@@ -72,6 +72,11 @@ char *ft_itoa_base(unsigned int nb)
     num = nb;
     if(num <= 15)
     	str[0] = '0';
+    if(num == 0)
+    {
+        str[0] = '0';
+        str[1] = '0';
+    }
     str[len] = '\0';
     if (!num)
         str[0] = '0';
