@@ -65,19 +65,13 @@ char *ft_itoa_base(unsigned int nb)
     char *str;
     char *base;
 
-    len = 0;
+    len = 2;
     num = nb;
     base = "0123456789abcdef";
-
-    if (!num)
-        len++;
-    while (num)
-    {
-        len++;
-        num /= 16;
-    }
     str = (char *)malloc(sizeof(char) * (len + 1));
     num = nb;
+    if(num <= 15)
+    	str[0] = '0';
     str[len] = '\0';
     if (!num)
         str[0] = '0';
