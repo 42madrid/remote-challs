@@ -1,4 +1,4 @@
-<h1 align="center"><code>Remote-Challs</code></h1>
+<h1 align="center"><code>Desafíos de la Galaxia - (Remote-Challs)</code></h1>
 
 <div align="center">
   <sub>Inspired by the <a href="https://github.com/hivehelsinki/remote-challs">remote-challs</a> created by <a href="https://github.com/jgengo">Jordane Gengo (Titus)</a>, <a href="">Oleksii Martynovskyi (Disky)</a>, <a href="">Paula Lantran (Ablette)</a></sub>

@@ -1,4 +1,4 @@
-<h1 align="center"><code>Chall00 / RGB to Hexadecimal </code></h1>
+<h1 align="center"><code>El Ojo de Sauron (Chall00) / RGB to Hexadecimal </code></h1>
 
 <div align="center">
   <sub>Created by <a href="https://github.com/jgengo">Jordane Gengo (Titus)</a>, <a href="">Oleksii Martynovskyi (Disky)</a>, <a href="">Paula Lantran (Ablette)</a></sub>
@@ -10,7 +10,7 @@
 ---
 
 ### Instructions
-<sub>**Turn-in directory:** `chall02/`</sub><br />
+<sub>**Turn-in directory:** `chall00/`</sub><br />
 <sub>**Files to turn in:** `<xlogin>.c`</sub><br />
 <sub>**Language:** `C`</sub><br />
 <sub>**Prototype:** `char   *hv_rgb2hex(int r, int g, int b);`</sub>
