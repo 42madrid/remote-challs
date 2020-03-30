@@ -14,6 +14,11 @@
 #include <stdio.h>
 #include <string.h>
 
+/*
+** I've created  6 digit array, with the '#' prefix. First I check the input,
+** then I fill the array converting from decimal to hex. Last, I allocate memory for the string.
+*/
+
 char	*hv_rgb2hex(int r, int g, int b)
 {
 	char result[8];
