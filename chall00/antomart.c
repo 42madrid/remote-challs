@@ -94,7 +94,6 @@ char *hv_rgb2hex(int r, int g, int b)
     char *green;
     char *blue;
     char *hexa;
-    char *aux;	
 
     if (!(hexa = malloc(sizeof(char) * 8)))
 		return (0);
@@ -110,10 +109,7 @@ char *hv_rgb2hex(int r, int g, int b)
 	green = NULL;
 	free(blue);
 	blue = NULL;
-	aux = hexa;
-	free(hexa);
-	hexa = NULL;
-        return (aux);
+        return (hexa);
     }
     else 
         return(NULL);
