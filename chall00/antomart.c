@@ -94,6 +94,7 @@ char *hv_rgb2hex(int r, int g, int b)
     char *green;
     char *blue;
     char *hexa;
+    char *aux;	 
 
     if (!(hexa = malloc(sizeof(char) * 8)))
 		return (0);
@@ -103,7 +104,13 @@ char *hv_rgb2hex(int r, int g, int b)
         green = ft_itoa_base(g);
         blue = ft_itoa_base(b);
         hexa = ft_strjoin_rgb(red, green, blue);
-        return (hexa);
+	free(red);
+	red = NULL;
+	free(green);
+	green = NULL;
+	free(blue);
+	blue = NULL;
+        return (aux);
     }
     else 
         return(NULL);
