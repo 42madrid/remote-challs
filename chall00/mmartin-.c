@@ -6,7 +6,7 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/30 20:29:48 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/03/30 22:08:02 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/03/30 22:33:30 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,6 @@ char	*hv_rgb2hex(int r, int g, int b)
 
 	if (r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255)
 		return (NULL);
-	str = NULL;
-	if (!sprintf(str, "#%.6x", r << 16 | g << 8 | b) ||
-			!(str = (char *)strdup(str)))
-		return (NULL);
-	return (str);
+	sprintf(str, "#%.6x", r << 16 | g << 8 | b);
+	return ((char *)strdup(str));
 }
