@@ -6,7 +6,6 @@ void    calculate_hex(int c, int color, char *result)
         result[c] = HEXADEC[color / 16];
     else
         result[c] = HEXADEC[color % 16];
-    c++;
 }
 
 char    *hv_rgb2hex(int r, int g, int b)
