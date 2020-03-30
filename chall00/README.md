@@ -1,4 +1,4 @@
-<h1 align="center"><code>El Ojo de Sauron (Chall00) / RGB to Hexadecimal </code></h1>
+<h1 align="center"><code>Ojo de Sauron (Chall00) / RGB to Hexadecimal </code></h1>
 
 <div align="center">
   <sub>Created by <a href="https://github.com/jgengo">Jordane Gengo (Titus)</a>, <a href="">Oleksii Martynovskyi (Disky)</a>, <a href="">Paula Lantran (Ablette)</a></sub>
@@ -41,3 +41,5 @@ strcmp(hv_rgb2hex(252, 186, 3), "#fcba03") == 0
 
 <br /><br />
 Good luck!
+<br />
+<sub>About the title: <a href="https://www.abc.es/ciencia/20140607/abci-sauron-visto-espacio-201406061739.html">Estrella Ojo de Sauron</a></sub>
