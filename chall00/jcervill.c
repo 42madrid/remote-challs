@@ -142,12 +142,3 @@ char *hv_rgb2hex(int r, int g, int b)
 	}
 	return (hex);
 }
-
-int main(void)
-{
-	int r = 252;
-	int g = 186;
-	int b = 3;
-	printf("color: %s\n", hv_rgb2hex(r,g,b));
-	return (0);
-}
