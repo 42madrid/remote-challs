@@ -104,6 +104,9 @@ char *hv_rgb2hex(int r, int g, int b)
         green = ft_itoa_base(g);
         blue = ft_itoa_base(b);
         hexa = ft_strjoin_rgb(red, green, blue);
+	aux = hexa;
+	free(hexa);
+	hexa = NULL;
 	free(red);
 	red = NULL;
 	free(green);
