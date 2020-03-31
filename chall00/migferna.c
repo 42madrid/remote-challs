@@ -27,7 +27,7 @@ char	*hv_rgb2hex(int r, int g, int b)
 	char hex[7];
 	static char base[] = "0123456789ABCDEF";
 
-	if ((r < 0 || r > 255) || (g < 0 || r > 255) || (b < 0 || b > 255))
+	if (r < 0 || r > 255 || g < 0 || r > 255 || b < 0 || b > 255)
 		return ("Error: Values not valid");
 	hex[0] = '#';
 	hex[1] = base[r / 16];
