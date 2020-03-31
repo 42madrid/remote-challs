@@ -36,6 +36,5 @@ char	*hv_rgb2hex(int r, int g, int b)
 	hex[4] = base[g % 16];
 	hex[5] = base[b / 16];
 	hex[6] = base[b % 16];
-
 	return (ft_strdup(hex));
 }
