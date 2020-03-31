@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gmartin.c                                          :+:      :+:    :+:   */
+/*   gmartin-.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,17 +14,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-/*  Para resolver este ejercicio he utilizado las funciones con las que hemos estado trabajando
-	para practicar con ellas. 
-	En primer lugar utilizamos la funcion itoa que convierte dígitos a caracteres, pero con la 
-	funcionalidad en este caso para que al mismo tiempo que vamos guardandolo en nuestro string 
-	los estemos convirtiendo a hexadecimal. Para ello simplemente calculamos los módulos de 
-	los digitos que nos han dado y vamos pasandolo a hexadecimal.
-	Una vez que tenemos los dígitos r, g y b en hexadecimal y convertidos a carácteres utilizamos la función
-	ft_strjoin para concatenarlos. Necesitaremos la funcion ft_strlen que mide el tamaño de los string que va
-	a concatenar para hacer la reserva de memoria previa.   */
-
-size_t	ft_strlen(const char *s)							// Con esta función conocemos el tamaño de cada string.
+size_t	ft_strlen(const char *s)
 {
 	size_t x;
 
@@ -36,7 +26,7 @@ size_t	ft_strlen(const char *s)							// Con esta función conocemos el tamaño 
 	return (x);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2) 		// Con esta función concatenamos los strings de r, g y b.
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*dst;
 	int		x;
@@ -63,38 +53,40 @@ char	*ft_strjoin(char const *s1, char const *s2) 		// Con esta función concaten
 	dst[x] = '\0';
 	return (dst);
 }
-char    *ft_itoa(int n) 									// Para convertir los dígitos a caracteres, previo cálculo para pasar a hexadecimal.
+
+char	*ft_itoa(int n)
 {
 	int		aux;
 	int		len;
 	char	*str;
-	
+
 	aux = n;
-	len = 2; 												// Sabemos que el tamaño de cada string será 2, no hace falta calcularlo. 
+	len = 2;
 	if ((str = (char*)malloc(sizeof(char) * len)) == NULL)
 		return (NULL);
 	str[len] = '\0';
-	if (aux/16 < 1) 										// Comprobamos si el dígito que nos dan es < a 16, en ese caso nuestro nuevo dígito 
-		str[0] = '0';										// en hexadecimal solo será representado por un carácter y tendremos que rellenar con
-	while (len--)											// '0' la primera posición para que nuestro string siempre este formado por 2 carácteres.
+	if (aux / 16 < 1)
+		str[0] = '0';
+	while (len--)
 	{
 		if ((n % 16) < 10)
-			str[len] = n % 16 + '0';						// Pasos para convertir en hexadecimal a la vez que guardamos en nuestro string.
+			str[len] = n % 16 + '0';
 		if ((n % 16) > 9)
 			str[len] = n % 16 + 'W';
 		n = n / 16;
 	}
-	return (str);											// Cada vez que entremos en la función devolverá r, g o b convertido a hexadecimal 
-}															// y como un string.
+	return (str);
+}
 
-char    *hv_rgb2hex(int r, int g, int b)					// Función principal. Recibe 3 dígitos para convertirlos en un string "rgb".
+char	*hv_rgb2hex(int r, int g, int b)
 {
-	char    *rgb;
-	rgb = "#";												// Nuestro string siempre comenzara con "#".
-	if (r < 0 || g < 0 || b < 0)							// Comprobación por si se introduce un número negativo.
-		return("Error: Introduce numeros posivitos.");
-	rgb = ft_strjoin(rgb, ft_itoa(r));						// Vamos mandando los datos de r, g y b para su calculo, conversión y concatenación.
+	char	*rgb;
+
+	rgb = "#";
+	if (r < 0 || g < 0 || b < 0 || r > 255 || g > 255 || b > 255)
+		return ("Error: Introduce numeros >= 0 && <=255.\n");
+	rgb = ft_strjoin(rgb, ft_itoa(r));
 	rgb = ft_strjoin(rgb, ft_itoa(g));
 	rgb = ft_strjoin(rgb, ft_itoa(b));
-	return(rgb);											// Retorno de nuestro "rgb" final. 
+	return (rgb);
 }
