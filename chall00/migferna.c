@@ -25,11 +25,10 @@ char	*ft_strdup(char *src)
 char	*hv_rgb2hex(int r, int g, int b)
 {
 	char hex[7];
-	char *base;
+	static char base[] = "0123456789ABCDEF";
 
 	if ((r < 0 || r > 255) || (g < 0 || r > 255) || (b < 0 || b > 255))
 		return ("Error: Values not valid");
-	base = "0123456789ABCDEF";
 	hex[0] = '#';
 	hex[1] = base[r / 16];
 	hex[2] = base[r % 16];
