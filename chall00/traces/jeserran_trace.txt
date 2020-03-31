@@ -1,0 +1,6 @@
+Compilation: OK
+test: hv_rgb2hex(252, 186, 3)
+expected_output: '#fcba03'
+user_output: '#0fc0ba03'
+Assertion failed: (!strcmp(result, expected)), function assert_results, file main.c, line 14.
+Exec: KO
