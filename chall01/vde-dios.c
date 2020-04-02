@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <string.h>
 
 int hv_necklace(char *s1, char *s2)
@@ -37,11 +36,5 @@ int hv_necklace(char *s1, char *s2)
 		k = 0;
 		i++;
 	}
-	return (0);
-}
-
-int main()
-{
-	printf("%d",hv_necklace("aabaaaaabaab", "aabaabaabaaa"));
 	return (0);
 }
