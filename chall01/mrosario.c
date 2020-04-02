@@ -6,7 +6,7 @@
 /*   By: mikiencolor <mikiencolor@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/02 21:21:08 by mikiencolor       #+#    #+#             */
-/*   Updated: 2020/04/02 21:21:16 by mikiencolor      ###   ########.fr       */
+/*   Updated: 2020/04/02 22:12:13 by mikiencolor      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int             hv_necklace(char *s1, char *s2)
     unsigned int     len;
     int              i;
 
-    if (((len = ft_strlen(s1)) != ft_strlen(s2)) || !s1 || !s2)
+    if (!s1 || !s2 || ((len = ft_strlen(s1)) != ft_strlen(s2)))
         return (0);
     if (*s2 == *s1 && (!(ft_strcmp(s1, s2, len))))
         return (1);
