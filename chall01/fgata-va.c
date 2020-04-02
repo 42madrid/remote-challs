@@ -32,12 +32,12 @@ int			hv_necklace(char *s1, char *s2)
 	i = 0;
 	while (i < len)
 	{
-		ft_slide_char(src, len);
 		if(strcmp(src, s2) == 0)
 		{
 			free(src);
 			return (1);
 		}
+		ft_slide_char(src, len);
 		i++;
 	}
 	free(src);
