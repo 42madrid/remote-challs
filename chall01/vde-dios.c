@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <string.h>
 
 int hv_necklace(char *s1, char *s2)
@@ -11,7 +12,7 @@ int hv_necklace(char *s1, char *s2)
 	i = 0;
 	k = 0;
 	j = 0;
-	if (l1 != strlen(s2))
+	if (l1 != (int)strlen(s2))
 		return (0);
 	if (!strcmp(s1, s2))
 		return (1);
@@ -36,5 +37,11 @@ int hv_necklace(char *s1, char *s2)
 		k = 0;
 		i++;
 	}
+	return (0);
+}
+
+int main()
+{
+	printf("%d",hv_necklace("aabaaaaabaab", "aabaabaabaaa"));
 	return (0);
 }
