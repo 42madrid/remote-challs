@@ -6,12 +6,11 @@
 /*   By: estina <estina@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/02 13:19:46 by estina            #+#    #+#             */
-/*   Updated: 2020/04/02 14:27:35 by estina           ###   ########.fr       */
+/*   Updated: 2020/04/02 14:29:15 by estina           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
 int		ft_strlen(char *s)
 {
