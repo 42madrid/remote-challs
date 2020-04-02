@@ -38,6 +38,8 @@ int		hv_necklace(char *s1, char *s2)
 	ft_bzero(mask, len);
 	if (!s1 || !s2 || ft_strlen(s1) != ft_strlen(s2))
 		return (0);
+	if (ft_strlen(s1) == 0 && ft_strlen(s2) == 0)
+		return (1);
 	its2 = 0;
 	while (s2[its2])
 	{
@@ -72,9 +74,4 @@ int		hv_necklace(char *s1, char *s2)
 			return (1);
 	}
 	return (0);
-}
-
-int main()
-{
-	printf("%d", hv_necklace("", ""));
 }
