@@ -1,4 +1,4 @@
-int hv_necklace(char *s1, char *s2)
+int check_necklace(char *s1, char *s2)
 {
 	int	i;
        	int	j;
@@ -31,4 +31,11 @@ int hv_necklace(char *s1, char *s2)
 		j++;
 	}
 	return (i + l == j && !s1[i + l] && !s2[j]);
+}
+
+int hv_necklace(char *s1, char *s2)
+{
+	if (!check_necklace(s1, s2))
+		return (check_necklace(s2, s1));
+	return (1);
 }
