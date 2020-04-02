@@ -1,4 +1,4 @@
-int check_necklace(char *s1, char *s2)
+statric int check_necklace(char *s1, char *s2)
 {
 	int	i;
        	int	j;
