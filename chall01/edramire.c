@@ -6,7 +6,7 @@
 /*   By: edramire <edramire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/02 17:15:16 by edramire          #+#    #+#             */
-/*   Updated: 2020/04/02 17:53:25 by edramire         ###   ########.fr       */
+/*   Updated: 2020/04/02 17:56:05 by edramire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int hv_necklace(char *s1, char *s2)
 			return (0);
 		index = (ptr - s2) / sizeof(char);
 		if (strncmp(s1, ptr, len_s2 - index) == 0 &&
-			strncmp(s1 + (len_s1 - index) * sizeof(char), s2, index) == 0)
+			strncmp(s1 + (len_s1 - index), s2, index) == 0)
 			break;
 		++ptr;
 	}
