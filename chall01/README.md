@@ -16,7 +16,7 @@
 <sub>**Language:** `C`</sub><br />
 <sub>**Prototype:** `int   hv_necklace(char *s1, char *s2);`</sub>
 
-<sub>**Deadline:** 02.04.2020 - 11:42am</sub>
+<sub>**Deadline:** 03.04.2020 - 11:42am</sub>
 <br /><br />
 ### Subject
 
