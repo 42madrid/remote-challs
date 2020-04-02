@@ -18,14 +18,14 @@ char	*ft_strdup(const char *s1)
 	return (dest);
 }
 
-int	ft_strcmp(const char *s1, const char *s2)
+int		ft_strcmp(const char *s1, const char *s2)
 {
 	while (*s1 != '\0' || *s2 != '\0')
 	{
 		if (*s1 != *s2++)
 			return (*(unsigned char *)s1 - *(unsigned char *)--s2);
-        *s1++;
-	}	
+        s1++;
+	}
 	return (0);
 }
 
@@ -42,18 +42,17 @@ size_t	ft_strlen(const char *s)
 char	*ft_substr(char *s, char end, unsigned int start, size_t len)
 {
 	size_t	i;
-	size_t	size;
 	char	*tab;
 
 	i = 0;
 	if (!s)
 		return (NULL);
-	size = ft_strlen(s + start);
 	if (!(tab = (char *)malloc((len + 2) * sizeof(char))))
 		return (NULL);
 	while (i < len)
 	{
-		tab[i++] = s[start + i];
+		tab[i] = s[start + i];
+		i++;
 	}
     free(s);
     tab[i] = end;
@@ -63,7 +62,6 @@ char	*ft_substr(char *s, char end, unsigned int start, size_t len)
 
 int     hv_necklace(char *s1, char *s2)
 {
-    int i;
     char *tmp;
 
     if (!s1 || !s2 || ft_strlen(s1) != ft_strlen(s2))
@@ -71,8 +69,6 @@ int     hv_necklace(char *s1, char *s2)
     if (ft_strcmp(s1, s2) == 0)
         return (1);
 
-	tmp = NULL;	
-    i = 0;
     tmp = ft_strdup(s1);
     while(*(s1++) != '\0')
     {
