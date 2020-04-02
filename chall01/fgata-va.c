@@ -23,6 +23,8 @@ int			hv_necklace(char *s1, char *s2)
 	size_t	len;
 	size_t	i;
 
+	if(!s1 || !s2)
+		return (0);
 	len = strlen(s1);
 	if (len != strlen(s2))
 		return (0);
