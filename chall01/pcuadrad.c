@@ -53,14 +53,14 @@ int hv_necklace(char *s1, char *s2)
     int     saves1;
     int     i;
 
-    is1 = 0;
+    is1 = -1;
     saves1 = -1;
     lens1 = ft_strlen(s1);
     if (lens1 != ft_strlen(s2))
         return (0);
     if (!ft_strcmp(s1, s2))
         return (1);
-    while (s1[is1])
+    while (s1[++is1])
     {
         is2 = 0;
         if (s1[is1] != s2[is2])
@@ -76,10 +76,7 @@ int hv_necklace(char *s1, char *s2)
                 if (i == saves1)
                     return (1);
             }
-            if (s2[is2] != s1[is1 + is2])
-                break ;
         }
-        is1++;
     }
     return (0);
 }
