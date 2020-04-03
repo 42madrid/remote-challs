@@ -23,7 +23,7 @@ int hv_necklace(char *s1, char *s2)
                 i = 0;
             else
                 i++;
-            if (!s1[j + 1])
+            if (!s2[j + 1])
                 j = 0;
             else
                 j++;
