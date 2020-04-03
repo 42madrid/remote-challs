@@ -19,11 +19,11 @@ int hv_necklace(char *s1, char *s2)
         c = 0;
         while (s1[i] == s2[j])
         {
-            if (i + 1 == strlen(s2))
+            if (!s1[i + 1])
                 i = 0;
             else
                 i++;
-            if (j + 1 == strlen(s2))
+            if (!s1[j + 1])
                 j = 0;
             else
                 j++;
