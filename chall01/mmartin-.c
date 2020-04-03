@@ -6,7 +6,7 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/02 16:46:55 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/04/03 03:24:34 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/04/03 03:27:51 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 **	RETURN VALUES
 **		1 if considered valid, 0 otherwise
 */
+
 int		hv_necklace(char *s1, char *s2)
 {
 	int		count;
