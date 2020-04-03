@@ -12,7 +12,7 @@ int hv_necklace(char *first, char *second)
 		{
 			while (first[i + j] && second[j] && first[i + j] == second[j])
 				j++;
-			if (!first[i + j])
+			if (!first[i + j] || !second[j])
 				break;
 			j = 0;
 		}
