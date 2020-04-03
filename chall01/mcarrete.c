@@ -6,7 +6,7 @@
 /*   By: mcarrete <mcarrete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/03 10:00:34 by mcarrete          #+#    #+#             */
-/*   Updated: 2020/04/03 11:29:45 by mcarrete         ###   ########.fr       */
+/*   Updated: 2020/04/03 23:39:15 by mcarrete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,44 +28,46 @@ int hv_necklace(char *s1, char *s2)
 	int len_s1;
 	int len_s2;
 	int i;
-	int j;
+	int k;
 
 	len_s1 = ft_strlen(s1);
 	len_s2 = ft_strlen(s2);
-
 	/*
-	** First check if both strings have the same lenght:
+	** First check if both strings have the same length:
 	*/
-	if(len_s1 != len_s2)
+	if (len_s1 != len_s2)
 		return (0);
 	i = 0;
 	/*
-	** Locate s1[0] in s2 string:
+	** compare each char of s2 to each char of s1. If not the same, move
+	** one forward in s2 and compare again to s1 (starting from s1[0]);
 	*/
-	while (s2[i] != s1[0] && s2[i] != '\0')
+	i = 0;
+	k = 0;
+	while (s2[i + k] != '\0')
 	{
-		i++;
-	}
-	/*
-	** If s2[i] is not the last char, check if the next char is same as s1[0 + 1], 0 + 2 etc
-	*/
-	j = 1;
-	while (s2[i + j] != '\0')
-	{
-		if (s2[i + j] == s1[0 + j])
-			j++;
-		else
-			return (0);
-	}
-	/*
-	** check if the previous char is same as last char of s1 string:
-	*/
-	j = 1;
-	while ((i - j) >= 1)
-	{
-		if (s2[i - j] == s1[len_s1 - j])
+		if (s2[i + k] == s1[i])
 		{
-			j++;
+			i++;
+		}
+		else
+		{
+			k++;
+			i = 0;
+		}
+
+	}
+	/*
+	** Once s2 has reached its end, continue comparing to s1[i], now
+	** from the start of s2.
+	*/
+	k = 0;
+	while (s1[i] != '\0')
+	{
+		if (s2[k] == s1[i])
+		{
+			k++;
+			i++;
 		}
 		else
 			return (0);
