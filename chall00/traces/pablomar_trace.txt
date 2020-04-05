@@ -1,0 +1,24 @@
+Compilation: OK
+test: hv_rgb2hex(252, 186, 3)
+expected_output: '#fcba03'
+user_output: '#fcba03'
+test: hv_rgb2hex(70, 235, 52)
+expected_output: '#46eb34'
+user_output: '#46eb34'
+test: hv_rgb2hex(159, 52, 235)
+expected_output: '#9f34eb'
+user_output: '#9f34eb'
+test: hv_rgb2hex(52, 101, 235)
+expected_output: '#3465eb'
+user_output: '#3465eb'
+test: hv_rgb2hex(52, 235, 119)
+expected_output: '#34eb77'
+user_output: '#34eb77'
+test: hv_rgb2hex(208, 235, 52)
+expected_output: '#d0eb34'
+user_output: '#d0eb34'
+test: hv_rgb2hex(0, 0, 255)
+expected_output: '#0000ff'
+user_output: '#ff'
+Assertion failed: (!strcmp(result, expected)), function assert_results, file main.c, line 14.
+Exec: KO
