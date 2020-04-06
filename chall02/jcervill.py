@@ -1,6 +1,7 @@
 import sys
 
 i = 0
+j = 0
 morse = {
 	'a':'.-',
 	'A':'.-',
@@ -58,7 +59,14 @@ morse = {
 }
 if (len(sys.argv) == 2):
 	str = ''
-	while (i < len(sys.argv[1])):
-		str = str + (morse[sys.argv[1][i]])
-		i = i + 1
-print (str)
+	if (sys.argv[1].isalpha()):
+		while (i < len(sys.argv[1])):
+			str = str + (morse[sys.argv[1][i]])
+			i = i + 1
+		print (str)
+	else:
+		print("usage: ./xlogin.py <a-zA-Z string>")
+		exit(1)
+else:
+	print("usage: ./xlogin.py <a-zA-Z string>")
+	exit(1)
