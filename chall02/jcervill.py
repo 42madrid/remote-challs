@@ -65,7 +65,7 @@ if (len(sys.argv) == 2):
 			i = i + 1
 		print (str)
 	else:
-		print("usage: ./xlogin.py <a-zA-Z string>")
+		print("usage: ./jcervill.py <a-zA-Z string>")
 		exit(1)
 else:
 	print("usage: ./xlogin.py <a-zA-Z string>")
