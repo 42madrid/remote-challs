@@ -24,5 +24,5 @@ def parse_morse(txt):
 if __name__ == "__main__":
     if len(sys.argv) != 2 or check_string(sys.argv[1]) == 0:
         print ("usage: " + sys.argv[0] + " <a-zA-Z string>")
-        sys.exit()
-    print (parse_morse(sys.argv[1].upper()))
+    else:
+        print (parse_morse(sys.argv[1].upper()))
