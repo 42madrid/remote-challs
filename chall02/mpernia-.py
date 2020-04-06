@@ -40,4 +40,4 @@ if len(sys.argv) == 2 and all(x.isalpha() or x.isspace() for x in sys.argv[1]) a
 			print(' ', end='')
 	print('')
 else:
-	print("usage: ./xlogin.py <a--Z string>")
+	print("usage: ./mpernia- <a--Z string>")
