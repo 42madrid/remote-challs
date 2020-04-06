@@ -10,7 +10,7 @@
 ---
 
 ### Instructions
-<sub>**Turn-in directory:** `chall01/`</sub><br />
+<sub>**Turn-in directory:** `chall02/`</sub><br />
 <sub>**Files to turn in:** `<xlogin>.py`</sub><br />
 <sub>**Language:** `Python 3.x`</sub>
 
@@ -99,9 +99,9 @@ usage: ./xlogin.py <a-zA-Z string>
 <br /><br />
 ### Reward
 
- - The first one to submit a working solution will earn `10` points for their coalition.
- - Everyone else submitting a working solution *(not yet submitted)* will earn `3` points for their coalition.
- - Every participant that tried to solve the challenge and pushed a solution will earn `2` points for their coalition.
+ - The first one to submit a working solution will earn `420` points for their coalition.
+ - Everyone else submitting a working solution *(not yet submitted)* will earn `126` points for their coalition.
+ - Every participant that tried to solve the challenge and pushed a solution will earn `84` points for their coalition.
  
 <br /><br />
 Good luck!
