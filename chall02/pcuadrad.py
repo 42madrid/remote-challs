@@ -2,10 +2,6 @@
 
 import sys
 
-def finish_program():
-    print ("usage: ./pcuadrad.py <a-zA-Z string>")
-    sys.exit()
-
 def check_string(txt):
     for char in txt:
         if not char.isalpha() and not char.isspace():
@@ -26,8 +22,7 @@ def parse_morse(txt):
     return str_morse
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        finish_program()
-    elif check_string(sys.argv[1]) == 0:
-        finish_program()
+    if len(sys.argv) != 2 or check_string(sys.argv[1]) == 0:
+        print ("usage: ./pcuadrad.py <a-zA-Z string>")
+        sys.exit()
     print (parse_morse(sys.argv[1].upper()))
