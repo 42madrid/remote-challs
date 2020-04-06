@@ -6,12 +6,13 @@
 #    By: miguel <miguel@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/06 16:23:52 by miguel            #+#    #+#              #
-#    Updated: 2020/04/06 17:17:25 by miguel           ###   ########.fr        #
+#    Updated: 2020/04/06 19:17:00 by miguel           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 import sys
 
+error = False
 morse = {
 'a' :'.-',
 'b' : '-...', 
@@ -42,12 +43,19 @@ morse = {
 ' ' : ' '
 }
 
-if len(sys.argv) != 2 or  not sys.argv[1].isalpha() and not sys.argv[1].find(" "):
-     print("usage: ./mmateo-t.py <a-zA-Z string>")
+if len(sys.argv) != 2 or not sys.argv[1]:
+	print("usage: ./mmateo-t.py <a-zA-Z string>")
 else:
-    string = sys.argv[1].lower()
-    for c in string:
-        print(morse.get(c), end="")
-    print("")
+	string = sys.argv[1].lower()
+	for c in string:
+		if c not in morse:
+			error = True
+
+	if not error:
+		for c in string:
+			print(morse.get(c), end="")
+		print("")
+	else:
+		print("usage: ./mmateo-t.py <a-zA-Z string>")
 
 sys.exit()
