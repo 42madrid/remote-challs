@@ -53,11 +53,12 @@ morse = {
 	'y':'-.--',
 	'Y':'-.--',
 	'z':'--..',
-	'Z':'--..'
+	'Z':'--..',
+	' ':' '
 }
 if (len(sys.argv) == 2):
 	str = ''
 	while (i < len(sys.argv[1])):
-		str = str + ' ' + (morse[sys.argv[1][i]])
+		str = str + (morse[sys.argv[1][i]])
 		i = i + 1
 print (str)
