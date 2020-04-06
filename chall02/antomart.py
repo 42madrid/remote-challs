@@ -40,7 +40,7 @@ MORSE = {
 # for each char or space in the string write the corresponding char of our dictionary
 
 def main():
-    if len(sys.argv) == 2 and all(x.isalpha() or x.find(' ') for x in sys.argv[1]):
+    if len(sys.argv) == 2 and sys.argv[1] != "" and all(x.isalpha() or x.isspace() for x in sys.argv[1]):
         str = sys.argv[1].upper()
         for char in str:
             if (char.isalpha() or char == ' '):
