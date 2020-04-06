@@ -19,22 +19,20 @@ MORSE_CODE_DICT = { 'A':'.-', 'B':'-...',
 def encrypt(message):
     cipher = ''
     for letter in message:
-        if letter != ' ':
-
-            # Looks up the dictionary and adds the
-            # correspponding morse code
-            # along with a space to separate
-            # morse codes for different characters
-            cipher += MORSE_CODE_DICT[letter] + ''
+        if letter.isalpha():
+            if letter != ' ':
+                cipher += MORSE_CODE_DICT[letter] + ''
         else:
-            # 1 space indicates different characters
-            # and 2 indicates different words
-            cipher += ' '
+            if letter.isspace():
+                cipher += ' '
+            else:
+                print "usage: ./xlogin.py <a-zA-Z string>"
+                exit(1)
 
     return cipher
 
 def main(argv):
-  if ((len(argv) == 2) and (len(argv[1]) > 0)):
+  if len(argv) == 2 and len(argv[1]) > 0:
     result = encrypt(argv[1].upper()) 
     print (result) 
   else:
