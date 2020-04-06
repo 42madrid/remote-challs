@@ -6,7 +6,7 @@
 #    By: gsalo <gsalo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/06 13:11:23 by gsanchez          #+#    #+#              #
-#    Updated: 2020/04/06 13:11:51 by gsalo            ###   ########.fr        #
+#    Updated: 2020/04/06 13:20:36 by gsalo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,4 @@ for char in sys.argv[1]:
 for char in sys.argv[1]:
 	if char.lower() in MORSE_CODE:
 		sys.stdout.write(MORSE_CODE[char.lower()])
-	else:
-		print("usage " + sys.argv[0] + " <a-zA-Z string>")
-		exit()
 sys.stdout.write('\n')
