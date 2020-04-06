@@ -6,13 +6,14 @@
 #    By: miguel <miguel@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/06 16:23:52 by miguel            #+#    #+#              #
-#    Updated: 2020/04/06 19:17:00 by miguel           ###   ########.fr        #
+#    Updated: 2020/04/06 19:29:28 by miguel           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 import sys
 
 error = False
+spaces = 0
 morse = {
 'a' :'.-',
 'b' : '-...', 
@@ -50,8 +51,11 @@ else:
 	for c in string:
 		if c not in morse:
 			error = True
+			break
+		if c == ' ':
+			spaces+=1
 
-	if not error:
+	if not error and spaces < len(string):
 		for c in string:
 			print(morse.get(c), end="")
 		print("")
