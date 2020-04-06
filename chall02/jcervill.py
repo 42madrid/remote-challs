@@ -56,16 +56,27 @@ morse = {
 	'Z':'--..',
 	' ':' '
 }
-if (len(sys.argv) == 2):
-	str = ''
-	if (sys.argv[1].isalpha()):
-		while (i < len(sys.argv[1])):
-			str = str + (morse[sys.argv[1][i]])
-			i = i + 1
-		print (str)
-	else:
-		print("usage:" + sys.argv[0] + "<a-zA-Z string>")
-		exit(1)
-else:
+
+def error():
 	print("usage: " + sys.argv[0] + " <a-zA-Z string>")
 	exit(1)
+
+def is_morse(dictionary, strin):
+	for j in strin:
+		if not (j.isspace() or j.isalpha()):
+			error()
+		if not(dictionary[j]):
+			error()
+	return 1
+
+if (len(sys.argv) == 2 and len(sys.argv[1]) > 0):
+	if (is_morse(morse, sys.argv[1]) == 1):
+		str = ""
+		while (i < len(sys.argv[1])):
+			str = str + (morse[sys.argv[1][i]])
+			i += 1
+		print (str)
+	else:
+		error()
+else:
+	error()
