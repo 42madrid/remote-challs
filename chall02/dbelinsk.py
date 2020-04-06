@@ -74,16 +74,17 @@ def is_all_letter(av):
 		return 0
 	return 1
 
-def warning():
-	print ('usage: ./xlogin.py <a-zA-Z string>')
+def warning(s):
+	print ('usage:', s, '<a-zA-Z string>')
 
 if __name__ == "__main__":
 	ac = len(sys.argv)
+	fname = sys.argv[0]
 	if ac == 2:
 		av = sys.argv[1].lower()
 		if is_all_letter(av) == 1:
 			morseLoop(av)
 		else:
-			warning()
+			warning(fname)
 	else:
-		warning()
+		warning(fname)
