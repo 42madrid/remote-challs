@@ -13,7 +13,10 @@ def convert_to_morse(to_encode):
 	return ''.join(map(lambda x: morse_map.get(x), to_encode))
 
 if __name__ == "__main__":
-	if len(sys.argv) != 2 or len(sys.argv[1]) < 1 or not all(c.isalpha() or c.isspace() for c in sys.argv[1]):
+	if len(sys.argv) != 2 or len(sys.argv[1]) < 1:
+		print("usage: " + sys.argv[0] + " <a-zA-Z string>")
+		exit(1)
+	if not all((c >= 'A' and c <= 'Z') or (c >= 'a' and c <= 'z') or c == ' ' for c in sys.argv[1]):
 		print("usage: " + sys.argv[0] + " <a-zA-Z string>")
 		exit(1)
 	print(convert_to_morse(sys.argv[1].upper()))
