@@ -1,0 +1,15 @@
+Compilation: OK
+test: hv_necklace("nicole", "icolen")
+expected_output: 1
+user_output: 1
+test: hv_necklace("", "")
+expected_output: 1
+user_output: 1
+test: hv_necklace("aaa", "aaa")
+expected_output: 1
+user_output: 1
+test: hv_necklace("ror", "ror")
+expected_output: 1
+user_output: 0
+Assertion failed: (result == expected), function assert_results, file main.c, line 14.
+Exec: KO

@@ -1,0 +1,10 @@
+isoria-g.c:40:26: warning: unsequenced modification and access to 'i' [-Wunsequenced]
+        j += s1[i] - s2[i++];
+                ~        ^
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_hv_necklace", referenced from:
+      _assert_results in main-fbfad1.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+Compilation: KO
