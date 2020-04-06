@@ -1,7 +1,6 @@
 import sys
 
 i = 0
-j = 0
 morse = {
 	'a':'.-',
 	'A':'.-',
@@ -65,8 +64,8 @@ if (len(sys.argv) == 2):
 			i = i + 1
 		print (str)
 	else:
-		print("usage: ./jcervill.py <a-zA-Z string>")
+		print("usage:" + sys.argv[0] + "<a-zA-Z string>")
 		exit(1)
 else:
-	print("usage: ./xlogin.py <a-zA-Z string>")
+	print("usage: " + sys.argv[0] + " <a-zA-Z string>")
 	exit(1)
