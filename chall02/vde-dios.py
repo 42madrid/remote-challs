@@ -6,7 +6,7 @@ dictionary = [ '.-', '-...', '-.-.', '-..', '.', '..-.', '--.', '....',
             '-.--', '--..']
 
 def error():
-    print("usage: ./xlogin.py <a-zA-Z string>")
+    print("usage: ./" + sys.argv[0] + " <a-zA-Z string>")
 
 def morse(string):
     code = ''
