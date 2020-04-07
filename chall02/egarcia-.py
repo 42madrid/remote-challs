@@ -11,4 +11,4 @@ if (len(sys.argv) == 2 and all(x.isalpha()  or  x.isspace() for x in sys.argv[1]
             print(morse[letter.upper()],end="")
     print()
 else:
-    print("usage: ./" + sys.argv[0] +  " <a-zA-Z string>")
+    print("usage: " + sys.argv[0] +  " <a-zA-Z string>")
