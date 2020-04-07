@@ -15,45 +15,38 @@
 #
 # Constelación Serpens (Chall02) / String to Morse
 #
-# Solved with key-value pair dictionary as static variable in a class.
+# Solved with key-value pair dictionary as local variable in a function, due
+# to local variables are faster than global variables in python.
 # The achieved solution has fitted challenge's problem conception, by
 # blacklisting wrong inputs by using regular expressions and, or, wrong
-# invocations. Memory clean.
+# invocations.
 #
 
 import sys
 import re
 
-class morse:
-	dictionary = { 'a':'.-', 'b':'-...', 'c':'-.-.', 'd':'-..', 'e':'.',
+def encrypt (message):
+	morse_dict = { 'a':'.-', 'b':'-...', 'c':'-.-.', 'd':'-..', 'e':'.',
 		'f':'..-.', 'g':'--.', 'h':'....', 'i':'..', 'j':'.---', 'k':'-.-',
 		'l':'.-..', 'm':'--', 'n':'-.', 'o':'---', 'p':'.--.', 'q':'--.-',
 		'r':'.-.', 's':'...', 't':'-', 'u':'..-', 'v':'...-', 'w':'.--',
 		'x':'-..-', 'y':'-.--', 'z':'--..'}
-
-	def encrypt (self, message):
-		cipher = ''
-		for char in message:
-			if char >= 'a' and char <= 'z':
-				cipher += self.dictionary[char]
-			elif  char >= 'A' and char <= 'Z':
-				cipher += self.dictionary[char.lower()]
-			elif char == ' ':
-				cipher += ' '
-		return (cipher)
-
-	def __init__ (self, message):
-		self.message = message
-		self.encrypted = self.encrypt(message)
+	cipher = ''
+	for char in message:
+		if char >= 'a' and char <= 'z':
+			cipher += morse_dict[char]
+		elif  char >= 'A' and char <= 'Z':
+			cipher += morse_dict[char.lower()]
+		elif char == ' ':
+			cipher += ' '
+	return (cipher)
 
 def main():
 	if len(sys.argv) != 2 or sys.argv[1] == '' or \
 		re.search(r'[^a-zA-Z ]', sys.argv[1]):
 		print ('usage: ' + sys.argv[0] + ' ' + '<a-zA-Z string>')
 	else:
-		user_input = morse(sys.argv[1])
-		print (user_input.encrypted)
-		del user_input
+		print (encrypt(sys.argv[1]))
 
 if __name__ == '__main__':
-    main()
+	main()
