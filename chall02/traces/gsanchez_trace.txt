@@ -1,0 +1,430 @@
+2c2,31
+< usage: ./gsanchez.py <a-zA-Z string>
+---
+> ./gsanchez.py: line 13: import: command not found
+> ./gsanchez.py: line 15: MORSE_CODE: command not found
+> ./gsanchez.py: line 16: b:: command not found
+> ./gsanchez.py: line 17: c:: command not found
+> ./gsanchez.py: line 18: d:: command not found
+> ./gsanchez.py: line 19: e:: command not found
+> ./gsanchez.py: line 20: f:: command not found
+> ./gsanchez.py: line 21: g:: command not found
+> ./gsanchez.py: line 22: h:: command not found
+> ./gsanchez.py: line 23: i:: command not found
+> ./gsanchez.py: line 24: j:: command not found
+> ./gsanchez.py: line 25: k:: command not found
+> ./gsanchez.py: line 26: l:: command not found
+> ./gsanchez.py: line 27: m:: command not found
+> ./gsanchez.py: line 28: n:: command not found
+> ./gsanchez.py: line 29: o:: command not found
+> ./gsanchez.py: line 30: p:: command not found
+> ./gsanchez.py: line 31: q:: command not found
+> ./gsanchez.py: line 32: r:: command not found
+> ./gsanchez.py: line 33: s:: command not found
+> ./gsanchez.py: line 34: t:: command not found
+> ./gsanchez.py: line 35: u:: command not found
+> ./gsanchez.py: line 36: v:: command not found
+> ./gsanchez.py: line 37: w:: command not found
+> ./gsanchez.py: line 38: x:: command not found
+> ./gsanchez.py: line 39: y:: command not found
+> ./gsanchez.py: line 40: z:: command not found
+> ./gsanchez.py: line 41:  :: command not found
+> ./gsanchez.py: line 43: syntax error near unexpected token `sys.argv'
+> ./gsanchez.py: line 43: `if len(sys.argv) != 2:'
+4c33,62
+< usage: ./gsanchez.py <a-zA-Z string>
+---
+> ./gsanchez.py: line 13: import: command not found
+> ./gsanchez.py: line 15: MORSE_CODE: command not found
+> ./gsanchez.py: line 16: b:: command not found
+> ./gsanchez.py: line 17: c:: command not found
+> ./gsanchez.py: line 18: d:: command not found
+> ./gsanchez.py: line 19: e:: command not found
+> ./gsanchez.py: line 20: f:: command not found
+> ./gsanchez.py: line 21: g:: command not found
+> ./gsanchez.py: line 22: h:: command not found
+> ./gsanchez.py: line 23: i:: command not found
+> ./gsanchez.py: line 24: j:: command not found
+> ./gsanchez.py: line 25: k:: command not found
+> ./gsanchez.py: line 26: l:: command not found
+> ./gsanchez.py: line 27: m:: command not found
+> ./gsanchez.py: line 28: n:: command not found
+> ./gsanchez.py: line 29: o:: command not found
+> ./gsanchez.py: line 30: p:: command not found
+> ./gsanchez.py: line 31: q:: command not found
+> ./gsanchez.py: line 32: r:: command not found
+> ./gsanchez.py: line 33: s:: command not found
+> ./gsanchez.py: line 34: t:: command not found
+> ./gsanchez.py: line 35: u:: command not found
+> ./gsanchez.py: line 36: v:: command not found
+> ./gsanchez.py: line 37: w:: command not found
+> ./gsanchez.py: line 38: x:: command not found
+> ./gsanchez.py: line 39: y:: command not found
+> ./gsanchez.py: line 40: z:: command not found
+> ./gsanchez.py: line 41:  :: command not found
+> ./gsanchez.py: line 43: syntax error near unexpected token `sys.argv'
+> ./gsanchez.py: line 43: `if len(sys.argv) != 2:'
+6c64,93
+< usage: ./gsanchez.py <a-zA-Z string>
+---
+> ./gsanchez.py: line 13: import: command not found
+> ./gsanchez.py: line 15: MORSE_CODE: command not found
+> ./gsanchez.py: line 16: b:: command not found
+> ./gsanchez.py: line 17: c:: command not found
+> ./gsanchez.py: line 18: d:: command not found
+> ./gsanchez.py: line 19: e:: command not found
+> ./gsanchez.py: line 20: f:: command not found
+> ./gsanchez.py: line 21: g:: command not found
+> ./gsanchez.py: line 22: h:: command not found
+> ./gsanchez.py: line 23: i:: command not found
+> ./gsanchez.py: line 24: j:: command not found
+> ./gsanchez.py: line 25: k:: command not found
+> ./gsanchez.py: line 26: l:: command not found
+> ./gsanchez.py: line 27: m:: command not found
+> ./gsanchez.py: line 28: n:: command not found
+> ./gsanchez.py: line 29: o:: command not found
+> ./gsanchez.py: line 30: p:: command not found
+> ./gsanchez.py: line 31: q:: command not found
+> ./gsanchez.py: line 32: r:: command not found
+> ./gsanchez.py: line 33: s:: command not found
+> ./gsanchez.py: line 34: t:: command not found
+> ./gsanchez.py: line 35: u:: command not found
+> ./gsanchez.py: line 36: v:: command not found
+> ./gsanchez.py: line 37: w:: command not found
+> ./gsanchez.py: line 38: x:: command not found
+> ./gsanchez.py: line 39: y:: command not found
+> ./gsanchez.py: line 40: z:: command not found
+> ./gsanchez.py: line 41:  :: command not found
+> ./gsanchez.py: line 43: syntax error near unexpected token `sys.argv'
+> ./gsanchez.py: line 43: `if len(sys.argv) != 2:'
+8c95,124
+< usage: ./gsanchez.py <a-zA-Z string>
+---
+> ./gsanchez.py: line 13: import: command not found
+> ./gsanchez.py: line 15: MORSE_CODE: command not found
+> ./gsanchez.py: line 16: b:: command not found
+> ./gsanchez.py: line 17: c:: command not found
+> ./gsanchez.py: line 18: d:: command not found
+> ./gsanchez.py: line 19: e:: command not found
+> ./gsanchez.py: line 20: f:: command not found
+> ./gsanchez.py: line 21: g:: command not found
+> ./gsanchez.py: line 22: h:: command not found
+> ./gsanchez.py: line 23: i:: command not found
+> ./gsanchez.py: line 24: j:: command not found
+> ./gsanchez.py: line 25: k:: command not found
+> ./gsanchez.py: line 26: l:: command not found
+> ./gsanchez.py: line 27: m:: command not found
+> ./gsanchez.py: line 28: n:: command not found
+> ./gsanchez.py: line 29: o:: command not found
+> ./gsanchez.py: line 30: p:: command not found
+> ./gsanchez.py: line 31: q:: command not found
+> ./gsanchez.py: line 32: r:: command not found
+> ./gsanchez.py: line 33: s:: command not found
+> ./gsanchez.py: line 34: t:: command not found
+> ./gsanchez.py: line 35: u:: command not found
+> ./gsanchez.py: line 36: v:: command not found
+> ./gsanchez.py: line 37: w:: command not found
+> ./gsanchez.py: line 38: x:: command not found
+> ./gsanchez.py: line 39: y:: command not found
+> ./gsanchez.py: line 40: z:: command not found
+> ./gsanchez.py: line 41:  :: command not found
+> ./gsanchez.py: line 43: syntax error near unexpected token `sys.argv'
+> ./gsanchez.py: line 43: `if len(sys.argv) != 2:'
+10c126,155
+< ...---...$
+---
+> ./gsanchez.py: line 13: import: command not found$
+> ./gsanchez.py: line 15: MORSE_CODE: command not found$
+> ./gsanchez.py: line 16: b:: command not found$
+> ./gsanchez.py: line 17: c:: command not found$
+> ./gsanchez.py: line 18: d:: command not found$
+> ./gsanchez.py: line 19: e:: command not found$
+> ./gsanchez.py: line 20: f:: command not found$
+> ./gsanchez.py: line 21: g:: command not found$
+> ./gsanchez.py: line 22: h:: command not found$
+> ./gsanchez.py: line 23: i:: command not found$
+> ./gsanchez.py: line 24: j:: command not found$
+> ./gsanchez.py: line 25: k:: command not found$
+> ./gsanchez.py: line 26: l:: command not found$
+> ./gsanchez.py: line 27: m:: command not found$
+> ./gsanchez.py: line 28: n:: command not found$
+> ./gsanchez.py: line 29: o:: command not found$
+> ./gsanchez.py: line 30: p:: command not found$
+> ./gsanchez.py: line 31: q:: command not found$
+> ./gsanchez.py: line 32: r:: command not found$
+> ./gsanchez.py: line 33: s:: command not found$
+> ./gsanchez.py: line 34: t:: command not found$
+> ./gsanchez.py: line 35: u:: command not found$
+> ./gsanchez.py: line 36: v:: command not found$
+> ./gsanchez.py: line 37: w:: command not found$
+> ./gsanchez.py: line 38: x:: command not found$
+> ./gsanchez.py: line 39: y:: command not found$
+> ./gsanchez.py: line 40: z:: command not found$
+> ./gsanchez.py: line 41:  :: command not found$
+> ./gsanchez.py: line 43: syntax error near unexpected token `sys.argv'$
+> ./gsanchez.py: line 43: `if len(sys.argv) != 2:'$
+12c157,186
+< -...-...-..-.--$
+---
+> ./gsanchez.py: line 13: import: command not found$
+> ./gsanchez.py: line 15: MORSE_CODE: command not found$
+> ./gsanchez.py: line 16: b:: command not found$
+> ./gsanchez.py: line 17: c:: command not found$
+> ./gsanchez.py: line 18: d:: command not found$
+> ./gsanchez.py: line 19: e:: command not found$
+> ./gsanchez.py: line 20: f:: command not found$
+> ./gsanchez.py: line 21: g:: command not found$
+> ./gsanchez.py: line 22: h:: command not found$
+> ./gsanchez.py: line 23: i:: command not found$
+> ./gsanchez.py: line 24: j:: command not found$
+> ./gsanchez.py: line 25: k:: command not found$
+> ./gsanchez.py: line 26: l:: command not found$
+> ./gsanchez.py: line 27: m:: command not found$
+> ./gsanchez.py: line 28: n:: command not found$
+> ./gsanchez.py: line 29: o:: command not found$
+> ./gsanchez.py: line 30: p:: command not found$
+> ./gsanchez.py: line 31: q:: command not found$
+> ./gsanchez.py: line 32: r:: command not found$
+> ./gsanchez.py: line 33: s:: command not found$
+> ./gsanchez.py: line 34: t:: command not found$
+> ./gsanchez.py: line 35: u:: command not found$
+> ./gsanchez.py: line 36: v:: command not found$
+> ./gsanchez.py: line 37: w:: command not found$
+> ./gsanchez.py: line 38: x:: command not found$
+> ./gsanchez.py: line 39: y:: command not found$
+> ./gsanchez.py: line 40: z:: command not found$
+> ./gsanchez.py: line 41:  :: command not found$
+> ./gsanchez.py: line 43: syntax error near unexpected token `sys.argv'$
+> ./gsanchez.py: line 43: `if len(sys.argv) != 2:'$
+14c188,217
+< .--..-.-----..-..-----..-.$
+---
+> ./gsanchez.py: line 13: import: command not found$
+> ./gsanchez.py: line 15: MORSE_CODE: command not found$
+> ./gsanchez.py: line 16: b:: command not found$
+> ./gsanchez.py: line 17: c:: command not found$
+> ./gsanchez.py: line 18: d:: command not found$
+> ./gsanchez.py: line 19: e:: command not found$
+> ./gsanchez.py: line 20: f:: command not found$
+> ./gsanchez.py: line 21: g:: command not found$
+> ./gsanchez.py: line 22: h:: command not found$
+> ./gsanchez.py: line 23: i:: command not found$
+> ./gsanchez.py: line 24: j:: command not found$
+> ./gsanchez.py: line 25: k:: command not found$
+> ./gsanchez.py: line 26: l:: command not found$
+> ./gsanchez.py: line 27: m:: command not found$
+> ./gsanchez.py: line 28: n:: command not found$
+> ./gsanchez.py: line 29: o:: command not found$
+> ./gsanchez.py: line 30: p:: command not found$
+> ./gsanchez.py: line 31: q:: command not found$
+> ./gsanchez.py: line 32: r:: command not found$
+> ./gsanchez.py: line 33: s:: command not found$
+> ./gsanchez.py: line 34: t:: command not found$
+> ./gsanchez.py: line 35: u:: command not found$
+> ./gsanchez.py: line 36: v:: command not found$
+> ./gsanchez.py: line 37: w:: command not found$
+> ./gsanchez.py: line 38: x:: command not found$
+> ./gsanchez.py: line 39: y:: command not found$
+> ./gsanchez.py: line 40: z:: command not found$
+> ./gsanchez.py: line 41:  :: command not found$
+> ./gsanchez.py: line 43: syntax error near unexpected token `sys.argv'$
+> ./gsanchez.py: line 43: `if len(sys.argv) != 2:'$
+16c219,248
+< ...---... -...-...-..-.--$
+---
+> ./gsanchez.py: line 13: import: command not found$
+> ./gsanchez.py: line 15: MORSE_CODE: command not found$
+> ./gsanchez.py: line 16: b:: command not found$
+> ./gsanchez.py: line 17: c:: command not found$
+> ./gsanchez.py: line 18: d:: command not found$
+> ./gsanchez.py: line 19: e:: command not found$
+> ./gsanchez.py: line 20: f:: command not found$
+> ./gsanchez.py: line 21: g:: command not found$
+> ./gsanchez.py: line 22: h:: command not found$
+> ./gsanchez.py: line 23: i:: command not found$
+> ./gsanchez.py: line 24: j:: command not found$
+> ./gsanchez.py: line 25: k:: command not found$
+> ./gsanchez.py: line 26: l:: command not found$
+> ./gsanchez.py: line 27: m:: command not found$
+> ./gsanchez.py: line 28: n:: command not found$
+> ./gsanchez.py: line 29: o:: command not found$
+> ./gsanchez.py: line 30: p:: command not found$
+> ./gsanchez.py: line 31: q:: command not found$
+> ./gsanchez.py: line 32: r:: command not found$
+> ./gsanchez.py: line 33: s:: command not found$
+> ./gsanchez.py: line 34: t:: command not found$
+> ./gsanchez.py: line 35: u:: command not found$
+> ./gsanchez.py: line 36: v:: command not found$
+> ./gsanchez.py: line 37: w:: command not found$
+> ./gsanchez.py: line 38: x:: command not found$
+> ./gsanchez.py: line 39: y:: command not found$
+> ./gsanchez.py: line 40: z:: command not found$
+> ./gsanchez.py: line 41:  :: command not found$
+> ./gsanchez.py: line 43: syntax error near unexpected token `sys.argv'$
+> ./gsanchez.py: line 43: `if len(sys.argv) != 2:'$
+18c250,279
+< .-.--..-.-..-...-...--...--.-..--..--...---..-.-..--.-..----.
+---
+> ./gsanchez.py: line 13: import: command not found
+> ./gsanchez.py: line 15: MORSE_CODE: command not found
+> ./gsanchez.py: line 16: b:: command not found
+> ./gsanchez.py: line 17: c:: command not found
+> ./gsanchez.py: line 18: d:: command not found
+> ./gsanchez.py: line 19: e:: command not found
+> ./gsanchez.py: line 20: f:: command not found
+> ./gsanchez.py: line 21: g:: command not found
+> ./gsanchez.py: line 22: h:: command not found
+> ./gsanchez.py: line 23: i:: command not found
+> ./gsanchez.py: line 24: j:: command not found
+> ./gsanchez.py: line 25: k:: command not found
+> ./gsanchez.py: line 26: l:: command not found
+> ./gsanchez.py: line 27: m:: command not found
+> ./gsanchez.py: line 28: n:: command not found
+> ./gsanchez.py: line 29: o:: command not found
+> ./gsanchez.py: line 30: p:: command not found
+> ./gsanchez.py: line 31: q:: command not found
+> ./gsanchez.py: line 32: r:: command not found
+> ./gsanchez.py: line 33: s:: command not found
+> ./gsanchez.py: line 34: t:: command not found
+> ./gsanchez.py: line 35: u:: command not found
+> ./gsanchez.py: line 36: v:: command not found
+> ./gsanchez.py: line 37: w:: command not found
+> ./gsanchez.py: line 38: x:: command not found
+> ./gsanchez.py: line 39: y:: command not found
+> ./gsanchez.py: line 40: z:: command not found
+> ./gsanchez.py: line 41:  :: command not found
+> ./gsanchez.py: line 43: syntax error near unexpected token `sys.argv'
+> ./gsanchez.py: line 43: `if len(sys.argv) != 2:'
+20c281,310
+< -.-...--..--...--.---.-..-..----.----..-..-..-..-.-------.--.
+---
+> ./gsanchez.py: line 13: import: command not found
+> ./gsanchez.py: line 15: MORSE_CODE: command not found
+> ./gsanchez.py: line 16: b:: command not found
+> ./gsanchez.py: line 17: c:: command not found
+> ./gsanchez.py: line 18: d:: command not found
+> ./gsanchez.py: line 19: e:: command not found
+> ./gsanchez.py: line 20: f:: command not found
+> ./gsanchez.py: line 21: g:: command not found
+> ./gsanchez.py: line 22: h:: command not found
+> ./gsanchez.py: line 23: i:: command not found
+> ./gsanchez.py: line 24: j:: command not found
+> ./gsanchez.py: line 25: k:: command not found
+> ./gsanchez.py: line 26: l:: command not found
+> ./gsanchez.py: line 27: m:: command not found
+> ./gsanchez.py: line 28: n:: command not found
+> ./gsanchez.py: line 29: o:: command not found
+> ./gsanchez.py: line 30: p:: command not found
+> ./gsanchez.py: line 31: q:: command not found
+> ./gsanchez.py: line 32: r:: command not found
+> ./gsanchez.py: line 33: s:: command not found
+> ./gsanchez.py: line 34: t:: command not found
+> ./gsanchez.py: line 35: u:: command not found
+> ./gsanchez.py: line 36: v:: command not found
+> ./gsanchez.py: line 37: w:: command not found
+> ./gsanchez.py: line 38: x:: command not found
+> ./gsanchez.py: line 39: y:: command not found
+> ./gsanchez.py: line 40: z:: command not found
+> ./gsanchez.py: line 41:  :: command not found
+> ./gsanchez.py: line 43: syntax error near unexpected token `sys.argv'
+> ./gsanchez.py: line 43: `if len(sys.argv) != 2:'
+22c312,341
+< -.--.-..-..-..--.-.......--.....--.--.-----.-.-..-.-...-.
+---
+> ./gsanchez.py: line 13: import: command not found
+> ./gsanchez.py: line 15: MORSE_CODE: command not found
+> ./gsanchez.py: line 16: b:: command not found
+> ./gsanchez.py: line 17: c:: command not found
+> ./gsanchez.py: line 18: d:: command not found
+> ./gsanchez.py: line 19: e:: command not found
+> ./gsanchez.py: line 20: f:: command not found
+> ./gsanchez.py: line 21: g:: command not found
+> ./gsanchez.py: line 22: h:: command not found
+> ./gsanchez.py: line 23: i:: command not found
+> ./gsanchez.py: line 24: j:: command not found
+> ./gsanchez.py: line 25: k:: command not found
+> ./gsanchez.py: line 26: l:: command not found
+> ./gsanchez.py: line 27: m:: command not found
+> ./gsanchez.py: line 28: n:: command not found
+> ./gsanchez.py: line 29: o:: command not found
+> ./gsanchez.py: line 30: p:: command not found
+> ./gsanchez.py: line 31: q:: command not found
+> ./gsanchez.py: line 32: r:: command not found
+> ./gsanchez.py: line 33: s:: command not found
+> ./gsanchez.py: line 34: t:: command not found
+> ./gsanchez.py: line 35: u:: command not found
+> ./gsanchez.py: line 36: v:: command not found
+> ./gsanchez.py: line 37: w:: command not found
+> ./gsanchez.py: line 38: x:: command not found
+> ./gsanchez.py: line 39: y:: command not found
+> ./gsanchez.py: line 40: z:: command not found
+> ./gsanchez.py: line 41:  :: command not found
+> ./gsanchez.py: line 43: syntax error near unexpected token `sys.argv'
+> ./gsanchez.py: line 43: `if len(sys.argv) != 2:'
+24c343,372
+< .---..--...-..--..--.-.--..----..--.....-...-.-.-....---..-...-.
+---
+> ./gsanchez.py: line 13: import: command not found
+> ./gsanchez.py: line 15: MORSE_CODE: command not found
+> ./gsanchez.py: line 16: b:: command not found
+> ./gsanchez.py: line 17: c:: command not found
+> ./gsanchez.py: line 18: d:: command not found
+> ./gsanchez.py: line 19: e:: command not found
+> ./gsanchez.py: line 20: f:: command not found
+> ./gsanchez.py: line 21: g:: command not found
+> ./gsanchez.py: line 22: h:: command not found
+> ./gsanchez.py: line 23: i:: command not found
+> ./gsanchez.py: line 24: j:: command not found
+> ./gsanchez.py: line 25: k:: command not found
+> ./gsanchez.py: line 26: l:: command not found
+> ./gsanchez.py: line 27: m:: command not found
+> ./gsanchez.py: line 28: n:: command not found
+> ./gsanchez.py: line 29: o:: command not found
+> ./gsanchez.py: line 30: p:: command not found
+> ./gsanchez.py: line 31: q:: command not found
+> ./gsanchez.py: line 32: r:: command not found
+> ./gsanchez.py: line 33: s:: command not found
+> ./gsanchez.py: line 34: t:: command not found
+> ./gsanchez.py: line 35: u:: command not found
+> ./gsanchez.py: line 36: v:: command not found
+> ./gsanchez.py: line 37: w:: command not found
+> ./gsanchez.py: line 38: x:: command not found
+> ./gsanchez.py: line 39: y:: command not found
+> ./gsanchez.py: line 40: z:: command not found
+> ./gsanchez.py: line 41:  :: command not found
+> ./gsanchez.py: line 43: syntax error near unexpected token `sys.argv'
+> ./gsanchez.py: line 43: `if len(sys.argv) != 2:'
+26c374,403
+< usage: ./gsanchez.py <a-zA-Z string>
+---
+> ./gsanchez.py: line 13: import: command not found
+> ./gsanchez.py: line 15: MORSE_CODE: command not found
+> ./gsanchez.py: line 16: b:: command not found
+> ./gsanchez.py: line 17: c:: command not found
+> ./gsanchez.py: line 18: d:: command not found
+> ./gsanchez.py: line 19: e:: command not found
+> ./gsanchez.py: line 20: f:: command not found
+> ./gsanchez.py: line 21: g:: command not found
+> ./gsanchez.py: line 22: h:: command not found
+> ./gsanchez.py: line 23: i:: command not found
+> ./gsanchez.py: line 24: j:: command not found
+> ./gsanchez.py: line 25: k:: command not found
+> ./gsanchez.py: line 26: l:: command not found
+> ./gsanchez.py: line 27: m:: command not found
+> ./gsanchez.py: line 28: n:: command not found
+> ./gsanchez.py: line 29: o:: command not found
+> ./gsanchez.py: line 30: p:: command not found
+> ./gsanchez.py: line 31: q:: command not found
+> ./gsanchez.py: line 32: r:: command not found
+> ./gsanchez.py: line 33: s:: command not found
+> ./gsanchez.py: line 34: t:: command not found
+> ./gsanchez.py: line 35: u:: command not found
+> ./gsanchez.py: line 36: v:: command not found
+> ./gsanchez.py: line 37: w:: command not found
+> ./gsanchez.py: line 38: x:: command not found
+> ./gsanchez.py: line 39: y:: command not found
+> ./gsanchez.py: line 40: z:: command not found
+> ./gsanchez.py: line 41:  :: command not found
+> ./gsanchez.py: line 43: syntax error near unexpected token `sys.argv'
+> ./gsanchez.py: line 43: `if len(sys.argv) != 2:'
+Diff: KO
