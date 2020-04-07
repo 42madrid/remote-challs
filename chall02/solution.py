@@ -40,6 +40,8 @@ def get_arg():
 
 
 def usage():
+    if len(sys.argv) <= 2:
+        return print("usage: %s <login> <a-A-Z string>" % sys.argv[0])
     return print("usage: ./%s.py <a-zA-Z string>" % sys.argv[1])
 
 
