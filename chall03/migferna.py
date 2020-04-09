@@ -33,7 +33,7 @@ def snail(matrix):
 
 def get_arg():
     matrix = []
-    if len(sys.argv) < 2 or (len(sys.argv) - 1 != len(sys.argv[1])):
+    if len(sys.argv) < 2 or (len(sys.argv) - 1 != len(sys.argv[1])) or len(sys.argv) > 21:wq:
         return None
     for i in sys.argv[1:]:
         if not i.isnumeric() or len(i) != len(sys.argv[1]):
