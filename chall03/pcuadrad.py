@@ -25,7 +25,7 @@ def snail(array):
         for row in range(rowEnd, rowBegin - 1, -1):
             snailArray.append(array[row][colBegin])
         colBegin += 1
-    print(', '.join(map(str, snailArray)))
+    print(', '.join(snailArray))
 
 def check(array):
     for elem in array:
@@ -37,7 +37,7 @@ def main():
     array = []
     for i in range(1, len(sys.argv)):
         array.append(sys.argv[i])
-    if len(array) == 0 or check(array) == False:
+    if len(array) == 0 or len(array) > 20 or check(array) == False:
         error()
     snail(array)
 
