@@ -6,7 +6,7 @@
 #    By: jtrancos <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/09 14:50:26 by jtrancos          #+#    #+#              #
-#    Updated: 2020/04/09 21:03:26 by jtrancos         ###   ########.fr        #
+#    Updated: 2020/04/09 21:18:04 by jtrancos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,9 @@ def fail_check():
 	for i in range(1, len(sys.argv)):
 		if len(sys.argv) - 1 != len(sys.argv[i]):
 			return usage()
+	for c in sys.argv[1:]:
+	  	if c.isnumeric() == False:
+	  		return usage()
 
 def snailing(array):
 	string = []
@@ -52,9 +55,6 @@ def snailing(array):
 def main():
 	fail_check()
 	array = sys.argv[1:]
-	for x in array:
-		if x.isnumeric() == False:
-			return usage()
 	print(*snailing(array), sep=", ")
 
 if __name__ == "__main__":
