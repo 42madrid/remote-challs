@@ -40,7 +40,7 @@ def get_arg():
     return matrix
 
 def usage():
-    return print("usage: ./%s.py <1-9 squared_rows...>" % sys.argv[1])
+    return print("usage: ./%s.py <1-9 squared_rows...>" % sys.argv[0])
 
 def main():
     arg = get_arg()
