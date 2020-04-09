@@ -36,6 +36,8 @@ def get_arg():
     if len(sys.argv) < 2 or (len(sys.argv) - 1 != len(sys.argv[1])):
         return None
     for i in sys.argv[1:]:
+        if not i.isalpha():
+            return None
         matrix.append(list(i))
     return matrix
 
