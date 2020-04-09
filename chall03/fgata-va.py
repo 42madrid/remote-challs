@@ -2,7 +2,7 @@
 import sys
 
 def errorMessage(file_name):
-    print("usage: %s <1-9 matrixd_rows...>" % file_name)
+    print("usage: %s <1-9 squared_rows...>" % file_name)
     quit()
 
 def validateInput(args):
