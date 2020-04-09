@@ -48,7 +48,7 @@ def main():
     arg = get_arg()
     if arg is None:
         return usage()
-    print(snail(arg))
+    print(', '.join(snail(arg)))
 
 if __name__ == "__main__":
     main()
