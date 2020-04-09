@@ -14,7 +14,7 @@ def print_vline(matrix, n, start, end, x, ending):
 
 def print_snail(matrix, arg_len):
 	row_start = col_start = 0
-	row_end = col_end = arg_len - 1
+	row_end = col_end = arg_len
 	while row_start <= row_end and col_start <= col_end:
 		ending = ending_def(col_start, col_end, row_end, row_start)
 		print_hline(matrix, row_start, col_start, col_end + 1, 1, ending)
@@ -45,5 +45,5 @@ if arg_len in range(1, 21) and all(len(sys.argv[i]) == arg_len and sys.argv[i].i
 		for j in matrix_range:
 			if sys.argv[i + 1][j] == '0': error()
 			matrix[i].append(sys.argv[i + 1][j])
-	print_snail(matrix, arg_len)
+	print_snail(matrix, arg_len - 1)
 else: error()
