@@ -1,0 +1,131 @@
+2c2,8
+< usage: ./vde-dios.py <a-zA-Z string>
+---
+> ./vde-dios.py: line 1: import: command not found
+> ./vde-dios.py: line 3: dictionary: command not found
+> ./vde-dios.py: line 4: ..,: command not found
+> ./vde-dios.py: line 5: --.-,: command not found
+> ./vde-dios.py: line 6: -.--,: command not found
+> ./vde-dios.py: line 8: syntax error near unexpected token `('
+> ./vde-dios.py: line 8: `def error():'
+4c10,16
+< usage: ./vde-dios.py <a-zA-Z string>
+---
+> ./vde-dios.py: line 1: import: command not found
+> ./vde-dios.py: line 3: dictionary: command not found
+> ./vde-dios.py: line 4: ..,: command not found
+> ./vde-dios.py: line 5: --.-,: command not found
+> ./vde-dios.py: line 6: -.--,: command not found
+> ./vde-dios.py: line 8: syntax error near unexpected token `('
+> ./vde-dios.py: line 8: `def error():'
+6c18,24
+< usage: ./vde-dios.py <a-zA-Z string>
+---
+> ./vde-dios.py: line 1: import: command not found
+> ./vde-dios.py: line 3: dictionary: command not found
+> ./vde-dios.py: line 4: ..,: command not found
+> ./vde-dios.py: line 5: --.-,: command not found
+> ./vde-dios.py: line 6: -.--,: command not found
+> ./vde-dios.py: line 8: syntax error near unexpected token `('
+> ./vde-dios.py: line 8: `def error():'
+8c26,32
+< usage: ./vde-dios.py <a-zA-Z string>
+---
+> ./vde-dios.py: line 1: import: command not found
+> ./vde-dios.py: line 3: dictionary: command not found
+> ./vde-dios.py: line 4: ..,: command not found
+> ./vde-dios.py: line 5: --.-,: command not found
+> ./vde-dios.py: line 6: -.--,: command not found
+> ./vde-dios.py: line 8: syntax error near unexpected token `('
+> ./vde-dios.py: line 8: `def error():'
+10c34,40
+< ...---...$
+---
+> ./vde-dios.py: line 1: import: command not found$
+> ./vde-dios.py: line 3: dictionary: command not found$
+> ./vde-dios.py: line 4: ..,: command not found$
+> ./vde-dios.py: line 5: --.-,: command not found$
+> ./vde-dios.py: line 6: -.--,: command not found$
+> ./vde-dios.py: line 8: syntax error near unexpected token `('$
+> ./vde-dios.py: line 8: `def error():'$
+12c42,48
+< -...-...-..-.--$
+---
+> ./vde-dios.py: line 1: import: command not found$
+> ./vde-dios.py: line 3: dictionary: command not found$
+> ./vde-dios.py: line 4: ..,: command not found$
+> ./vde-dios.py: line 5: --.-,: command not found$
+> ./vde-dios.py: line 6: -.--,: command not found$
+> ./vde-dios.py: line 8: syntax error near unexpected token `('$
+> ./vde-dios.py: line 8: `def error():'$
+14c50,56
+< .--..-.-----..-..-----..-.$
+---
+> ./vde-dios.py: line 1: import: command not found$
+> ./vde-dios.py: line 3: dictionary: command not found$
+> ./vde-dios.py: line 4: ..,: command not found$
+> ./vde-dios.py: line 5: --.-,: command not found$
+> ./vde-dios.py: line 6: -.--,: command not found$
+> ./vde-dios.py: line 8: syntax error near unexpected token `('$
+> ./vde-dios.py: line 8: `def error():'$
+16c58,64
+< ...---... -...-...-..-.--$
+---
+> ./vde-dios.py: line 1: import: command not found$
+> ./vde-dios.py: line 3: dictionary: command not found$
+> ./vde-dios.py: line 4: ..,: command not found$
+> ./vde-dios.py: line 5: --.-,: command not found$
+> ./vde-dios.py: line 6: -.--,: command not found$
+> ./vde-dios.py: line 8: syntax error near unexpected token `('$
+> ./vde-dios.py: line 8: `def error():'$
+18c66,72
+< .-.--..-.-..-...-...--...--.-..--..--...---..-.-..--.-..----.
+---
+> ./vde-dios.py: line 1: import: command not found
+> ./vde-dios.py: line 3: dictionary: command not found
+> ./vde-dios.py: line 4: ..,: command not found
+> ./vde-dios.py: line 5: --.-,: command not found
+> ./vde-dios.py: line 6: -.--,: command not found
+> ./vde-dios.py: line 8: syntax error near unexpected token `('
+> ./vde-dios.py: line 8: `def error():'
+20c74,80
+< -.-...--..--...--.---.-..-..----.----..-..-..-..-.-------.--.
+---
+> ./vde-dios.py: line 1: import: command not found
+> ./vde-dios.py: line 3: dictionary: command not found
+> ./vde-dios.py: line 4: ..,: command not found
+> ./vde-dios.py: line 5: --.-,: command not found
+> ./vde-dios.py: line 6: -.--,: command not found
+> ./vde-dios.py: line 8: syntax error near unexpected token `('
+> ./vde-dios.py: line 8: `def error():'
+22c82,88
+< -.--.-..-..-..--.-.......--.....--.--.-----.-.-..-.-...-.
+---
+> ./vde-dios.py: line 1: import: command not found
+> ./vde-dios.py: line 3: dictionary: command not found
+> ./vde-dios.py: line 4: ..,: command not found
+> ./vde-dios.py: line 5: --.-,: command not found
+> ./vde-dios.py: line 6: -.--,: command not found
+> ./vde-dios.py: line 8: syntax error near unexpected token `('
+> ./vde-dios.py: line 8: `def error():'
+24c90,96
+< .---..--...-..--..--.-.--..----..--.....-...-.-.-....---..-...-.
+---
+> ./vde-dios.py: line 1: import: command not found
+> ./vde-dios.py: line 3: dictionary: command not found
+> ./vde-dios.py: line 4: ..,: command not found
+> ./vde-dios.py: line 5: --.-,: command not found
+> ./vde-dios.py: line 6: -.--,: command not found
+> ./vde-dios.py: line 8: syntax error near unexpected token `('
+> ./vde-dios.py: line 8: `def error():'
+26c98,104
+< usage: ./vde-dios.py <a-zA-Z string>
+---
+> ./vde-dios.py: line 1: import: command not found
+> ./vde-dios.py: line 3: dictionary: command not found
+> ./vde-dios.py: line 4: ..,: command not found
+> ./vde-dios.py: line 5: --.-,: command not found
+> ./vde-dios.py: line 6: -.--,: command not found
+> ./vde-dios.py: line 8: syntax error near unexpected token `('
+> ./vde-dios.py: line 8: `def error():'
+Diff: KO

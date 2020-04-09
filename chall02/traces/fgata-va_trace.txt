@@ -1,0 +1,25 @@
+2c2
+< usage: ./fgata-va.py <a-zA-Z string>
+---
+> usage: ./xlogin.py <a-zA-Z string>
+4c4
+< usage: ./fgata-va.py <a-zA-Z string>
+---
+> usage: ./xlogin.py <a-zA-Z string>
+6c6
+< usage: ./fgata-va.py <a-zA-Z string>
+---
+> usage: ./xlogin.py <a-zA-Z string>
+8c8
+< usage: ./fgata-va.py <a-zA-Z string>
+---
+> usage: ./xlogin.py <a-zA-Z string>
+22c22
+< -.--.-..-..-..--.-.......--.....--.--.-----.-.-..-.-...-.
+---
+> -.--.-..-..-..-.-........--.....--.--.-----.-.-..-.-...-.
+26c26
+< usage: ./fgata-va.py <a-zA-Z string>
+---
+> usage: ./xlogin.py <a-zA-Z string>
+Diff: KO
