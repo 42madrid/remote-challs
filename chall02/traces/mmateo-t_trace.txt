@@ -1,0 +1,482 @@
+2c2,35
+< usage: ./mmateo-t.py <a-zA-Z string>
+---
+> ./mmateo-t.py: line 13: import: command not found
+> ./mmateo-t.py: line 15: error: command not found
+> ./mmateo-t.py: line 16: spaces: command not found
+> ./mmateo-t.py: line 17: morse: command not found
+> ./mmateo-t.py: line 18: a: command not found
+> ./mmateo-t.py: line 19: b: command not found
+> ./mmateo-t.py: line 20: c: command not found
+> ./mmateo-t.py: line 21: d: command not found
+> ./mmateo-t.py: line 22: e: command not found
+> ./mmateo-t.py: line 23: f: command not found
+> ./mmateo-t.py: line 24: g: command not found
+> ./mmateo-t.py: line 25: h: command not found
+> ./mmateo-t.py: line 26: i: command not found
+> ./mmateo-t.py: line 27: j: command not found
+> ./mmateo-t.py: line 28: k: command not found
+> ./mmateo-t.py: line 29: l: command not found
+> ./mmateo-t.py: line 30: m: command not found
+> ./mmateo-t.py: line 31: n: command not found
+> ./mmateo-t.py: line 32: o: command not found
+> ./mmateo-t.py: line 33: p: command not found
+> ./mmateo-t.py: line 34: q: command not found
+> ./mmateo-t.py: line 35: r: command not found
+> ./mmateo-t.py: line 36: s: command not found
+> ./mmateo-t.py: line 37: t: command not found
+> ./mmateo-t.py: line 38: u: command not found
+> ./mmateo-t.py: line 39: v: command not found
+> 21:48  up 5 days,  9:09, 1 user, load averages: 2.22 2.16 2.19
+> USER     TTY      FROM              LOGIN@  IDLE WHAT
+> ./mmateo-t.py: line 41: x: command not found
+> ./mmateo-t.py: line 42: y: command not found
+> ./mmateo-t.py: line 43: z: command not found
+> ./mmateo-t.py: line 44:  : command not found
+> ./mmateo-t.py: line 45: syntax error near unexpected token `}'
+> ./mmateo-t.py: line 45: `}'
+4c37,70
+< usage: ./mmateo-t.py <a-zA-Z string>
+---
+> ./mmateo-t.py: line 13: import: command not found
+> ./mmateo-t.py: line 15: error: command not found
+> ./mmateo-t.py: line 16: spaces: command not found
+> ./mmateo-t.py: line 17: morse: command not found
+> ./mmateo-t.py: line 18: a: command not found
+> ./mmateo-t.py: line 19: b: command not found
+> ./mmateo-t.py: line 20: c: command not found
+> ./mmateo-t.py: line 21: d: command not found
+> ./mmateo-t.py: line 22: e: command not found
+> ./mmateo-t.py: line 23: f: command not found
+> ./mmateo-t.py: line 24: g: command not found
+> ./mmateo-t.py: line 25: h: command not found
+> ./mmateo-t.py: line 26: i: command not found
+> ./mmateo-t.py: line 27: j: command not found
+> ./mmateo-t.py: line 28: k: command not found
+> ./mmateo-t.py: line 29: l: command not found
+> ./mmateo-t.py: line 30: m: command not found
+> ./mmateo-t.py: line 31: n: command not found
+> ./mmateo-t.py: line 32: o: command not found
+> ./mmateo-t.py: line 33: p: command not found
+> ./mmateo-t.py: line 34: q: command not found
+> ./mmateo-t.py: line 35: r: command not found
+> ./mmateo-t.py: line 36: s: command not found
+> ./mmateo-t.py: line 37: t: command not found
+> ./mmateo-t.py: line 38: u: command not found
+> ./mmateo-t.py: line 39: v: command not found
+> 21:48  up 5 days,  9:09, 1 user, load averages: 2.22 2.16 2.19
+> USER     TTY      FROM              LOGIN@  IDLE WHAT
+> ./mmateo-t.py: line 41: x: command not found
+> ./mmateo-t.py: line 42: y: command not found
+> ./mmateo-t.py: line 43: z: command not found
+> ./mmateo-t.py: line 44:  : command not found
+> ./mmateo-t.py: line 45: syntax error near unexpected token `}'
+> ./mmateo-t.py: line 45: `}'
+6c72,105
+< usage: ./mmateo-t.py <a-zA-Z string>
+---
+> ./mmateo-t.py: line 13: import: command not found
+> ./mmateo-t.py: line 15: error: command not found
+> ./mmateo-t.py: line 16: spaces: command not found
+> ./mmateo-t.py: line 17: morse: command not found
+> ./mmateo-t.py: line 18: a: command not found
+> ./mmateo-t.py: line 19: b: command not found
+> ./mmateo-t.py: line 20: c: command not found
+> ./mmateo-t.py: line 21: d: command not found
+> ./mmateo-t.py: line 22: e: command not found
+> ./mmateo-t.py: line 23: f: command not found
+> ./mmateo-t.py: line 24: g: command not found
+> ./mmateo-t.py: line 25: h: command not found
+> ./mmateo-t.py: line 26: i: command not found
+> ./mmateo-t.py: line 27: j: command not found
+> ./mmateo-t.py: line 28: k: command not found
+> ./mmateo-t.py: line 29: l: command not found
+> ./mmateo-t.py: line 30: m: command not found
+> ./mmateo-t.py: line 31: n: command not found
+> ./mmateo-t.py: line 32: o: command not found
+> ./mmateo-t.py: line 33: p: command not found
+> ./mmateo-t.py: line 34: q: command not found
+> ./mmateo-t.py: line 35: r: command not found
+> ./mmateo-t.py: line 36: s: command not found
+> ./mmateo-t.py: line 37: t: command not found
+> ./mmateo-t.py: line 38: u: command not found
+> ./mmateo-t.py: line 39: v: command not found
+> 21:48  up 5 days,  9:09, 1 user, load averages: 2.22 2.16 2.19
+> USER     TTY      FROM              LOGIN@  IDLE WHAT
+> ./mmateo-t.py: line 41: x: command not found
+> ./mmateo-t.py: line 42: y: command not found
+> ./mmateo-t.py: line 43: z: command not found
+> ./mmateo-t.py: line 44:  : command not found
+> ./mmateo-t.py: line 45: syntax error near unexpected token `}'
+> ./mmateo-t.py: line 45: `}'
+8c107,140
+< usage: ./mmateo-t.py <a-zA-Z string>
+---
+> ./mmateo-t.py: line 13: import: command not found
+> ./mmateo-t.py: line 15: error: command not found
+> ./mmateo-t.py: line 16: spaces: command not found
+> ./mmateo-t.py: line 17: morse: command not found
+> ./mmateo-t.py: line 18: a: command not found
+> ./mmateo-t.py: line 19: b: command not found
+> ./mmateo-t.py: line 20: c: command not found
+> ./mmateo-t.py: line 21: d: command not found
+> ./mmateo-t.py: line 22: e: command not found
+> ./mmateo-t.py: line 23: f: command not found
+> ./mmateo-t.py: line 24: g: command not found
+> ./mmateo-t.py: line 25: h: command not found
+> ./mmateo-t.py: line 26: i: command not found
+> ./mmateo-t.py: line 27: j: command not found
+> ./mmateo-t.py: line 28: k: command not found
+> ./mmateo-t.py: line 29: l: command not found
+> ./mmateo-t.py: line 30: m: command not found
+> ./mmateo-t.py: line 31: n: command not found
+> ./mmateo-t.py: line 32: o: command not found
+> ./mmateo-t.py: line 33: p: command not found
+> ./mmateo-t.py: line 34: q: command not found
+> ./mmateo-t.py: line 35: r: command not found
+> ./mmateo-t.py: line 36: s: command not found
+> ./mmateo-t.py: line 37: t: command not found
+> ./mmateo-t.py: line 38: u: command not found
+> ./mmateo-t.py: line 39: v: command not found
+> 21:48  up 5 days,  9:09, 1 user, load averages: 2.22 2.16 2.19
+> USER     TTY      FROM              LOGIN@  IDLE WHAT
+> ./mmateo-t.py: line 41: x: command not found
+> ./mmateo-t.py: line 42: y: command not found
+> ./mmateo-t.py: line 43: z: command not found
+> ./mmateo-t.py: line 44:  : command not found
+> ./mmateo-t.py: line 45: syntax error near unexpected token `}'
+> ./mmateo-t.py: line 45: `}'
+10c142,175
+< ...---...$
+---
+> ./mmateo-t.py: line 13: import: command not found$
+> ./mmateo-t.py: line 15: error: command not found$
+> ./mmateo-t.py: line 16: spaces: command not found$
+> ./mmateo-t.py: line 17: morse: command not found$
+> ./mmateo-t.py: line 18: a: command not found$
+> ./mmateo-t.py: line 19: b: command not found$
+> ./mmateo-t.py: line 20: c: command not found$
+> ./mmateo-t.py: line 21: d: command not found$
+> ./mmateo-t.py: line 22: e: command not found$
+> ./mmateo-t.py: line 23: f: command not found$
+> ./mmateo-t.py: line 24: g: command not found$
+> ./mmateo-t.py: line 25: h: command not found$
+> ./mmateo-t.py: line 26: i: command not found$
+> ./mmateo-t.py: line 27: j: command not found$
+> ./mmateo-t.py: line 28: k: command not found$
+> ./mmateo-t.py: line 29: l: command not found$
+> ./mmateo-t.py: line 30: m: command not found$
+> ./mmateo-t.py: line 31: n: command not found$
+> ./mmateo-t.py: line 32: o: command not found$
+> ./mmateo-t.py: line 33: p: command not found$
+> ./mmateo-t.py: line 34: q: command not found$
+> ./mmateo-t.py: line 35: r: command not found$
+> ./mmateo-t.py: line 36: s: command not found$
+> ./mmateo-t.py: line 37: t: command not found$
+> ./mmateo-t.py: line 38: u: command not found$
+> ./mmateo-t.py: line 39: v: command not found$
+> 21:48  up 5 days,  9:09, 1 user, load averages: 2.22 2.16 2.19$
+> USER     TTY      FROM              LOGIN@  IDLE WHAT$
+> ./mmateo-t.py: line 41: x: command not found$
+> ./mmateo-t.py: line 42: y: command not found$
+> ./mmateo-t.py: line 43: z: command not found$
+> ./mmateo-t.py: line 44:  : command not found$
+> ./mmateo-t.py: line 45: syntax error near unexpected token `}'$
+> ./mmateo-t.py: line 45: `}'$
+12c177,210
+< -...-...-..-.--$
+---
+> ./mmateo-t.py: line 13: import: command not found$
+> ./mmateo-t.py: line 15: error: command not found$
+> ./mmateo-t.py: line 16: spaces: command not found$
+> ./mmateo-t.py: line 17: morse: command not found$
+> ./mmateo-t.py: line 18: a: command not found$
+> ./mmateo-t.py: line 19: b: command not found$
+> ./mmateo-t.py: line 20: c: command not found$
+> ./mmateo-t.py: line 21: d: command not found$
+> ./mmateo-t.py: line 22: e: command not found$
+> ./mmateo-t.py: line 23: f: command not found$
+> ./mmateo-t.py: line 24: g: command not found$
+> ./mmateo-t.py: line 25: h: command not found$
+> ./mmateo-t.py: line 26: i: command not found$
+> ./mmateo-t.py: line 27: j: command not found$
+> ./mmateo-t.py: line 28: k: command not found$
+> ./mmateo-t.py: line 29: l: command not found$
+> ./mmateo-t.py: line 30: m: command not found$
+> ./mmateo-t.py: line 31: n: command not found$
+> ./mmateo-t.py: line 32: o: command not found$
+> ./mmateo-t.py: line 33: p: command not found$
+> ./mmateo-t.py: line 34: q: command not found$
+> ./mmateo-t.py: line 35: r: command not found$
+> ./mmateo-t.py: line 36: s: command not found$
+> ./mmateo-t.py: line 37: t: command not found$
+> ./mmateo-t.py: line 38: u: command not found$
+> ./mmateo-t.py: line 39: v: command not found$
+> 21:48  up 5 days,  9:09, 1 user, load averages: 2.22 2.16 2.19$
+> USER     TTY      FROM              LOGIN@  IDLE WHAT$
+> ./mmateo-t.py: line 41: x: command not found$
+> ./mmateo-t.py: line 42: y: command not found$
+> ./mmateo-t.py: line 43: z: command not found$
+> ./mmateo-t.py: line 44:  : command not found$
+> ./mmateo-t.py: line 45: syntax error near unexpected token `}'$
+> ./mmateo-t.py: line 45: `}'$
+14c212,245
+< .--..-.-----..-..-----..-.$
+---
+> ./mmateo-t.py: line 13: import: command not found$
+> ./mmateo-t.py: line 15: error: command not found$
+> ./mmateo-t.py: line 16: spaces: command not found$
+> ./mmateo-t.py: line 17: morse: command not found$
+> ./mmateo-t.py: line 18: a: command not found$
+> ./mmateo-t.py: line 19: b: command not found$
+> ./mmateo-t.py: line 20: c: command not found$
+> ./mmateo-t.py: line 21: d: command not found$
+> ./mmateo-t.py: line 22: e: command not found$
+> ./mmateo-t.py: line 23: f: command not found$
+> ./mmateo-t.py: line 24: g: command not found$
+> ./mmateo-t.py: line 25: h: command not found$
+> ./mmateo-t.py: line 26: i: command not found$
+> ./mmateo-t.py: line 27: j: command not found$
+> ./mmateo-t.py: line 28: k: command not found$
+> ./mmateo-t.py: line 29: l: command not found$
+> ./mmateo-t.py: line 30: m: command not found$
+> ./mmateo-t.py: line 31: n: command not found$
+> ./mmateo-t.py: line 32: o: command not found$
+> ./mmateo-t.py: line 33: p: command not found$
+> ./mmateo-t.py: line 34: q: command not found$
+> ./mmateo-t.py: line 35: r: command not found$
+> ./mmateo-t.py: line 36: s: command not found$
+> ./mmateo-t.py: line 37: t: command not found$
+> ./mmateo-t.py: line 38: u: command not found$
+> ./mmateo-t.py: line 39: v: command not found$
+> 21:48  up 5 days,  9:09, 1 user, load averages: 2.22 2.16 2.19$
+> USER     TTY      FROM              LOGIN@  IDLE WHAT$
+> ./mmateo-t.py: line 41: x: command not found$
+> ./mmateo-t.py: line 42: y: command not found$
+> ./mmateo-t.py: line 43: z: command not found$
+> ./mmateo-t.py: line 44:  : command not found$
+> ./mmateo-t.py: line 45: syntax error near unexpected token `}'$
+> ./mmateo-t.py: line 45: `}'$
+16c247,280
+< ...---... -...-...-..-.--$
+---
+> ./mmateo-t.py: line 13: import: command not found$
+> ./mmateo-t.py: line 15: error: command not found$
+> ./mmateo-t.py: line 16: spaces: command not found$
+> ./mmateo-t.py: line 17: morse: command not found$
+> ./mmateo-t.py: line 18: a: command not found$
+> ./mmateo-t.py: line 19: b: command not found$
+> ./mmateo-t.py: line 20: c: command not found$
+> ./mmateo-t.py: line 21: d: command not found$
+> ./mmateo-t.py: line 22: e: command not found$
+> ./mmateo-t.py: line 23: f: command not found$
+> ./mmateo-t.py: line 24: g: command not found$
+> ./mmateo-t.py: line 25: h: command not found$
+> ./mmateo-t.py: line 26: i: command not found$
+> ./mmateo-t.py: line 27: j: command not found$
+> ./mmateo-t.py: line 28: k: command not found$
+> ./mmateo-t.py: line 29: l: command not found$
+> ./mmateo-t.py: line 30: m: command not found$
+> ./mmateo-t.py: line 31: n: command not found$
+> ./mmateo-t.py: line 32: o: command not found$
+> ./mmateo-t.py: line 33: p: command not found$
+> ./mmateo-t.py: line 34: q: command not found$
+> ./mmateo-t.py: line 35: r: command not found$
+> ./mmateo-t.py: line 36: s: command not found$
+> ./mmateo-t.py: line 37: t: command not found$
+> ./mmateo-t.py: line 38: u: command not found$
+> ./mmateo-t.py: line 39: v: command not found$
+> 21:48  up 5 days,  9:09, 1 user, load averages: 2.22 2.16 2.19$
+> USER     TTY      FROM              LOGIN@  IDLE WHAT$
+> ./mmateo-t.py: line 41: x: command not found$
+> ./mmateo-t.py: line 42: y: command not found$
+> ./mmateo-t.py: line 43: z: command not found$
+> ./mmateo-t.py: line 44:  : command not found$
+> ./mmateo-t.py: line 45: syntax error near unexpected token `}'$
+> ./mmateo-t.py: line 45: `}'$
+18c282,315
+< .-.--..-.-..-...-...--...--.-..--..--...---..-.-..--.-..----.
+---
+> ./mmateo-t.py: line 13: import: command not found
+> ./mmateo-t.py: line 15: error: command not found
+> ./mmateo-t.py: line 16: spaces: command not found
+> ./mmateo-t.py: line 17: morse: command not found
+> ./mmateo-t.py: line 18: a: command not found
+> ./mmateo-t.py: line 19: b: command not found
+> ./mmateo-t.py: line 20: c: command not found
+> ./mmateo-t.py: line 21: d: command not found
+> ./mmateo-t.py: line 22: e: command not found
+> ./mmateo-t.py: line 23: f: command not found
+> ./mmateo-t.py: line 24: g: command not found
+> ./mmateo-t.py: line 25: h: command not found
+> ./mmateo-t.py: line 26: i: command not found
+> ./mmateo-t.py: line 27: j: command not found
+> ./mmateo-t.py: line 28: k: command not found
+> ./mmateo-t.py: line 29: l: command not found
+> ./mmateo-t.py: line 30: m: command not found
+> ./mmateo-t.py: line 31: n: command not found
+> ./mmateo-t.py: line 32: o: command not found
+> ./mmateo-t.py: line 33: p: command not found
+> ./mmateo-t.py: line 34: q: command not found
+> ./mmateo-t.py: line 35: r: command not found
+> ./mmateo-t.py: line 36: s: command not found
+> ./mmateo-t.py: line 37: t: command not found
+> ./mmateo-t.py: line 38: u: command not found
+> ./mmateo-t.py: line 39: v: command not found
+> 21:48  up 5 days,  9:09, 1 user, load averages: 2.22 2.16 2.19
+> USER     TTY      FROM              LOGIN@  IDLE WHAT
+> ./mmateo-t.py: line 41: x: command not found
+> ./mmateo-t.py: line 42: y: command not found
+> ./mmateo-t.py: line 43: z: command not found
+> ./mmateo-t.py: line 44:  : command not found
+> ./mmateo-t.py: line 45: syntax error near unexpected token `}'
+> ./mmateo-t.py: line 45: `}'
+20c317,350
+< -.-...--..--...--.---.-..-..----.----..-..-..-..-.-------.--.
+---
+> ./mmateo-t.py: line 13: import: command not found
+> ./mmateo-t.py: line 15: error: command not found
+> ./mmateo-t.py: line 16: spaces: command not found
+> ./mmateo-t.py: line 17: morse: command not found
+> ./mmateo-t.py: line 18: a: command not found
+> ./mmateo-t.py: line 19: b: command not found
+> ./mmateo-t.py: line 20: c: command not found
+> ./mmateo-t.py: line 21: d: command not found
+> ./mmateo-t.py: line 22: e: command not found
+> ./mmateo-t.py: line 23: f: command not found
+> ./mmateo-t.py: line 24: g: command not found
+> ./mmateo-t.py: line 25: h: command not found
+> ./mmateo-t.py: line 26: i: command not found
+> ./mmateo-t.py: line 27: j: command not found
+> ./mmateo-t.py: line 28: k: command not found
+> ./mmateo-t.py: line 29: l: command not found
+> ./mmateo-t.py: line 30: m: command not found
+> ./mmateo-t.py: line 31: n: command not found
+> ./mmateo-t.py: line 32: o: command not found
+> ./mmateo-t.py: line 33: p: command not found
+> ./mmateo-t.py: line 34: q: command not found
+> ./mmateo-t.py: line 35: r: command not found
+> ./mmateo-t.py: line 36: s: command not found
+> ./mmateo-t.py: line 37: t: command not found
+> ./mmateo-t.py: line 38: u: command not found
+> ./mmateo-t.py: line 39: v: command not found
+> 21:48  up 5 days,  9:09, 1 user, load averages: 2.22 2.16 2.19
+> USER     TTY      FROM              LOGIN@  IDLE WHAT
+> ./mmateo-t.py: line 41: x: command not found
+> ./mmateo-t.py: line 42: y: command not found
+> ./mmateo-t.py: line 43: z: command not found
+> ./mmateo-t.py: line 44:  : command not found
+> ./mmateo-t.py: line 45: syntax error near unexpected token `}'
+> ./mmateo-t.py: line 45: `}'
+22c352,385
+< -.--.-..-..-..--.-.......--.....--.--.-----.-.-..-.-...-.
+---
+> ./mmateo-t.py: line 13: import: command not found
+> ./mmateo-t.py: line 15: error: command not found
+> ./mmateo-t.py: line 16: spaces: command not found
+> ./mmateo-t.py: line 17: morse: command not found
+> ./mmateo-t.py: line 18: a: command not found
+> ./mmateo-t.py: line 19: b: command not found
+> ./mmateo-t.py: line 20: c: command not found
+> ./mmateo-t.py: line 21: d: command not found
+> ./mmateo-t.py: line 22: e: command not found
+> ./mmateo-t.py: line 23: f: command not found
+> ./mmateo-t.py: line 24: g: command not found
+> ./mmateo-t.py: line 25: h: command not found
+> ./mmateo-t.py: line 26: i: command not found
+> ./mmateo-t.py: line 27: j: command not found
+> ./mmateo-t.py: line 28: k: command not found
+> ./mmateo-t.py: line 29: l: command not found
+> ./mmateo-t.py: line 30: m: command not found
+> ./mmateo-t.py: line 31: n: command not found
+> ./mmateo-t.py: line 32: o: command not found
+> ./mmateo-t.py: line 33: p: command not found
+> ./mmateo-t.py: line 34: q: command not found
+> ./mmateo-t.py: line 35: r: command not found
+> ./mmateo-t.py: line 36: s: command not found
+> ./mmateo-t.py: line 37: t: command not found
+> ./mmateo-t.py: line 38: u: command not found
+> ./mmateo-t.py: line 39: v: command not found
+> 21:48  up 5 days,  9:09, 1 user, load averages: 2.22 2.16 2.19
+> USER     TTY      FROM              LOGIN@  IDLE WHAT
+> ./mmateo-t.py: line 41: x: command not found
+> ./mmateo-t.py: line 42: y: command not found
+> ./mmateo-t.py: line 43: z: command not found
+> ./mmateo-t.py: line 44:  : command not found
+> ./mmateo-t.py: line 45: syntax error near unexpected token `}'
+> ./mmateo-t.py: line 45: `}'
+24c387,420
+< .---..--...-..--..--.-.--..----..--.....-...-.-.-....---..-...-.
+---
+> ./mmateo-t.py: line 13: import: command not found
+> ./mmateo-t.py: line 15: error: command not found
+> ./mmateo-t.py: line 16: spaces: command not found
+> ./mmateo-t.py: line 17: morse: command not found
+> ./mmateo-t.py: line 18: a: command not found
+> ./mmateo-t.py: line 19: b: command not found
+> ./mmateo-t.py: line 20: c: command not found
+> ./mmateo-t.py: line 21: d: command not found
+> ./mmateo-t.py: line 22: e: command not found
+> ./mmateo-t.py: line 23: f: command not found
+> ./mmateo-t.py: line 24: g: command not found
+> ./mmateo-t.py: line 25: h: command not found
+> ./mmateo-t.py: line 26: i: command not found
+> ./mmateo-t.py: line 27: j: command not found
+> ./mmateo-t.py: line 28: k: command not found
+> ./mmateo-t.py: line 29: l: command not found
+> ./mmateo-t.py: line 30: m: command not found
+> ./mmateo-t.py: line 31: n: command not found
+> ./mmateo-t.py: line 32: o: command not found
+> ./mmateo-t.py: line 33: p: command not found
+> ./mmateo-t.py: line 34: q: command not found
+> ./mmateo-t.py: line 35: r: command not found
+> ./mmateo-t.py: line 36: s: command not found
+> ./mmateo-t.py: line 37: t: command not found
+> ./mmateo-t.py: line 38: u: command not found
+> ./mmateo-t.py: line 39: v: command not found
+> 21:48  up 5 days,  9:09, 1 user, load averages: 2.22 2.16 2.19
+> USER     TTY      FROM              LOGIN@  IDLE WHAT
+> ./mmateo-t.py: line 41: x: command not found
+> ./mmateo-t.py: line 42: y: command not found
+> ./mmateo-t.py: line 43: z: command not found
+> ./mmateo-t.py: line 44:  : command not found
+> ./mmateo-t.py: line 45: syntax error near unexpected token `}'
+> ./mmateo-t.py: line 45: `}'
+26c422,455
+< usage: ./mmateo-t.py <a-zA-Z string>
+---
+> ./mmateo-t.py: line 13: import: command not found
+> ./mmateo-t.py: line 15: error: command not found
+> ./mmateo-t.py: line 16: spaces: command not found
+> ./mmateo-t.py: line 17: morse: command not found
+> ./mmateo-t.py: line 18: a: command not found
+> ./mmateo-t.py: line 19: b: command not found
+> ./mmateo-t.py: line 20: c: command not found
+> ./mmateo-t.py: line 21: d: command not found
+> ./mmateo-t.py: line 22: e: command not found
+> ./mmateo-t.py: line 23: f: command not found
+> ./mmateo-t.py: line 24: g: command not found
+> ./mmateo-t.py: line 25: h: command not found
+> ./mmateo-t.py: line 26: i: command not found
+> ./mmateo-t.py: line 27: j: command not found
+> ./mmateo-t.py: line 28: k: command not found
+> ./mmateo-t.py: line 29: l: command not found
+> ./mmateo-t.py: line 30: m: command not found
+> ./mmateo-t.py: line 31: n: command not found
+> ./mmateo-t.py: line 32: o: command not found
+> ./mmateo-t.py: line 33: p: command not found
+> ./mmateo-t.py: line 34: q: command not found
+> ./mmateo-t.py: line 35: r: command not found
+> ./mmateo-t.py: line 36: s: command not found
+> ./mmateo-t.py: line 37: t: command not found
+> ./mmateo-t.py: line 38: u: command not found
+> ./mmateo-t.py: line 39: v: command not found
+> 21:48  up 5 days,  9:09, 1 user, load averages: 2.22 2.16 2.19
+> USER     TTY      FROM              LOGIN@  IDLE WHAT
+> ./mmateo-t.py: line 41: x: command not found
+> ./mmateo-t.py: line 42: y: command not found
+> ./mmateo-t.py: line 43: z: command not found
+> ./mmateo-t.py: line 44:  : command not found
+> ./mmateo-t.py: line 45: syntax error near unexpected token `}'
+> ./mmateo-t.py: line 45: `}'
+Diff: KO
