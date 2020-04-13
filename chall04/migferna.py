@@ -77,7 +77,8 @@ def main():
                 print(order(bookshelfs, books), end='\n\n')
     else:
         bookshelfs, books = open_files(sys.argv[1])
-        print(order(bookshelfs, books))
+        if bookshelfs != None and books != None:
+            print(order(bookshelfs, books))
 
 if __name__ == "__main__":
     main()
