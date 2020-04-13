@@ -17,7 +17,7 @@ def error(e , i):
 # Check format plus sort shelfs
 def shelf_parse(shelves):
     l = shelves.replace("\n", "").split(" ")
-    l.sort(reverse=True)
+    l.sort(key=len, reverse=True)
     for c in l:
         if not c.isdigit():
             return None
@@ -27,27 +27,28 @@ def shelf_parse(shelves):
 # Check book format and adds books
 def book_parse(books):
     b = re.search('^\d+', books)
-    if b is None:
+    if re.search('^\d+\s\w+', books) is None:
         return None
     return int(b.group())
 
+
 # Placing books on shells until completed
-def get_outcome(shelves, books, i):
+def calc_number(shelves, books, i):
     n_shelves = 0
     capacity = 0
     for c in shelves:
-        if capacity < books:
-            n_shelves += 1
-            capacity += int(c)
-        else:
+        capacity += int(c)
+        n_shelves += 1
+        if capacity >= books:
             break
     if capacity < books:
         error(3, i)
     else:
-        print(n_shelves)
+        return(n_shelves)
 
 
-def input_parse(f, i):
+# Get number of shelves, prior parsing info
+def number_of_shelves(f, i):
     books = 0
     shelves = shelf_parse(f.readline())
     for x in f:
@@ -55,7 +56,7 @@ def input_parse(f, i):
             return(error(1, i))
         books += book_parse(x)    
     f.close()
-    get_outcome(shelves, books, i)
+    return(calc_number(shelves, books, i))
 
 
 def main():
@@ -64,13 +65,13 @@ def main():
             try:
                 print("%s:\n" % sys.argv[i] if len(sys.argv) > 2 else "", end = "")
                 f = open(sys.argv[i], "r")
-                input_parse(f, i)
+                print(number_of_shelves(f, i))
             except:
                 error(2, i)
             print("\n" if i < len(sys.argv) - 1 else "", end="")
     else:
         f = sys.stdin
-        input_parse(f, 0)
+        print(number_of_shelves(f, 0))
     
 
 if __name__ == "__main__":
