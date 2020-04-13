@@ -28,7 +28,8 @@ def usage(message):
 def open_files(filename):
     books = []
     if (filename == os.path.basename(__file__)):
-        exit(usage("Can't read file"))
+        print(usage("Can't read file"))
+        return None, None
     try:
         with open(filename, "r") as file:
             for i, line in enumerate(file):
@@ -43,7 +44,8 @@ def open_files(filename):
                     books.append(book)
         return bookshelfs, books
     except (FileNotFoundError, PermissionError):
-        return usage("Can't read file")
+        usage("Can't read file")
+        return None, None
     
 
 def read():
@@ -71,8 +73,8 @@ def main():
         for filename in sys.argv[1:]:
             print(filename + ":")
             bookshelfs, books = open_files(filename)
-            print(order(bookshelfs, books))
-            print("\n")
+            if bookshelfs != None and books != None:
+                print(order(bookshelfs, books))
     else:
         bookshelfs, books = open_files(sys.argv[1])
         print(order(bookshelfs, books))
