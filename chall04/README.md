@@ -221,7 +221,8 @@ heredoc> 51 b388905
 heredoc> 77 b442295
 heredoc> 152 b195720
 heredoc> 46 b453542
-13
+heredoc> EOF
+12
 ```
 
 <br /><br />
