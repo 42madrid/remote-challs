@@ -12,7 +12,7 @@ def place_books(books, shelfs):
         begin = shelfs[i]
         begin += rest
         rest = 0
-        if begin < 0:
+        if begin < 0 and i is len(shelfs) - 1:
             return False
         for j in range(last_book, len(books)):
             begin -= books[j]
@@ -23,6 +23,7 @@ def place_books(books, shelfs):
             if j is len(books) - 1:
                 print (i + 1)
                 return True
+    print (i + 1)
     return True
 
 def parse_file(txt):
@@ -59,7 +60,7 @@ def main():
             if len(sys.argv) is not 2:
                 print (sys.argv[i] + ":")
             try:
-                if sys.argv[i].find(".py"):
+                if sys.argv[i].find(".txt") is -1:
                     error_message(sys.argv[i], "Can't read file")
                     if len(sys.argv) is not 2 and i is not len(sys.argv) - 1:
                         print()
