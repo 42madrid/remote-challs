@@ -69,9 +69,10 @@ def main():
         print(order(bookshelfs, books))
     elif len(sys.argv[1:]) > 1:
         for filename in sys.argv[1:]:
-            print("./" + filename + ":")
+            print(filename + ":")
             bookshelfs, books = open_files(filename)
             print(order(bookshelfs, books))
+            print("\n")
     else:
         bookshelfs, books = open_files(sys.argv[1])
         print(order(bookshelfs, books))
