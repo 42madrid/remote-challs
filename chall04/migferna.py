@@ -2,6 +2,7 @@
 
 import sys
 import collections
+import os
 
 def order(bookshelfs, books):
     bookshelfs = [int(x) for x in bookshelfs]
@@ -22,12 +23,12 @@ def order(bookshelfs, books):
     return (i+1)
 
 def usage(message):
-    print("./%s: %s: %s" % (sys.argv[0], sys.argv[1], message))
+    print("%s: %s: %s" % (sys.argv[0], sys.argv[1], message))
 
 def open_files(filename):
     books = []
-    if (filename == sys.argv[0]):
-        return usage("Can't read file")
+    if (filename == os.path.basename(__file__)):
+        exit(usage("Can't read file"))
     try:
         with open(filename, "r") as file:
             for i, line in enumerate(file):
