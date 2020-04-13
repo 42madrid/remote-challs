@@ -74,7 +74,7 @@ def main():
             print(filename + ":")
             bookshelfs, books = open_files(filename)
             if bookshelfs != None and books != None:
-                print(order(bookshelfs, books))
+                print(order(bookshelfs, books), end='\n\n')
     else:
         bookshelfs, books = open_files(sys.argv[1])
         print(order(bookshelfs, books))
