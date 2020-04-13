@@ -9,6 +9,7 @@ def order(bookshelfs, books):
     bookshelfs.sort(reverse=True)
     books = sorted(books, key = lambda i: i['width'], reverse=True)
     
+    i = 0
     for book in books:
         for i, bookshelf in enumerate(bookshelfs):
             if book['width'] <= bookshelf:
@@ -19,8 +20,7 @@ def order(bookshelfs, books):
                 return ("Not enough space in the given shelves")
             else:
                 bookshelf + 1
-
-    return (i+1)
+    return i if len(bookshelfs) == 0 else i+1
 
 def usage(message):
     print("%s: %s: %s" % (sys.argv[0], sys.argv[1], message))
@@ -28,13 +28,14 @@ def usage(message):
 def open_files(filename):
     books = []
     if (filename == os.path.basename(__file__)):
-        print(usage("Can't read file"))
+        usage("Can't read file")
         return None, None
     try:
         with open(filename, "r") as file:
             for i, line in enumerate(file):
                 if i == 0:
                     bookshelfs =  line.split()
+                    bookshelfs = [s for s in bookshelfs if s.isdigit()]
                 else:
                     line = line.split(" ", 1)
                     book = {
@@ -50,11 +51,13 @@ def open_files(filename):
 
 def read():
     books = []
+    bookshelfs = []
     for i, line in enumerate(sys.stdin):
         if '' == line.rstrip():
             break
         elif i == 0:
             bookshelfs = line.split()
+            bookshelfs = [s for s in bookshelfs if s.isdigit()]
         else:
             line = line.split(" ", 1)
             book = {
@@ -70,11 +73,12 @@ def main():
         bookshelfs, books = read()
         print(order(bookshelfs, books))
     elif len(sys.argv[1:]) > 1:
-        for filename in sys.argv[1:]:
+        for i, filename in enumerate(sys.argv[1:]):
             print(filename + ":")
             bookshelfs, books = open_files(filename)
             if bookshelfs != None and books != None:
-                print(order(bookshelfs, books), end='\n\n')
+                print(order(bookshelfs, books))
+            print("\n" if i < len(sys.argv) - 2 else "", end="")
     else:
         bookshelfs, books = open_files(sys.argv[1])
         if bookshelfs != None and books != None:
