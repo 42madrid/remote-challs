@@ -49,6 +49,8 @@ The output must be the number of shelves you have to buy. If you can't fit all t
 If one passes too much files, treat all the files in the passed order, and prefix the output of each file by `filename:\n`.
 
 > NOTE: All the asked error messages are in the examples.
+>
+> NOTE 2: Solution that do not find the minimum number of shelves required will be accepted, for a smaller amount of points. However, those solution **MUST** try to fill the taken shelves at the most possible. A solution implying that a shelf can be empty **IS INVALID**.
 
 You have to submit a **python3 executable script** to solve this problem.
 
@@ -226,9 +228,11 @@ heredoc> 46 b453542
 ### Reward
 
  - The first one to submit a working solution will earn `840` points for their coalition.
- - Everyone else submitting a working solution *(not yet submitted)* will earn `252` points for their coalition.
- - Every participant that tried to solve the challenge and pushed a solution will earn `168` points for their coalition.
+ - Everyone else submitting a working solutuin *(not yet submitted)* will earn `252` points for their coalition.
+ - Every participant that tried to solve the challenge and pushed a solution will earn `84` points for their coalition.
  
+*Anyone submitting an optimised solution will earn `210` bonus points for their coalition.*
+
 <br /><br />
 Good luck!
 <br />
