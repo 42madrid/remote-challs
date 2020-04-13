@@ -66,9 +66,15 @@ def read():
 def main():
     if not sys.argv[1:]:
         bookshelfs, books = read()
+        print(order(bookshelfs, books))
+    elif len(sys.argv[1:]) > 1:
+        for filename in sys.argv[1:]:
+            print("./" + filename + ":")
+            bookshelfs, books = open_files(filename)
+            print(order(bookshelfs, books))
     else:
         bookshelfs, books = open_files(sys.argv[1])
-    print(order(bookshelfs, books))
+        print(order(bookshelfs, books))
 
 if __name__ == "__main__":
     main()
