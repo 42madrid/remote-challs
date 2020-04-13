@@ -14,14 +14,22 @@ def order(bookshelfs, books):
                 bookshelf -= book['width']
                 bookshelfs[i] = bookshelf
                 break
+            elif len(bookshelfs) == i + 1:
+                return ("Not enough space in the given shelves")
             else:
                 bookshelf + 1
+
     return (i+1)
 
-def open_files():
+def usage(message):
+    print("./%s: %s: %s" % (sys.argv[0], sys.argv[1], message))
+
+def open_files(filename):
     books = []
+    if (filename == sys.argv[0]):
+        return usage("Can't read file")
     try:
-        with open(sys.argv[1], "r") as file:
+        with open(filename, "r") as file:
             for i, line in enumerate(file):
                 if i == 0:
                     bookshelfs =  line.split()
@@ -34,7 +42,7 @@ def open_files():
                     books.append(book)
         return bookshelfs, books
     except (FileNotFoundError, PermissionError):
-        print("./%s: %s: Can't read file" % (sys.argv[0], sys.argv[1]))
+        return usage("Can't read file")
     
 
 def read():
@@ -58,7 +66,7 @@ def main():
     if not sys.argv[1:]:
         bookshelfs, books = read()
     else:
-        bookshelfs, books = open_files()
+        bookshelfs, books = open_files(sys.argv[1])
     print(order(bookshelfs, books))
 
 if __name__ == "__main__":
