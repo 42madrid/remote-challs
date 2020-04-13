@@ -5,10 +5,7 @@ import re
 
 
 def error(e , i):
-    if (i == 0):
-        file_name = "stdin"
-    else:
-        file_name = sys.argv[i]
+    file_name =  "stin" if i == 0 else sys.argv[i]
     if (e == 1):
         print("%s: %s: bad format" %(sys.argv[0], file_name))
     elif (e == 2):
