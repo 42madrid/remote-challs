@@ -32,7 +32,7 @@ def book_parse(books):
     return int(b.group())
 
 
-# Placing books on shells until completed
+# Calculate number of shelves: placing books on shells until completed
 def calc_number(shelves, books, i):
     n_shelves = 0
     capacity = 0
@@ -44,7 +44,7 @@ def calc_number(shelves, books, i):
     if capacity < books:
         error(3, i)
     else:
-        return(n_shelves)
+        print(n_shelves)
 
 
 # Get number of shelves, prior parsing info
@@ -56,7 +56,7 @@ def number_of_shelves(f, i):
             return(error(1, i))
         books += book_parse(x)    
     f.close()
-    return(calc_number(shelves, books, i))
+    calc_number(shelves, books, i)
 
 
 def main():
@@ -65,13 +65,13 @@ def main():
             try:
                 print("%s:\n" % sys.argv[i] if len(sys.argv) > 2 else "", end = "")
                 f = open(sys.argv[i], "r")
-                print(number_of_shelves(f, i))
+                number_of_shelves(f, i)
             except:
                 error(2, i)
             print("\n" if i < len(sys.argv) - 1 else "", end="")
     else:
         f = sys.stdin
-        print(number_of_shelves(f, 0))
+        number_of_shelves(f, 0)
     
 
 if __name__ == "__main__":
