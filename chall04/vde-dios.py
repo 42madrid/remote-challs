@@ -56,7 +56,10 @@ def number_of_shelves(f, i):
             return(error(1, i))
         books += book_parse(x)    
     f.close()
-    calc_number(shelves, books, i)
+    if books == 0:
+        error(1, i)
+    else:
+        calc_number(shelves, books, i)
 
 
 def main():
