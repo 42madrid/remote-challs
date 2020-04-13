@@ -17,7 +17,7 @@ def order(bookshelfs, books):
                 bookshelfs[i] = bookshelf
                 break
             elif len(bookshelfs) == i + 1:
-                return ("Not enough space in the given shelves")
+                return
             else:
                 bookshelf + 1
     return i if len(bookshelfs) == 0 else i+1
@@ -82,7 +82,11 @@ def main():
     else:
         bookshelfs, books = open_files(sys.argv[1])
         if bookshelfs != None and books != None:
-            print(order(bookshelfs, books))
+            output = order(bookshelfs, books)
+            if output != None:
+                print(output)
+            else:
+                usage("Not enough space in the given shelves")
 
 if __name__ == "__main__":
     main()
