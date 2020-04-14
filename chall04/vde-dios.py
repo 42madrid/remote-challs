@@ -14,7 +14,7 @@ def error(e , i):
         print("%s: %s: Not enough space in the given shelves" %(sys.argv[0], file_name))
 
 
-# Check format plus sort shelfs
+# Check format plus sort shelves
 def shelf_parse(shelves):
     l = shelves.replace("\n", "").split(" ")
     l.sort(key=len, reverse=True)
@@ -24,7 +24,7 @@ def shelf_parse(shelves):
     return (l)
 
 
-# Check book format and adds books
+# Check book format and add books
 def book_parse(books):
     b = re.search('^\d+', books)
     if re.search('^\d+\s\w+', books) is None:
@@ -63,15 +63,16 @@ def number_of_shelves(f, i):
 
 
 def main():
-    if (len(sys.argv) > 1):
-        for i in range(1, len(sys.argv)):
+    l = len(sys.argv)
+    if (l > 1):
+        for i in range(1, l):
             try:
-                print("%s:\n" % sys.argv[i] if len(sys.argv) > 2 else "", end = "")
+                print("%s:\n" % sys.argv[i] if l > 2 else "", end = "")
                 f = open(sys.argv[i], "r")
                 number_of_shelves(f, i)
             except:
                 error(2, i)
-            print("\n" if i < len(sys.argv) - 1 else "", end="")
+            print("\n" if i < l - 1 else "", end="")
     else:
         f = sys.stdin
         number_of_shelves(f, 0)
