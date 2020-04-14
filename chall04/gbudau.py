@@ -40,9 +40,10 @@ def verify_and_save_file(arg, source):
     # Save first line to bookshelves list from the file generator, striping spaces and newline
     # Splitting the line into a list of numeric strings
     # next() can return an error when the file is empty, without any newline so im using try/except
+    # Also checking the shelves to have non-zero values
     try:
         bookshelves = next(arg).rstrip().split()
-        if not bookshelves or any(not shelf.isdigit() for shelf in bookshelves):
+        if not bookshelves or any(not shelf.isdigit() or shelf[0] == '0' for shelf in bookshelves):
             return None, None
     except StopIteration:
         if source == STDIN:
