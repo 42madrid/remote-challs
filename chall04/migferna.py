@@ -23,12 +23,16 @@ def order(bookshelfs, books):
     return i if len(bookshelfs) == 0 else i+1
 
 def usage(message):
-    print("%s: %s: %s" % (sys.argv[0], sys.argv[1], message))
+    if (len(sys.argv) > 1):
+        print("%s: %s: %s" % (sys.argv[0], sys.argv[1], message))
+    else:
+        print("%s: stdin: %s" % (sys.argv[0], message))
 
 def open_files(filename):
     books = []
+    bookshelfs = []
     if (filename == os.path.basename(__file__)):
-        return None, None
+        return bookshelfs, books
     try:
         with open(filename, "r") as file:
             for i, line in enumerate(file):
@@ -44,7 +48,7 @@ def open_files(filename):
                     books.append(book)
         return bookshelfs, books
     except (FileNotFoundError, PermissionError):
-        return None, None
+        return bookshelfs, books
     
 
 def read():
@@ -52,7 +56,7 @@ def read():
     bookshelfs = []
     for i, line in enumerate(sys.stdin):
         if '' == line.rstrip():
-            break
+            return bookshelfs, books
         elif i == 0:
             bookshelfs = line.split()
             bookshelfs = [s for s in bookshelfs if s.isdigit()]
@@ -69,16 +73,19 @@ def read():
 def main():
     if not sys.argv[1:]:
         bookshelfs, books = read()
-        output = order(bookshelfs, books)
-        if output != None:
-            print(output)
+        if len(bookshelfs) > 0 and len(books) > 0:
+            output = order(bookshelfs, books)
+            if output != None:
+                print(output)
+            else:
+                usage("Not enough space in the given shelves")
         else:
-            usage("Not enough space in the given shelves")
+            usage("Can't read file")
     elif len(sys.argv[1:]) > 1:
         for i, filename in enumerate(sys.argv[1:]):
             print(filename + ":")
             bookshelfs, books = open_files(filename)
-            if bookshelfs != None and books != None:
+            if len(bookshelfs) > 0 and len(books) > 0:
                 output = order(bookshelfs, books)
                 if output != None:
                     print(output)
@@ -89,7 +96,7 @@ def main():
             print("\n" if i < len(sys.argv) - 2 else "", end="")
     else:
         bookshelfs, books = open_files(sys.argv[1])
-        if bookshelfs != None and books != None:
+        if len(bookshelfs) > 0 and len(books) > 0:
             output = order(bookshelfs, books)
             if output != None:
                 print(output)
