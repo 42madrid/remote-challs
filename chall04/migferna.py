@@ -28,7 +28,6 @@ def usage(message):
 def open_files(filename):
     books = []
     if (filename == os.path.basename(__file__)):
-        usage("Can't read file")
         return None, None
     try:
         with open(filename, "r") as file:
@@ -45,7 +44,6 @@ def open_files(filename):
                     books.append(book)
         return bookshelfs, books
     except (FileNotFoundError, PermissionError):
-        usage("Can't read file")
         return None, None
     
 
@@ -71,13 +69,23 @@ def read():
 def main():
     if not sys.argv[1:]:
         bookshelfs, books = read()
-        print(order(bookshelfs, books))
+        output = order(bookshelfs, books)
+        if output != None:
+            print(output)
+        else:
+            usage("Not enough space in the given shelves")
     elif len(sys.argv[1:]) > 1:
         for i, filename in enumerate(sys.argv[1:]):
             print(filename + ":")
             bookshelfs, books = open_files(filename)
             if bookshelfs != None and books != None:
-                print(order(bookshelfs, books))
+                output = order(bookshelfs, books)
+                if output != None:
+                    print(output)
+                else:
+                    usage("Not enough space in the given shelves")
+            else:
+                usage("Can't read file")
             print("\n" if i < len(sys.argv) - 2 else "", end="")
     else:
         bookshelfs, books = open_files(sys.argv[1])
@@ -87,6 +95,8 @@ def main():
                 print(output)
             else:
                 usage("Not enough space in the given shelves")
+        else:
+            usage("Can't read file")
 
 if __name__ == "__main__":
     main()
