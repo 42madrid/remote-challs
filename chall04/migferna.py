@@ -47,7 +47,7 @@ def open_files(filename):
                     }
                     books.append(book)
         return bookshelfs, books
-    except (FileNotFoundError, PermissionError):
+    except (FileNotFoundError, PermissionError, ValueError):
         return bookshelfs, books
     
 
@@ -61,12 +61,15 @@ def read():
             bookshelfs = line.split()
             bookshelfs = [s for s in bookshelfs if s.isdigit()]
         else:
-            line = line.split(" ", 1)
-            book = {
-                "width": int(line[0]),
-                "title": line[1].rstrip("\n")
-            }
-            books.append(book)
+            try:
+                line = line.split(" ", 1)
+                book = {
+                    "width": int(line[0]),
+                    "title": line[1].rstrip("\n")
+                }
+                books.append(book)
+            except (ValueError):
+                return bookshelfs, books
     return bookshelfs, books
         
 
