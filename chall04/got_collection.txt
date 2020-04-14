@@ -1,5 +1,5 @@
 150 150 300 150 150
-70 A Game of Thrones
+70 
 76 A Clash of Kings
 99 A Storm of Swords
 75 A Feasts for Crows

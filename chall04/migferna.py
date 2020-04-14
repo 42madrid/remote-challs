@@ -47,7 +47,7 @@ def open_files(filename):
                     }
                     books.append(book)
         return bookshelfs, books
-    except (FileNotFoundError, PermissionError, ValueError):
+    except (FileNotFoundError, PermissionError, ValueError, IndexError):
         return bookshelfs, books
     
 
@@ -68,7 +68,7 @@ def read():
                     "title": line[1].rstrip("\n")
                 }
                 books.append(book)
-            except (ValueError):
+            except (ValueError, IndexError):
                 return bookshelfs, books
     return bookshelfs, books
         
