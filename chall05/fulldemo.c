@@ -1,5 +1,3 @@
-#include <stdlib.h>
-
 int		ft_ie_except_after_c(char* str)
 {
 	int i;
