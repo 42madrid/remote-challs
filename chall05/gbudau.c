@@ -9,7 +9,7 @@ int		ft_ie_except_after_c(char* str)
 	while (*str)
 	{
 		if (tolower(*str) == 'c')
-			if (*(str + 1) && tolower(*(str + 1)) == 'i')
+			if (tolower(*(str + 1)) == 'i')
 				return (0);
 		if (tolower(*str) == 'e')
 		{
@@ -18,7 +18,7 @@ int		ft_ie_except_after_c(char* str)
 				str++;
 				continue;
 			}
-			if (*(str + 1) && tolower(*(str + 1)) == 'i')
+			if (tolower(*(str + 1)) == 'i')
 				return (0);
 		}
 		str++;
