@@ -4,7 +4,6 @@
 
 int     ft_ie_except_after_c(char* str)
 {
-    int ret = 1;
     while (*str)
     {
         if (*(str + 2) && *str == 'c' && *(str + 1) == 'i' && *(str + 2) == 'e')
@@ -13,7 +12,7 @@ int     ft_ie_except_after_c(char* str)
             return 0;
         str++;
     }
-    return(ret);
+    return(1);
 }
 
 /*
