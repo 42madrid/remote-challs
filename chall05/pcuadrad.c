@@ -17,7 +17,7 @@ int     ft_ie_except_after_c(char *str)
 {
     int coincidence;
 
-    if (((coincidence = find(str, "ei")) != -1 && (coincidence == 0 || str[coincidence - 1] != 'c')) ||
+    if ((!str) || ((coincidence = find(str, "ei")) != -1 && (coincidence == 0 || str[coincidence - 1] != 'c')) ||
         ((coincidence = find(str, "ie")) != -1 && str[coincidence - 1] == 'c'))
         return (0);
     return (1);
