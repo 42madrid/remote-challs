@@ -1,15 +1,6 @@
 #include <unistd.h>
 #include <stdio.h>
 
-int ft_strlen(char *str)
-{
-	int cont;
-	cont = 0;
-	while(str[cont]!='\0')
-		cont++;
-	return(cont);
-}
-
 int ft_ie_except_after_c(char *str)
 {
 	int i;
