@@ -14,7 +14,7 @@ int ft_ie_except_after_c(char* str)
         p = str;
         while (*str)
         {
-            if (*str == 'e')
+            if (ft_lower(*str) == 'e')
             {
                 if (str != p && (str - 1)!= p)
                     if (ft_lower(*(str - 1)) == 'i' && ft_lower(*(str - 2)) == 'c')
