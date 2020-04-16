@@ -6,7 +6,7 @@
 /*   By: jtrancos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/16 13:01:08 by jtrancos          #+#    #+#             */
-/*   Updated: 2020/04/16 13:31:06 by jtrancos         ###   ########.fr       */
+/*   Updated: 2020/04/16 13:36:56 by jtrancos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,3 @@ int	ft_ie_except_after_c(char* str)
 	}
 	return (1);
 }
-/*
-**	int	main(void)
-**{
-**	printf("%d\n", ft_ie_except_after_c("fiery"));
-**	return (0);
-**}
-*/
