@@ -59,14 +59,3 @@ int			ft_ie_except_after_c(char* str)
 	else
 		return (1);
 }
-
-#include <stdio.h>
-int main(void)
-{
-	printf("%d==1\n", ft_ie_except_after_c("a"));
-	printf("%d==1\n", ft_ie_except_after_c("zombie"));
-	printf("%d==1\n", ft_ie_except_after_c("transceiver"));
-	printf("%d==1\n", ft_ie_except_after_c("either"));
-	printf("%d==0\n", ft_ie_except_after_c("veil"));
-	printf("%d==0\n", ft_ie_except_after_c("icier"));
-}
