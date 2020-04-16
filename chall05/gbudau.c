@@ -1,4 +1,3 @@
-#include <string.h>
 #include <ctype.h>
 
 int		ft_ie_except_after_c(char* str)
