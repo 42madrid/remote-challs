@@ -6,7 +6,7 @@
 /*   By: estina <estina@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/16 14:07:38 by estina            #+#    #+#             */
-/*   Updated: 2020/04/16 14:41:38 by estina           ###   ########.fr       */
+/*   Updated: 2020/04/16 14:59:57 by estina           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int			ft_ie_except_after_c(char* str)
 		return (0);
 	i = 0;
 	rule = 2;
-	while (str[i])
+	while (str[i] && rule)
 	{
 		if (ft_lower(str[i]) == 'e' && ft_lower(str[i + 1]) == 'i' && i)
 			rule = ft_check_c(ft_lower(str[i - 1]), 1);
