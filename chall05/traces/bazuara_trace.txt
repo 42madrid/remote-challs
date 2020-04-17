@@ -1,0 +1,52 @@
+Compilation: OK
+test: ft_ie_except_after_c("ie")
+expected_output: 1
+user_output: 1
+test: ft_ie_except_after_c("cei")
+=================================================================
+==48745==ERROR: AddressSanitizer: global-buffer-overflow on address 0x0001005229bf at pc 0x000100522682 bp 0x7ffeef6de5f0 sp 0x7ffeef6de5e8
+READ of size 1 at 0x0001005229bf thread T0
+    #0 0x100522681 in ft_ie_except_after_c (bazuara:x86_64+0x100001681)
+    #1 0x10052215a in assert_results (bazuara:x86_64+0x10000115a)
+    #2 0x100522230 in main (bazuara:x86_64+0x100001230)
+    #3 0x7fff7309d2e4 in start (libdyld.dylib:x86_64+0x112e4)
+
+0x0001005229bf is located 1 bytes to the left of global variable '<string literal>' defined in 'main.c:23:17' (0x1005229c0) of size 4
+  '<string literal>' is ascii string 'cei'
+0x0001005229bf is located 60 bytes to the right of global variable '<string literal>' defined in 'main.c:22:17' (0x100522980) of size 3
+  '<string literal>' is ascii string 'ie'
+SUMMARY: AddressSanitizer: global-buffer-overflow (bazuara:x86_64+0x100001681) in ft_ie_except_after_c
+Shadow bytes around the buggy address:
+  0x1000200a44e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1000200a44f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1000200a4500: 00 00 00 00 02 f9 f9 f9 f9 f9 f9 f9 00 00 00 00
+  0x1000200a4510: 05 f9 f9 f9 f9 f9 f9 f9 00 07 f9 f9 f9 f9 f9 f9
+  0x1000200a4520: 07 f9 f9 f9 f9 f9 f9 f9 00 00 03 f9 f9 f9 f9 f9
+=>0x1000200a4530: 03 f9 f9 f9 f9 f9 f9[f9]04 f9 f9 f9 f9 f9 f9 f9
+  0x1000200a4540: 04 f9 f9 f9 f9 f9 f9 f9 03 f9 f9 f9 f9 f9 f9 f9
+  0x1000200a4550: 06 f9 f9 f9 f9 f9 f9 f9 06 f9 f9 f9 f9 f9 f9 f9
+  0x1000200a4560: 06 f9 f9 f9 f9 f9 f9 f9 07 f9 f9 f9 f9 f9 f9 f9
+  0x1000200a4570: 00 f9 f9 f9 f9 f9 f9 f9 07 f9 f9 f9 f9 f9 f9 f9
+  0x1000200a4580: 07 f9 f9 f9 f9 f9 f9 f9 00 04 f9 f9 f9 f9 f9 f9
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+==48745==ABORTING
+Exec: KO

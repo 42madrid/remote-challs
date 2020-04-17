@@ -1,0 +1,19 @@
+isoria-g.c:52:41: warning: result of comparison against a string literal is unspecified (use strncmp instead) [-Wstring-compare]
+    else if (ft_strlen(str) == 2 && str != "ei")
+                                        ^  ~~~~
+1 warning generated.
+Compilation: OK
+test: ft_ie_except_after_c("ie")
+expected_output: 1
+user_output: 1
+test: ft_ie_except_after_c("cei")
+expected_output: 1
+user_output: 1
+test: ft_ie_except_after_c("cie")
+expected_output: 0
+user_output: 0
+test: ft_ie_except_after_c("ei")
+expected_output: 0
+user_output: 1
+Assertion failed: (result == expected), function assert_results, file main.c, line 18.
+Exec: KO
