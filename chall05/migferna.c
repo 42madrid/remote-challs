@@ -1,5 +1,6 @@
 #include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -9,12 +10,44 @@ char	*ft_strchr(const char *s, int c)
 	return ((char *)s);
 }
 
-int	ft_ie_except_after_c(char* str)
+size_t	ft_strlen(const char *s)
+{
+	size_t cont;
+
+	cont = 0;
+	while (*s++)
+		cont++;
+	return (cont);
+}
+
+char	*ft_tolower(char *str)
+{
+	char	*aux;
+	int		len;
+
+	len = ft_strlen(str);
+	if (!(aux = malloc(sizeof(char) * (len + 1))))
+		return (NULL);
+	while (*str)
+	{
+		if (*str >= 'A' && *str <= 'Z')
+			*aux = *str + 32;
+		else
+			*aux = *str;
+		aux++;
+		str++;
+	}
+	*aux = '\n';
+	return (aux - len);
+}
+
+int		ft_ie_except_after_c(char* str)
 {
 	char *it;
 	char *prev;
 	char *next;
 
+	str = ft_tolower(str);
 	it = str;
 	while (it)
 	{
