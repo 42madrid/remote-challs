@@ -1,0 +1,6 @@
+150 150 300 150 150
+70     - G-me of Thrones
+76 A Clash of Kings
+99 A Storm of Swords
+75 A Feasts for Crows
+105 A Dance With Dragons
