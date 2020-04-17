@@ -1,6 +1,6 @@
 #include <ctype.h>
 
-int		ft_ie_except_after_c(char* str)
+int	ft_ie_except_after_c(char *str)
 {
 	char *start;
 
@@ -9,10 +9,11 @@ int		ft_ie_except_after_c(char* str)
 	{
 		if (tolower(*str) == 'c')
 		{
-			if (*(str + 1) && tolower(*(str + 1)) == 'i' && tolower(*(str + 2)) == 'e')
+			if (*(str + 1) && tolower(*(str + 1)) == 'i' &&
+							tolower(*(str + 2)) == 'e')
 				return (0);
 		}
-		if (tolower(*str) == 'e')
+		else if (tolower(*str) == 'e')
 		{
 			if (str - start > 0 && tolower(*(str - 1)) == 'c')
 			{
