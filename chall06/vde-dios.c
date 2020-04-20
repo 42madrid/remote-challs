@@ -12,18 +12,15 @@ typedef struct s_element{
 
 int ft_check_format(char *board)
 {
-    int i;
+    int i = -1;
+    int len = strlen(board);;
     int side;
-    int len;
 
-    //Valid charset
-    i = -1;
-    len = strlen(board);
-
+    //Valid charset?
     while(++i < len)
         if (!strchr(".KPBRQ\n", board[i]))
             return (0);
-    //Valid square
+    //Valid square?
     if (len > 89)
         return (0);
     side = sqrt(len);
@@ -34,7 +31,7 @@ int ft_check_format(char *board)
             return (0);
         i += side + 1;
     }
-    //Only one king
+    //Only one king?
     if (strchr(strchr(board, 'K') + 1, 'K'))
         return (0);
     return (1);
@@ -54,11 +51,9 @@ t_element ft_element_coord(int pos, int side, char *board)
 
 int     ft_check_colission(t_element king, t_element enemy, char *board)
 {
-    int x;
-    int y;
+    int x = enemy.x - king.x;;
+    int y = enemy.y - king.y;;
     
-    x = enemy.x - king.x;
-    y = enemy.y - king.y;
     while (abs(x) > 1 ||abs(y) > 1)
     {
         if (x)
@@ -73,21 +68,24 @@ int     ft_check_colission(t_element king, t_element enemy, char *board)
 
 int     ft_check_enemy(t_element king, t_element enemy, char *board)
 {
+    int delta_x = (enemy.x - king.x);
+    int delta_y = (enemy.y - king.y);
+
     if (strchr("RQ", enemy.id))
          if ((enemy.x == king.x ||enemy.y == king.y))
              return(!ft_check_colission(king, enemy, board));
     if (strchr("QB", enemy.id))
-        if (abs((enemy.x - king.x) / (enemy.y - king.y)) == 1)
+        if (delta_x && delta_y && abs(delta_y/ delta_x) == 1)
              return(!ft_check_colission(king, enemy, board));
     if (enemy.id == 'P')
-        if ((enemy.y - king.y) == 1 && abs((enemy.x - king.x)) == 1)
+        if (delta_y == 1 && abs(delta_x) == 1)
              return(!ft_check_colission(king, enemy, board));
     return (0);
 }
 
 int ft_check_mate(char *board)
 {
-    int pos;
+    int pos = 0;
     int side;
     t_element king;
     t_element enemy;
@@ -95,7 +93,6 @@ int ft_check_mate(char *board)
     if (!ft_check_format(board))
         return (1);
     side = sqrt(strlen(board));
-    pos = 0;
     while (board[pos] != 'K')
         pos++;
     king = ft_element_coord(pos, side, board);
