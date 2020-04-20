@@ -116,19 +116,24 @@ static int      ft_check_map(char *board)
     return (king != 1 ? 0 : 1);
 }
 
-int             ft_check_mate(char *board)
+int             ft_check_mate(char *board_param)
 {
     int hit;
     int king;
     int board_side = 0;
     int ring;
+    char *board;
 
-    if (!ft_check_map(board))
+    if (!ft_check_map(board_param))
         return (1);
+    if (!(board = malloc(sizeof(char) * strlen(board_param))))
+        return (1);
+    strcpy(board, board_param);
     ft_prepare_map(board, &king, &board_side);
     ring = 1;
     while (!(hit = ft_check_mate_ring(board, king, ring, board_side)))
         ring++;
+    free(board);
     if (hit == 1)
         return (0);
     else
