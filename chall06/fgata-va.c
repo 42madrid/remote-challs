@@ -57,6 +57,12 @@ char	**ft_full_matrix(char **matrix, int len, char* board)
 	return(matrix);
 }
 
+void	ft_free_board(char **matrix)
+{
+	for(int i = 0; matrix[i]; i++)
+		free(matrix[i]);
+}
+
 char	**ft_alloc_board(char *board)
 {
 	int len;
@@ -77,7 +83,10 @@ char	**ft_alloc_board(char *board)
 	for (int i = 0; i < len; i++)
 	{
 		if(!(matrix[i] = (char*)malloc((len + 1) * sizeof(char))))
+		{
+			ft_free_board(matrix);
 			return (NULL);
+		}
 	}
 	matrix = ft_full_matrix(matrix, len, board);
 	return (matrix);
@@ -98,7 +107,7 @@ int		ft_movements(int x, int y, char **matrix_board)
 		if (matrix_board[y - 1][x - 1] == 'K' || matrix_board[y - 1][x + 1] == 'K')
 			check = 0;
 	}
-	else if (piece == 'B')
+	else if (piece == 'B' || piece == 'Q')
 	{
 		distance = 1;
 		while (y + distance < len || y - distance >= 0)
@@ -113,7 +122,7 @@ int		ft_movements(int x, int y, char **matrix_board)
 			distance++;
 		}
 	}
-	else if (piece == 'R')
+	else if (piece == 'R' || piece == 'Q')
 	{
 		distance = 1;
 		while (x + distance < len || x - distance >= 0)
@@ -126,33 +135,7 @@ int		ft_movements(int x, int y, char **matrix_board)
 			distance++;
 		}
 	}
-	else if (piece == 'Q')
-	{
-		distance = 1;
-		while (y + distance < len || y - distance >= 0)
-		{
-			if((y + distance < len && matrix_board[y+distance][x] == 'K') ||
-			(y - distance >= 0 && matrix_board[y-distance][x] == 'K') ||
-			matrix_board[y][x + distance] == 'K' ||
-			matrix_board[y][x - distance] == 'K')
-				check = 0;
-			else if((x + distance < len &&
-			(matrix_board[y + distance][x + distance] == 'K' ||
-			matrix_board[y - distance][x + distance] == 'K')) ||
-			(x - distance >= 0 && 
-			(matrix_board[y - distance][x - distance] == 'K'||
-			matrix_board[y + distance][x - distance] == 'K')))
-				check = 0;
-			distance++;
-		}
-	}
 	return(check);
-}
-
-void	ft_free_board(char **matrix)
-{
-	for(int i = 0; matrix[i]; i++)
-		free(matrix[i]);
 }
 
 int		ft_check_mate(char *board)
