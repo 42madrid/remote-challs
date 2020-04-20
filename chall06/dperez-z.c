@@ -133,7 +133,7 @@ int ft_check_mate(char *board)
 		return(1);
 	len = check_dimension(board);
 	//size less 9
-	if ( len>7) 
+	if ( len>9) 
 		return(1);	
 	if(!(table =(char**) malloc(len*sizeof(char*))))
 		return(1);
@@ -163,7 +163,7 @@ int ft_check_mate(char *board)
 		i++;
 		r++;
 	}
-	
+	/*
       	i = 0;
         r = 0;
 	c = 0;
@@ -178,6 +178,7 @@ int ft_check_mate(char *board)
                 printf("\n");
 		r++;
         }
+	*/
 	i = 0;
 	while (kr-i>-1)
 	{
