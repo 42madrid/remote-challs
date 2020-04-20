@@ -6,12 +6,12 @@
 /*   By: edramire <edramire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/20 11:22:35 by edramire          #+#    #+#             */
-/*   Updated: 2020/04/20 16:35:39 by edramire         ###   ########.fr       */
+/*   Updated: 2020/04/20 21:19:48 by edramire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stdlib.h"
-#include "string.h"
+#include <stdio.h>
+#include <string.h>
 
 static int	get_chess_size(char *board, int len)
 {
@@ -72,9 +72,10 @@ static int	check_mate(int king, int size, char *board, int dx, int dy, char c)
 	t = 0;
 	row = king / size;
 	col = king % size;
-	while (++t < size)
+	while (++t < size - 1)
 	{
-		if ((col + t * dx) >= size - 1 || (row + t * dy) >= size - 1)
+		if ((col + t * dx) >= size - 1 || (col + t * dx) < 0 
+			|| (row + t * dy) >= size - 1 || (row + t * dy) < 0)
 			break ;
 		idx = (row + t * dy) * size + col + t * dx;
 		if (board[idx] == 'Q' || board[idx] == c)
