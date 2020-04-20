@@ -57,28 +57,28 @@ t_element ft_element_coord(int pos, int size)
     return (el);
 }
 
-int     ft_check_enemy(char *board, char *set, int pos, int size, t_element king, t_element enemy)
+int     ft_check_enemy(char *board, int pos, int size, t_element king, t_element enemy)
 {
-    if (strchr(set, board[pos]))
+    char *hor = "RQ";
+    char *diag = "QPB";
+    if (strchr(hor, board[pos]))
+    {
+         enemy = ft_element_coord(pos, size);
+         if ((enemy.x == king.x ||enemy.y == king.y))
+            return (0);
+    }
+    if (strchr(diag, board[pos]))
     {
         enemy = ft_element_coord(pos, size);
-        if (board[pos] == 'R' || board[pos] == 'Q')
+        if (abs((enemy.x - king.x) / (enemy.y - king.y)) == 1)
         {
-            if ((enemy.x == king.x ||enemy.y == king.y))
-                return (0);
-        }
-        else
-        {
-            if (abs((enemy.x - king.x) / (enemy.y - king.y)) == 1)
+            if (board[pos] == 'P')
             {
-                if (board[pos] == 'P')
-                {
-                    if (abs(enemy.x - king.x) == 1)
-                        return (0);
-                }
-                else
+                if (abs(enemy.x - king.x) == 1)
                     return (0);
             }
+            else
+                return (0);
         }
     }
     return (1);
@@ -90,7 +90,6 @@ int ft_check_mate(char *board)
     int size;
     t_element king;
     t_element enemy;
-    char *set = "PBRQ";
 
     if (!ft_check_format(board))
         return (1);
@@ -100,7 +99,7 @@ int ft_check_mate(char *board)
     //Check forward
     while(board[pos])
     {
-        if(!ft_check_enemy(board, set, pos, size, king, enemy))
+        if(!ft_check_enemy(board, pos, size, king, enemy))
             return (0);
         pos++;
     }
@@ -108,7 +107,7 @@ int ft_check_mate(char *board)
     pos = ft_get_king_pos(board);
     while(pos >= 0)
     {        
-        if(!ft_check_enemy(board, set, pos, size, king, enemy))
+        if(!ft_check_enemy(board, pos, size, king, enemy))
             return (0);
         pos--;
     }
