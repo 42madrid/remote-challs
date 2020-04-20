@@ -229,8 +229,8 @@ heredoc> EOF
 ### Reward
 
  - The first one to submit a working solution will earn `840` points for their coalition.
- - Everyone else submitting a working solutuin *(not yet submitted)* will earn `252` points for their coalition.
- - Every participant that tried to solve the challenge and pushed a solution will earn `84` points for their coalition.
+ - Everyone else submitting a working solution *(not yet submitted)* will earn `252` points for their coalition.
+ - Every participant that tried to solve the challenge and pushed a solution will earn `126` points for their coalition.
  
 *Anyone submitting an optimised solution will earn `210` bonus points for their coalition.*
 
