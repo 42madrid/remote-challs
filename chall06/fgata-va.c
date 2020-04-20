@@ -158,5 +158,5 @@ int		ft_check_mate(char *board)
 			}
 		}
 	}
-	return(0);
+	return(1);
 }
