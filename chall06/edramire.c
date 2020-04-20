@@ -6,7 +6,7 @@
 /*   By: edramire <edramire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/20 11:22:35 by edramire          #+#    #+#             */
-/*   Updated: 2020/04/20 15:57:10 by edramire         ###   ########.fr       */
+/*   Updated: 2020/04/20 16:35:39 by edramire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@ static int	get_chess_size(char *board, int len)
 {
 	int		size;
 	int		row;
-	int 	col;
+	int		col;
 
 	if (len == 0 || len > 89)
 		return (0);
 	size = 0;
 	row = 0;
-	while(*board != '\0')
+	while (*board != '\0')
 	{
 		col = 0;
-		while(*board != '\0' && *board != '\n')
+		while (*board != '\0' && *board != '\n')
 		{
 			++col;
 			++board;
@@ -72,10 +72,10 @@ static int	check_mate(int king, int size, char *board, int dx, int dy, char c)
 	t = 0;
 	row = king / size;
 	col = king % size;
-	while(++t < size)
+	while (++t < size)
 	{
 		if ((col + t * dx) >= size - 1 || (row + t * dy) >= size - 1)
-			break;
+			break ;
 		idx = (row + t * dy) * size + col + t * dx;
 		if (board[idx] == 'Q' || board[idx] == c)
 			return (0);
@@ -85,7 +85,7 @@ static int	check_mate(int king, int size, char *board, int dx, int dy, char c)
 	return (1);
 }
 
-int ft_check_mate(char *board)
+int			ft_check_mate(char *board)
 {
 	int		size;
 	int		king;
