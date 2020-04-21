@@ -34,6 +34,8 @@ int     P_checkmate(int column, int init_pos, char *str)
         }
         if (str[i] == '\n')
             i--;
+        if (str[i] != '.' && str[i] != 'K')
+            break;
         if (str[i] == 'K')
             return(0);
         h++;
@@ -56,6 +58,8 @@ int     P_checkmate(int column, int init_pos, char *str)
         }
         if (str[i] == '\n')
             i--;
+        if (str[i] != '.' && str[i] != 'K')
+            break;
         if (str[i] == 'K')
             return(0);
         h++;
@@ -80,6 +84,10 @@ int     B_checkmate(int column, int init_pos, char *str)
     {
         /* Exception */
         if (str[init_pos + 1] == '\n' || init_pos + 1 == (int)strlen(str)) 
+            break;
+
+        /* Pieces in between */
+        if (str[i] != '.' && str[i] != 'K')
             break;
 
         /* Mate */
@@ -119,6 +127,8 @@ int     B_checkmate(int column, int init_pos, char *str)
     {
         if (str[init_pos - 1] == '\n' && init_pos != 0)
             break;
+        if (str[i] != '.' && str[i] != 'K')
+            break;
         if (str[i] == 'K')
             return(0);
         else if (str[i - 1] == '\n' && i != init_pos)
@@ -145,6 +155,8 @@ int     B_checkmate(int column, int init_pos, char *str)
     {
         if (str[init_pos - 1] == '\n' && init_pos != 0)
             break;
+        if (str[i] != '.' && str[i] != 'K')
+            break;
         if (str[i] == 'K')
             return(0);
         else if (str[i - 1] == '\n' && i != init_pos)
@@ -170,6 +182,8 @@ int     B_checkmate(int column, int init_pos, char *str)
     while (i >= 0 && i < (int)strlen(str))
     {
         if (str[init_pos + 1] == '\n' || init_pos + 1 == (int)strlen(str))
+            break;
+        if (str[i] != '.' && str[i] != 'K')
             break;
         if (str[i] == 'K')
             return(0);
@@ -206,6 +220,8 @@ int     R_checkmate(int column, int init_pos, char *str)
     while (i >= 0 && i < (int)strlen(str) && str[i] != '\n')
     {
         i++;
+        if (str[i] != '.' && str[i] != 'K')
+            break;
         if (str[i] == 'K')
             return(0);
     }
@@ -213,6 +229,8 @@ int     R_checkmate(int column, int init_pos, char *str)
     while (i >= 0 && i < (int)strlen(str) && str[i] != '\n')
     {
         i--;
+        if (str[i] != '.' && str[i] != 'K')
+            break;
         if (str[i] == 'K')
             return(0);
     }
@@ -232,6 +250,8 @@ int     R_checkmate(int column, int init_pos, char *str)
         }
         if (str[i] == '\n')
             i++;
+        if (str[i] != '.' && str[i] != 'K')
+            break;
         if (str[i] == 'K')
             return(0);
     }
@@ -247,6 +267,8 @@ int     R_checkmate(int column, int init_pos, char *str)
         }
         if (str[i] == '\n')
             i--;
+        if (str[i] != '.' && str[i] != 'K')
+            break;
         if (str[i] == 'K')
             return(0);
     }
