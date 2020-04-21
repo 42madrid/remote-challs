@@ -41,46 +41,123 @@ static void ft_prepare_map(char *board, int *king, int *board_side)
     }
 }
 
-static int     ft_check_mate_ring(char *board, int king,
-    int ring, int board_size)
+static int      ft_check_south_east(char *board, int ring, int board_size, int king)
 {
-    int         offset;
-    int         d13;
-    int         d24;
-    int         r13;
-    int         r24;
+    int         row_chk;
     int         max;
 
     max = board_size * board_size;
-    offset = ring *  board_size;
-    d13 = offset + ring;
-    d24 = offset - ring;
-    r13 = offset;
-    r24 = ring;
+    row_chk = king + (ring *  board_size);
+    
+    return (((row_chk) % board_size < (row_chk + ring) % board_size) && 
+        (row_chk + ring) < max &&
+        (board[row_chk + ring] & (VSEMPERE_B | VSEMPERE_Q | (ring == 1 ? VSEMPERE_P : 0))) ? 1 : 0);
+}
 
-    if (ring >=board_size)
+static int      ft_check_north_west(char *board, int ring, int board_size, int king)
+{
+    int         row_chk;
+    int         max;
+
+    max = board_size * board_size;
+    row_chk = king - (ring *  board_size);
+    
+    return (((row_chk) % board_size > (row_chk - ring) % board_size) && 
+        (row_chk - ring) >= 0  &&
+        (board[row_chk - ring] & (VSEMPERE_B | VSEMPERE_Q)) ? 1 : 0);
+}
+
+static int      ft_check_south_west(char *board, int ring, int board_size, int king)
+{
+    int         row_chk;
+    int         max;
+
+    max = board_size * board_size;
+    row_chk = king + (ring *  board_size);
+    
+    return (((row_chk) % board_size > (row_chk - ring) % board_size) && 
+        (row_chk - ring) >= 0 &&
+        (board[row_chk - ring] & (VSEMPERE_B | VSEMPERE_Q | (ring == 1 ? VSEMPERE_P : 0))) ? 1 : 0);
+}
+
+static int      ft_check_north_east(char *board, int ring, int board_size, int king)
+{
+    int         row_chk;
+    int         max;
+
+    max = board_size * board_size;
+    row_chk = king - (ring *  board_size);
+    
+    return (((row_chk) % board_size < (row_chk + ring) % board_size) && 
+        (row_chk + ring) < max &&
+        (board[row_chk + ring] & (VSEMPERE_B | VSEMPERE_Q)) ? 1 : 0);
+}
+
+static int      ft_check_north(char *board, int ring, int board_size, int king)
+{
+    int         row_chk;
+    int         max;
+
+    max = board_size * board_size;
+    row_chk = king - (ring *  board_size);
+    
+    return (row_chk >= 0 &&
+        (board[row_chk] & (VSEMPERE_Q | VSEMPERE_R)) ? 1 : 0);
+}
+
+static int      ft_check_south(char *board, int ring, int board_size, int king)
+{
+    int         row_chk;
+    int         max;
+
+    max = board_size * board_size;
+    row_chk = king + (ring *  board_size);
+    
+    return (row_chk < max &&
+        (board[row_chk] & (VSEMPERE_Q | VSEMPERE_R)) ? 1 : 0);
+}
+
+static int      ft_check_east(char *board, int ring, int board_size, int king)
+{
+    int         row_chk;
+    int         max;
+
+    max = board_size * board_size;
+    row_chk = king + ring;
+    
+    return (((king) % board_size < (row_chk) % board_size) && 
+        row_chk < max &&
+        (board[row_chk] & (VSEMPERE_Q | VSEMPERE_R)) ? 1 : 0);
+}
+
+static int      ft_check_west(char *board, int ring, int board_size, int king)
+{
+    int         row_chk;
+    int         max;
+
+    max = board_size * board_size;
+    row_chk = king - ring;
+    
+    return (((king) % board_size > (row_chk) % board_size) && 
+        row_chk >= 0 &&
+        (board[row_chk] & (VSEMPERE_Q | VSEMPERE_R)) ? 1 : 0);
+}
+
+static int     ft_check_mate_ring(char *board, int king,
+    int ring, int board_size)
+{
+    if (ring >= board_size)
         return (2);
 
-
-    if (((king + d13) < max) && (board[king + d13] & (VSEMPERE_B | VSEMPERE_Q | (ring==1 ? VSEMPERE_P : 0))))
-        return (1);
-    if (((king - d13) >= 0) && (board[king - d13] & (VSEMPERE_B | VSEMPERE_Q)))
-        return (1);
-    if (((king / board_size) < ((king + d24) / board_size)) &&
-        ((king + d24) < max) && (board[king + d24] & (VSEMPERE_B | VSEMPERE_Q | (ring==1 ? VSEMPERE_P : 0))))
-        return (1);
-    if ((((king - d24) >= 0) && (board[king - d24] & (VSEMPERE_B | VSEMPERE_Q))))
-        return (1);
-    if ((((king + r13) < max) && (board[king + r13] & (VSEMPERE_B | VSEMPERE_Q | VSEMPERE_R))))
-        return (1);
-    if ((((king - r13) >= 0) && (board[king - r13] & (VSEMPERE_B | VSEMPERE_Q | VSEMPERE_R))))
-        return (1);
-    if ((((king + r24) < max) && (board[king + r24] & (VSEMPERE_B | VSEMPERE_Q | VSEMPERE_R))))
-        return (1);
-    if (((king / board_size) < ((king - r24) / board_size)) &&
-        ((king - r24) >= 0) && (board[king - r24] & (VSEMPERE_B | VSEMPERE_Q | VSEMPERE_R)))
-        return (1);
-    return (0);
+    return (ft_check_south_east(board, ring, board_size, king) || 
+        ft_check_north_west(board, ring, board_size, king) ||
+        ft_check_south_west(board, ring, board_size, king) ||
+        ft_check_north_west(board, ring, board_size, king) ||
+        ft_check_north_east(board, ring, board_size, king) ||
+        ft_check_north(board, ring, board_size, king) ||
+        ft_check_south(board, ring, board_size, king) ||
+        ft_check_east(board, ring, board_size, king) ||
+        ft_check_west(board, ring, board_size, king) ? 1 : 0);
 }
 
 static int      ft_check_map(char *board)
