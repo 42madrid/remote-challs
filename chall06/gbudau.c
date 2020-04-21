@@ -6,7 +6,7 @@
 /*   By: gbudau <gbudau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/20 23:10:50 by gbudau            #+#    #+#             */
-/*   Updated: 2020/04/21 08:10:45 by gbudau           ###   ########.fr       */
+/*   Updated: 2020/04/21 08:44:37 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static int	validate_board(char *board, int *size)
 		i++;
 	}
 	if ((*size == 0 && (*size = i) && *size > MAX_SQUARE_SIZE) ||
-		king_found != 1 || line_length != *size || lines != *size)
+		king_found != 1 || lines != *size)
 		return (0);
 	return (1);
 }
