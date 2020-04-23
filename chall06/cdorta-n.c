@@ -6,7 +6,7 @@
 /*   By: cdorta-n <cdorta-n@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/20 12:28:35 by cdorta-n          #+#    #+#             */
-/*   Updated: 2020/04/23 14:02:38 by cdorta-n         ###   ########.fr       */
+/*   Updated: 2020/04/23 17:25:13 by cdorta-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -202,7 +202,7 @@ static int		ft_checkboard(char *board)
 	return (lines);
 }
 
-static int		ft_check_mate(char *board)
+int		ft_check_mate(char *board)
 {
 	int lines;
 
