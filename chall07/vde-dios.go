@@ -21,7 +21,7 @@ func toHex(rgb [][]string) string {
     for i := 1; i < 4; i++ {
         hex, err := strconv.Atoi(strings.Join(rgb[i],""))
         outputErr(err)
-        output += fmt.Sprintf("%x", hex)
+        output += fmt.Sprintf("%02x", hex)
     }
     return output
 }
@@ -31,6 +31,7 @@ func MakeRequest(uri string) string{
     outputErr(err)
     body, err := ioutil.ReadAll(resp.Body)
     outputErr(err)
+    defer resp.Body.Close()
     log.Println(string(body))
     return string(body)
 }
