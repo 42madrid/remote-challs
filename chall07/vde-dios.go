@@ -40,5 +40,5 @@ func main() {
     response := MakeRequest("https://chall07.42madrid.com/")
     re := regexp.MustCompile(`\d+`)
     rgb := re.FindAllStringSubmatch(response, -1)
-    MakeRequest("https://chall07.42madrid.com/?id=" + strings.Join(rgb[0],"") + "&resp=" + toHex(rgb))
+    MakeRequest(fmt.Sprintf("https://chall07.42madrid.com/?id=%s&resp=%s", strings.Join(rgb[0],""), toHex(rgb)))
 }
