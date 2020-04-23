@@ -6,7 +6,7 @@
 /*   By: cdorta-n <cdorta-n@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/20 12:28:35 by cdorta-n          #+#    #+#             */
-/*   Updated: 2020/04/20 22:28:23 by cdorta-n         ###   ########.fr       */
+/*   Updated: 2020/04/23 14:02:38 by cdorta-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 ** Max Size 9x9, Only 1 King, Separator "\n".
 */
 
-int		ft_chesstable(int size, char *board)
+static int		ft_chesstable(int size, char *board)
 {
 	char table[size][size];
 	int c, a, b, j, i, s1, s2;
@@ -36,12 +36,10 @@ int		ft_chesstable(int size, char *board)
 		{
 			if (board[c] == '\n')
 				c++;
-			printf("[%c]", board[c]);
 			table[j][i] = board[c];
 			c++;
 			i++;
 		}
-		printf("\n");
 		j++;
 	}
 
@@ -66,7 +64,7 @@ int		ft_chesstable(int size, char *board)
 	}
 	
 	//CHECK PAWN POSITION RANGE WITH THE KING
-	if (b > 0)
+	if (b < size - 1)
 	{
 		if (!((table[b + 1][a + 1] == '.' || table[b + 1][a + 1] == 'R')
 		&& (table[b + 1][a - 1] == '.' || table[b + 1][a - 1] == 'R')))
@@ -167,7 +165,7 @@ int		ft_chesstable(int size, char *board)
 	return (1);
 }
 
-int		ft_checkboard(char *board)
+static int		ft_checkboard(char *board)
 {
 	int k;
 	int e;
@@ -198,19 +196,13 @@ int		ft_checkboard(char *board)
 		}
 	}
 	if (e < 0 || k == 0 || lines > 9)
-	{
-		printf("\n--->An error occur with the chessboard, check the input, check the characters and the number of KIng pieces presented <---\n");
 		return (-1);
-	}
 	if (((c - (lines - 1))) != lines * lines)
-	{
-		printf("\n--->An error occur with the chessboard, invalid number of rows and columns. Please, write a valid board with Max size of 9X9 <---\n");
 		return (-1);
-	}
 	return (lines);
 }
 
-int		ft_check_mate(char *board)
+static int		ft_check_mate(char *board)
 {
 	int lines;
 
