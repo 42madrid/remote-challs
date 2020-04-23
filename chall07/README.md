@@ -65,3 +65,5 @@ good:
  
 <br /><br />
 Good luck!
+<br />
+<sub>About the title: <a href="https://dragonball.fandom.com/es/wiki/Planeta_Vegeta">Planeta Vegeta</a></sub>
