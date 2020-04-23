@@ -57,8 +57,8 @@ If there is no arguments or if the input is invalid in the usual ways (There is 
 ft_check_mate("..\n.K") == 1
 ft_check_mate("R...\n.K..\n..P.\n....") == 0
 ft_check_mate("R...\n...K\n....\n...R") == 0
-ft_check_mate("'R..F\n...K\n..X.\n...R") == 1
-ft_check_mate("'R...\n...K\n..\n...R") == 1
+ft_check_mate("R..F\n...K\n..X.\n...R") == 1
+ft_check_mate("R...\n...K\n..\n...R") == 1
 ```
 
 ### Capture Examples
