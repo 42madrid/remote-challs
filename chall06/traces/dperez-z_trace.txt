@@ -1,0 +1,110 @@
+Compilation: OK
+test: ft_check_mate("......
+......
+......
+......")
+expected_output: 1
+user_output: 1
+test: ft_check_mate("......
+...K..
+...P..
+..K...")
+expected_output: 1
+user_output: 1
+test: ft_check_mate("K.....
+......
+......
+......
+......
+......")
+expected_output: 1
+user_output: 1
+test: ft_check_mate("K.....
+......
+......
+......")
+expected_output: 1
+user_output: 1
+test: ft_check_mate("Z.....
+......
+......
+......
+......
+......")
+expected_output: 1
+user_output: 1
+test: ft_check_mate("Z.....
+......
+......
+......")
+expected_output: 1
+user_output: 1
+test: ft_check_mate("Q.....
+......
+......
+......
+......
+......")
+expected_output: 1
+user_output: 1
+test: ft_check_mate("Q.....
+......
+......
+......")
+expected_output: 1
+user_output: 1
+test: ft_check_mate(".")
+expected_output: 1
+user_output: 1
+test: ft_check_mate("K")
+=================================================================
+==92851==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x6020000000f0 at pc 0x0001073eacdc bp 0x7ffee8816430 sp 0x7ffee8816428
+READ of size 8 at 0x6020000000f0 thread T0
+    #0 0x1073eacdb in ft_check_mate dperez-z.c:185
+    #1 0x1073e9c3a in assert_results main.c:11
+    #2 0x1073e9d98 in main main.c:27
+    #3 0x7fff7309d2e4 in start (libdyld.dylib:x86_64+0x112e4)
+
+0x6020000000f1 is located 0 bytes to the right of 1-byte region [0x6020000000f0,0x6020000000f1)
+allocated by thread T0 here:
+    #0 0x10743eabd in wrap_malloc (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x45abd)
+    #1 0x1073eaa00 in ft_check_mate dperez-z.c:138
+    #2 0x1073e9c3a in assert_results main.c:11
+    #3 0x1073e9d98 in main main.c:27
+    #4 0x7fff7309d2e4 in start (libdyld.dylib:x86_64+0x112e4)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow dperez-z.c:185 in ft_check_mate
+Shadow bytes around the buggy address:
+  0x1c03ffffffc0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c03ffffffd0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c03ffffffe0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c03fffffff0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c0400000000: fa fa fd fd fa fa 00 00 fa fa 00 00 fa fa 00 06
+=>0x1c0400000010: fa fa 00 04 fa fa 00 00 fa fa 00 06 fa fa[01]fa
+  0x1c0400000020: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c0400000030: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c0400000040: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c0400000050: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c0400000060: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+==92851==ABORTING
+Exec: KO
