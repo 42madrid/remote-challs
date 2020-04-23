@@ -8,13 +8,6 @@ import (
 	"time"
 )
 
-type values struct {
-	id    int
-	red   int
-	green int
-	blue  int
-}
-
 func time_elapse(start time.Time) int {
 	ms := time.Since(start)
 	new_ms := int(ms.Seconds() * 1000)
