@@ -20,9 +20,9 @@ func printRequestTime(url string, answer string, start time.Time) {
 	now := time.Now()
 	elapsed := now.Sub(start)
 	if answer == "NO" {
-		fmt.Println(elapsed,"- GET ", url)
+		fmt.Println(elapsed,"- GET", url)
 	} else {
-		fmt.Println(elapsed,"- GET ", url, "\n\tanswer:", answer)
+		fmt.Println(elapsed,"- GET", url, "\n\tanswer:", answer)
 	}
 }
 
@@ -57,12 +57,12 @@ func parseBody(body string, l *log.Logger) (string, int, int, int){
 }
 
 func main() {
-	l := log.New(os.Stderr, "", 0)
+	l := log.New(os.Stderr, "An error ocurred:\n", 0)
 	url := "https://chall07.42madrid.com/"
 	start := time.Now()
 	body := DoRequest(url ,l, start)
 	id, r, g, b := parseBody(body, l)
 	hex := RGBToHex(r, g, b)
 	url = url + "?id=" + id + "&resp=" + hex
-	body = DoRequest(url ,l, start)
+	DoRequest(url ,l, start)
 }
