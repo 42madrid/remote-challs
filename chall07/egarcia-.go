@@ -22,8 +22,8 @@ func main() {
 	}
 	id := string[0]
 	hex := fmt.Sprintf("%02x%02x%02x", red, green, blue);  
-	urlResponse := fmt.Sprintf("https://chall07.42madrid.com/?%s&resp=%s", id, hex)
-	response, err = http.Get(urlResponse)
+	context := fmt.Sprintf("https://chall07.42madrid.com/?%s&resp=%s", id, hex)
+	response, err = http.Get(context)
 	res , err := ioutil.ReadAll(response.Body)
 	if err != nil {
 		log.Fatal(err)
