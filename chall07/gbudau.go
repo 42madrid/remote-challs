@@ -23,7 +23,7 @@ func requestServer() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf("%s\n", body)
+	fmt.Printf("%s\n", string(body))
 
 	/* Use regex to find the digits in the string and check to be more than 4 digits */
 	/* Expecting the first 4 digits to be in correct order and valid */
