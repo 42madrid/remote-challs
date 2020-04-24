@@ -25,7 +25,7 @@ func requestServer() {
 	}
 	fmt.Printf("%s\n", string(body))
 
-	/* Use regex to find the digits in the string and check to be more than 4 digits */
+	/* Use regex to find the digits in the string and check to be more than 3 digits */
 	/* Expecting the first 4 digits to be in correct order and valid */
 	re := regexp.MustCompile(`\d+`)
 	set := re.FindAllString(string(body), -1)
