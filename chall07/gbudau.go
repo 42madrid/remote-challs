@@ -11,19 +11,19 @@ import (
 
 func requestServer() {
 	/* First GET request to get the required formated string */
-    resp, err := http.Get("https://chall07.42madrid.com/")
+	resp, err := http.Get("https://chall07.42madrid.com/")
 	if err != nil {
 		panic(err)
-    }
+	}
 	fmt.Println("Response status:", resp.Status)
-    defer resp.Body.Close()
+	defer resp.Body.Close()
 
 	/* Read and print response */
-    body, err := ioutil.ReadAll(resp.Body)
+	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		panic(err)
-    }
-    fmt.Printf("%s\n", body)
+	}
+	fmt.Printf("%s\n", body)
 
 	/* Use regex to find the digits in the string and check to be more than 4 digits */
 	/* Expecting the first 4 digits to be in correct order and valid */
@@ -44,15 +44,15 @@ func requestServer() {
 	resp, err = http.Get(answer)
 	if err != nil {
 		panic(err)
-    }
+	}
 	fmt.Println("Response status:", resp.Status)
-    defer resp.Body.Close()
+	defer resp.Body.Close()
 
 	/* Read and print the response */
-    body, err = ioutil.ReadAll(resp.Body)
+	body, err = ioutil.ReadAll(resp.Body)
 	if err != nil {
 		panic(err)
-    }
+	}
 	fmt.Printf("answer: %s\n", string(body))
 }
 
