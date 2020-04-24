@@ -26,8 +26,8 @@ func printRequestTime(url string, answer string, start time.Time) {
 }
 
 func DoRequest(url string, l *log.Logger, start time.Time) (string) {
-	response, err := http.Get(url)
 	printRequestTime(url, "", start)
+	response, err := http.Get(url)
 	if err != nil {
 		l.Fatalln(err)
 	}
