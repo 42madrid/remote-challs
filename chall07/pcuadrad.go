@@ -12,14 +12,13 @@ import (
 )
 
 func RGBToHex(r int, g int, b int) (string) {
-	hex := fmt.Sprintf("%x", r) + fmt.Sprintf("%x", g) + fmt.Sprintf("%x", b)
-	return hex
+	return fmt.Sprintf("%x%x%x",r ,g ,b)
 }
 
 func printRequestTime(url string, answer string, start time.Time) {
 	now := time.Now()
 	elapsed := now.Sub(start)
-	if answer == "NO" {
+	if answer == "" {
 		fmt.Println(elapsed,"- GET", url)
 	} else {
 		fmt.Println(elapsed,"- GET", url, "\n\tanswer:", answer)
@@ -28,7 +27,7 @@ func printRequestTime(url string, answer string, start time.Time) {
 
 func DoRequest(url string, l *log.Logger, start time.Time) (string) {
 	response, err := http.Get(url)
-	printRequestTime(url, "NO", start)
+	printRequestTime(url, "", start)
 	if err != nil {
 		l.Fatalln(err)
 	}
