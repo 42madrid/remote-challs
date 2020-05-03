@@ -28,7 +28,9 @@ def check_box(box):
     count_upper = 0
     for lines in range(len(box)):
         count_m += box[lines].count("m")
-        count_e += box[lines].count("e")        
+        count_e += box[lines].count("e")
+        if len(box[lines]) != len(box[0]) and box[lines] != '\n':
+            return 0
         if re.match(r"^\+\+*\+$", box[lines]) or re.match(r"^\+[\+e]*\+$", box[lines]):
             count_upper += 1
         elif box[lines] == '\n':
@@ -53,8 +55,6 @@ for line in sys.stdin:
     else:
         instructions.append("-1")
 if not (instructions.count("-1") > 0 or len(instructions) != 1 or check_box(box) != 1):
-    #print ("Invalid Input.")
-    #exit()
     pos = Position(box)
     for move in instructions[0]:
         if move == "i":
