@@ -5,11 +5,22 @@ import sys
 def error(message):
     print("%s: %s" % (sys.argv[0], message))
 
+def first_and_last(line):
+    for c in line:
+        if c != '+':
+            return False
+    return True
+
 def check(minifield):
     robotx, roboty = valid_robot(minifield)
     exitx, exity = valid_exit(minifield)
+    first = first_and_last(minifield[0])
+    for l in minifield:
+        if (l[0] != '+' and l[0] != 'E') or (l[-1] != '+' and l[-1] != 'E'):
+           return False
+    last = first_and_last(minifield[-1])
 
-    if robotx == -1 or exitx == -1:
+    if robotx == -1 or exitx == -1 or not first or not last:
         return False
     else:
         return True
