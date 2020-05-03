@@ -81,7 +81,7 @@ def move_robot(move, rpos, map_line_size):
     return rpos
 
 def valid_move(map, rpos):
-    if map[rpos] in "0*E":
+    if map[rpos] in "0*EM":
         return 1
     return 0
 
@@ -107,7 +107,9 @@ def apply_moves(map, map_line_size, moves):
     return ('Failure.', 1)
 
 def main():
-    user_input = sys.stdin.readlines()
+    #user_input = sys.stdin.readlines()
+    user_input = ["++++++++\n","+00M000E\n","++++++++\n", "\n", "IWWWWEEEEEEK\n"]
+
     map, map_line_size, moves, error = process_user_input(user_input)
     if not error is None:
         print(error)
