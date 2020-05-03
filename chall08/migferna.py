@@ -110,6 +110,7 @@ def main():
     minifield, instructions = parse_file(sys.stdin)
     if not check(minifield):
         print("%s: Invalid input." % (sys.argv[0]))
+        return
     robotx, roboty = valid_robot(minifield)
     exitx, exity = valid_exit(minifield)
     robotState, newx, newy = play(minifield, instructions, robotx, roboty, robotState)
