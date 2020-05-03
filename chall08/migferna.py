@@ -36,17 +36,15 @@ def play(minifield, instructions, robotx, roboty, robotState):
     instruction = instructions.pop(0)
     while instruction != 'I' and len(instructions) > 1:
         instruction = instructions.pop(0)
-    robotState = True if instruction == 'I' else False
-    get_instruction(minifield, instructions, robotx, roboty, robotState)
-    print(robotState)
-    
+    robotState = True if instruction == 'I' else 0
+    robotState, newx, newy = get_instruction(minifield, instructions, robotx, roboty, robotState)
+    return robotState, newx, newy
 
 def get_instruction(minifield, instructions, robotx, roboty, robotState):
+    newx = robotx
+    newy = roboty
     if len(instructions) > 0:
         instruction = instructions.pop(0)
-        print(instruction)
-        newx = robotx
-        newy = roboty
         if instruction == 'N' and robotState:
             newx = newx - 1
             newy = newy
@@ -65,10 +63,13 @@ def get_instruction(minifield, instructions, robotx, roboty, robotState):
             robotState = True
         
         if minifield[newx][newy] == '0' or minifield[newx][newy] == 'E':
-            move(minifield, robotx, roboty, newx , newy)
+            move(minifield, robotx, roboty, newx, newy)
+        elif minifield[newx][newy] == '+':
+            move(minifield, robotx, roboty, robotx, roboty)
         elif minifield[newx][newy] == '*':
-            return newx, newy
-        get_instruction(minifield, instructions, newx, newy, robotState)
+            return robotState, newx, newy
+        robotState, newx, newy = get_instruction(minifield, instructions, newx, newy, robotState)
+    return robotState, newx, newy
     
 
 def main():
@@ -81,12 +82,12 @@ def main():
         return error("Invalid input.")
     robotx, roboty = get_pos_robot(minifield)
     exitx, exity = get_pos_exit(minifield)
-    robotState = play(minifield, instructions, robotx, roboty, robotState)
+    robotState, newx, newy = play(minifield, instructions, robotx, roboty, robotState)
     robotx, roboty = get_pos_robot(minifield)
-    print(robotx, roboty, exitx, exity, robotState)
+    #print(robotx, roboty, exitx, exity, robotState)
     if robotx == exitx and roboty == exity and not robotState:
         print('Success.')
-    elif minifield[robotx][roboty] == '*':
+    elif minifield[newx][newy] == '*':
         print('Exploded.')
     else:
         print('Failure.')
