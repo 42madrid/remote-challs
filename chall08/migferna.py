@@ -108,21 +108,21 @@ def main():
     minifield = []
     instructions = []
     robotState = False
+    if len(sys.argv) != 1:
+        return 
     minifield, instructions = parse_file(sys.stdin)
-    valid = check(minifield)
-    if len(sys.argv) != 1 or not valid:
-        return error("Invalid input.")
+    if not check(minifield):
+        print("%s: Invalid input." % (sys.argv[0]))
     robotx, roboty = valid_robot(minifield)
     exitx, exity = valid_exit(minifield)
     robotState, newx, newy = play(minifield, instructions, robotx, roboty, robotState)
     robotx, roboty = valid_robot(minifield)
-    #print(robotx, roboty, exitx, exity, robotState)
     if robotx == exitx and roboty == exity and not robotState:
-        print('Success.')
+        print("Success.")
     elif minifield[newx][newy] == '*':
-        print('Exploded.')
+        print("Exploded.")
     else:
-        print('Failure.')
+        print("Failure.")
 
 if __name__ == "__main__":
     main()
