@@ -5,6 +5,15 @@ import sys
 def error(message):
     print("%s: %s" % (sys.argv[0], message))
 
+def check(minifield):
+    robotx, roboty = valid_robot(minifield)
+    exitx, exity = valid_exit(minifield)
+
+    if robotx == -1 or exitx == -1:
+        return False
+    else:
+        return True
+
 def parse_file(f):
     minifield = []
     lines = f.readlines()
@@ -13,19 +22,31 @@ def parse_file(f):
         minifield.append(line)
     return minifield, list(lines[-1].rstrip('\n'))
 
-def get_pos_robot(minifield):
+def valid_robot(minifield):
+    found = False
+    robotx = -1
+    roboty = -1
     for posx, line in enumerate(minifield):
         for posy, c in enumerate(line):
-            if (c == 'M'):
-                return posx, posy
-    return -1, -1
+            if c == 'M' and found:
+                return -1, -1
+            elif c == 'M':
+                robotx = posx
+                roboty = posy
+    return robotx, roboty
 
-def get_pos_exit(minifield):
+def valid_exit(minifield):
+    found = False
+    exitx = -1
+    exity = -1
     for posx, line in enumerate(minifield):
         for posy, c in enumerate(line):
-            if (c == 'E'):
-                return posx, posy
-    return -1, -1
+            if c == 'E' and found:
+                return -1, -1
+            elif c == 'E':
+                exitx = posx
+                exity = posy
+    return exitx, exity
 
 def move(minifield, robotx, roboty, newx, newy):
     minifield[robotx][roboty] = 0
@@ -77,13 +98,13 @@ def main():
     instructions = []
     robotState = False
     minifield, instructions = parse_file(sys.stdin)
-    
-    if len(sys.argv) != 1:
+    valid = check(minifield)
+    if len(sys.argv) != 1 or not valid:
         return error("Invalid input.")
-    robotx, roboty = get_pos_robot(minifield)
-    exitx, exity = get_pos_exit(minifield)
+    robotx, roboty = valid_robot(minifield)
+    exitx, exity = valid_exit(minifield)
     robotState, newx, newy = play(minifield, instructions, robotx, roboty, robotState)
-    robotx, roboty = get_pos_robot(minifield)
+    robotx, roboty = valid_robot(minifield)
     #print(robotx, roboty, exitx, exity, robotState)
     if robotx == exitx and roboty == exity and not robotState:
         print('Success.')
