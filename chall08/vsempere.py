@@ -107,8 +107,7 @@ def apply_moves(map, map_line_size, moves):
     return ('Failure.', 1)
 
 def main():
-    #user_input = sys.stdin.readlines()
-    user_input = ["++++++++\n","+00M000E\n","++++++++\n", "\n", "IWWWWEEEEEEK\n"]
+    user_input = sys.stdin.readlines()
 
     map, map_line_size, moves, error = process_user_input(user_input)
     if not error is None:
