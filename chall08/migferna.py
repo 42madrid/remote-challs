@@ -2,9 +2,6 @@
 
 import sys
 
-def error(message):
-    print("%s: %s" % (sys.argv[0], message))
-
 def first_and_last(line):
     for c in line:
         if c != '+':
