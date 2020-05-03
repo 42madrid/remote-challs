@@ -8,13 +8,22 @@ def first_and_last(line):
             return False
     return True
 
+def check_line(line):
+    if (line[0] != '+' and line[0] != 'E') or (line[-1] != '+' and line[-1] != 'E'):
+        return False
+    for c in line[1:-1]:
+        if c != '*' and c != '0' and c != '+' and c != 'M' and c != 'E':
+            return False
+    return True
+
 def check(minifield):
     robotx, roboty = valid_robot(minifield)
     exitx, exity = valid_exit(minifield)
     first = first_and_last(minifield[0])
     for l in minifield:
-        if (l[0] != '+' and l[0] != 'E') or (l[-1] != '+' and l[-1] != 'E'):
-           return False
+        checked = check_line(l)
+        if not checked:
+            return False
     last = first_and_last(minifield[-1])
 
     if robotx == -1 or exitx == -1 or not first or not last:
