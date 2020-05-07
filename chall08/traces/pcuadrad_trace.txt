@@ -1,0 +1,5 @@
+12c12
+< ./pcuadrad.py: Invalid input.
+---
+> Failure.
+Diff: KO

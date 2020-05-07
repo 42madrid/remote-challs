@@ -1,0 +1,38 @@
+4c4
+< ./edramire.py: Invalid input.
+---
+> Invalid input.
+6c6
+< ./edramire.py: Invalid input.
+---
+> Invalid input.
+8c8
+< ./edramire.py: Invalid input.
+---
+> Success.
+10c10
+< ./edramire.py: Invalid input.
+---
+> Invalid input.
+12c12
+< ./edramire.py: Invalid input.
+---
+> Invalid input.
+14c14,15
+< ./edramire.py: Invalid input.
+---
+> Invalid input.
+> Invalid input.
+24c25
+< Exploded.
+---
+> Exploted.
+28c29
+< ./edramire.py: Invalid input.
+---
+> Invalid input.
+30c31
+< ./edramire.py: Invalid input.
+---
+> Invalid input.
+Diff: KO
