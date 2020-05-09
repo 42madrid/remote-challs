@@ -121,5 +121,5 @@ char	*ft_format_duration(char *seconds)
 	number = strtoull(seconds, NULL, 10);
 	if (!number)
 		return ("now");
-	return (human_time(strtoull(seconds, NULL, 10)));
+	return (human_time(number));
 }
