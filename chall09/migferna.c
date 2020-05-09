@@ -9,21 +9,27 @@ int parser(int seconds, int d)
 	return min;
 }
 
-char *generate_output(int hours, int minutes, int seconds)
+char *generate_output(int years, int months, int days, int hours, int minutes, int seconds)
 {
 	char *format;
 
 	char *minutes_count;
 	char *seconds_count;
 	char *hours_count;
+	char *years_count;
+	char *months_count;
+	char *days_count;
 
 	if (!(format = malloc(100)))
 		return NULL;
 	minutes_count = minutes > 1 ? "minutes" : "minute";
 	seconds_count = seconds > 1 ? "seconds" : "second";
 	hours_count = hours > 1 ? "hours" : "hour";
+	years_count = years > 1 ? "years" : "year";
+	months_count = months > 1 ? "months" : "month";
+	days_count = days > 1 ? "days" : "day";
 	
-	sprintf(format, "%d %s, %d %s, %d %s", hours, hours_count, minutes, minutes_count, seconds, seconds_count);
+	sprintf(format, "%d %s, %d %s, %d %s, %d %s, %d %s, %d %s", years, years_count, months,months_count, days, days_count, hours, hours_count, minutes, minutes_count, seconds, seconds_count);
 	return (format);
 }
 
@@ -35,6 +41,9 @@ char *parser_format(char *s)
 	int minutes;
 	int hours;
 	int days;
+	int months;
+	int years;
+
 	if (seconds == 0)
 		out = "now";
 	else if (seconds > 60)
@@ -52,8 +61,18 @@ char *parser_format(char *s)
 		days = parser(hours, 24);
 		hours = hours % 24;
 	}
+	if (days > 31)
+	{
+		months = parser(days, 31);
+		days = days % 31;
+	}
+	if (months > 12)
+	{
+		years = parser(days, 12);
+		days = days % 12;
+	}
 	
-	out = generate_output(hours, minutes, seconds);
+	out = generate_output(years, months, days, hours, minutes, seconds);
 	return (out);
 }
 
@@ -84,8 +103,8 @@ int main()
 	printf("%s\n", ft_format_duration("3662"));
 	//printf("%s\n", ft_format_duration("0"));
 	printf("%s\n", ft_format_duration("-1"));
-	printf("%s", ft_format_duration("LOL42LOL"));
+	printf("%s\n", ft_format_duration("LOL42LOL"));
 	//printf("%s", ft_format_duration(""));
-	//printf("%s", ft_format_duration("2175984000"));
+	printf("%s\n", ft_format_duration("2175984000"));
 	return (0);
 }
