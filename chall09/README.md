@@ -57,9 +57,9 @@ ft_format_duration("2175984000") # returns "69 years"
 
 ### Reward
 
- - The first one to submit a working solution will earn `420` points for their coalition.
- - Everyone else submitting a working solutuin *(not yet submitted)* will earn `126` points for their coalition.
- - Every participant that tried to solve the challenge and pushed a solution will earn `84` points for their coalition.
+ - The first one to submit a working solution will earn `2100` points for their coalition.
+ - Everyone else submitting a working solutuin *(not yet submitted)* will earn `1260` points for their coalition.
+ - Every participant that tried to solve the challenge and pushed a solution will earn `420` points for their coalition.
 
 Good luck!
 <br />
