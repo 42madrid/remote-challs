@@ -6,7 +6,7 @@
 /*   By: bazuara <bazuara@student.42madrid.>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/09 14:07:16 by bazuara           #+#    #+#             */
-/*   Updated: 2020/05/09 16:38:58 by bazuara          ###   ########.fr       */
+/*   Updated: 2020/05/09 19:58:44 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,48 @@
 #include <stdio.h>
 #include <string.h>
 
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char	*new;
+	size_t	total;
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	if (!s1 || !s2)
+		return (0);
+	total = strlen(s1) + strlen(s2);
+	if ((new = malloc(((total) * sizeof(char)) + 1)))
+	{
+		while (i < strlen(s1))
+		{
+			new[i] = s1[i];
+			i++;
+		}
+		j = 0;
+		while (j < strlen(s2))
+		{
+			new[i + j] = s2[j];
+			j++;
+		}
+		new[i + j] = '\0';
+	}
+	return (new);
+}
+
+
 char	*ft_format_duration(char *seconds)
 {
 	int 	sc;
 	int		mn;
 	int		hr;
-	int 	dy;
-	int 	yr;
+	int		dy;
+	int		yr;
 	char	*result;
+	char	*temp;
 
 	sc = atoi(seconds);
-	if (sc == 0)
+	if (sc <= 0)
 	{
 		if (strcmp(seconds, "0") == 0)
 			return ("now");
@@ -35,23 +66,38 @@ char	*ft_format_duration(char *seconds)
 	hr = mn / 60;
 	dy = hr / 24;
 	yr = dy / 365;
-	//printf("respre: s:%i m:%i, h:%i, d:%i,  y:%i\n", sc, mn, hr, dy, yr);
+	printf("respre: s:%d m:%d, h:%d, d:%d,  y:%d\n", sc, mn, hr, dy, yr);
 	sc = sc % 60;
 	mn = mn % 60;
 	hr = hr % 24;
 	dy = dy % 365;
-	//printf("result: s:%i m:%i, h:%i, d:%i,  y:%i\n", sc, mn, hr, dy, yr);
-	result = calloc(200, sizeof(char));
-	sprintf(result, "s:%i m:%i, h:%i, d:%i, y:%i\n", sc, mn, hr, dy, yr);
-	//strcpy(seconds, sprintf(seconds, "s:%i m:%i, h:%i, d:%i,  y:%i\n", sc, mn, hr, dy, yr));
+	temp = calloc(50, sizeof(char));
+	sprintf(temp, "%d", yr);
+	if (yr != 0)
+		result = ft_strjoin( temp, " años, ");
+	sprintf(temp, "%d", dy);
+	if (dy != 0)
+		result = ft_strjoin( result, ft_strjoin( temp, " días, "));
+	sprintf(temp, "%d", hr);
+	if (hr != 0)
+		result = ft_strjoin( result, ft_strjoin( temp, " horas, "));
+	sprintf(temp, "%d", mn);
+	if (mn != 0)
+		result = ft_strjoin( result, ft_strjoin( temp, " minutos y "));
+	sprintf(temp, "%d", sc);
+	if (sc != 0)
+		result = ft_strjoin( result, ft_strjoin( temp, " segundos."));
+
+
+	printf("result: s:%i m:%i, h:%i, d:%i,  y:%i\n", sc, mn, hr, dy, yr);
 	return (result);
 }
 
 int	main(void)
 {
 	//ft_format_duration("60");
-//	printf("%s",ft_format_duration(" - - - - - - 42"));
-	printf("%d\n", atoi("62")); //62
+	printf("%s",ft_format_duration("312236000"));
+/*	printf("%d\n", atoi("62")); //62
 	printf("%d\n", atoi("3662")); //3662
 	printf("%d\n", atoi("0")); //0 
 	printf("%d\n", atoi("-1")); //-1
@@ -68,5 +114,5 @@ int	main(void)
 	printf("%d\n", atoi("---42")); //0
 	printf("%d\n", atoi(" - - - - - - 42")); //0
 	printf("%d\n", atoi("0042")); //42
-	printf("%d\n", atoi("0 42")); //0
+	printf("%d\n", atoi("0 42")); //0*/
 }
