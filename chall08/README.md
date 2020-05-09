@@ -49,6 +49,7 @@ The orders understandable by the robot are as follows:
 - `K` cuts the engine of the robot
 
 If one tries to move it to a square occupied by a wall `+`, then the robot stays in place.  
+If one tries to move the bot passed the exit, then the robot stays in place.  
 If the robot is not started (`I/K`) then the commands are inoperative. It is possible to stop it or to start it as many times as desired.  
 When the robot has reached the exit, it is necessary to stop it to win the game.
 

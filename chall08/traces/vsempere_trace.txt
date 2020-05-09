@@ -1,0 +1,33 @@
+4c4
+< ./vsempere.py: Invalid input.
+---
+> Invalid input.
+6c6
+< ./vsempere.py: Invalid input.
+---
+> Invalid input.
+8c8
+< ./vsempere.py: Invalid input.
+---
+> Invalid input.
+10c10
+< ./vsempere.py: Invalid input.
+---
+> Invalid input.
+12c12
+< ./vsempere.py: Invalid input.
+---
+> Failure.
+14c14
+< ./vsempere.py: Invalid input.
+---
+> Invalid input.
+28c28
+< ./vsempere.py: Invalid input.
+---
+> Invalid input.
+30c30
+< ./vsempere.py: Invalid input.
+---
+> Invalid input.
+Diff: KO

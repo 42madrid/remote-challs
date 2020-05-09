@@ -1,0 +1,99 @@
+4c4,20
+< ./migferna.py: Invalid input.
+---
+> Traceback (most recent call last):
+>   File "./migferna.py", line 135, in <module>
+>     main()
+>   File "./migferna.py", line 125, in main
+>     robotState, newx, newy = play(minifield, instructions, robotx, roboty, robotState)
+>   File "./migferna.py", line 78, in play
+>     robotState, newx, newy = get_instruction(minifield, instructions, robotx, roboty, robotState)
+>   File "./migferna.py", line 109, in get_instruction
+>     robotState, newx, newy = get_instruction(minifield, instructions, newx, newy, robotState)
+>   File "./migferna.py", line 109, in get_instruction
+>     robotState, newx, newy = get_instruction(minifield, instructions, newx, newy, robotState)
+>   File "./migferna.py", line 109, in get_instruction
+>     robotState, newx, newy = get_instruction(minifield, instructions, newx, newy, robotState)
+>   [Previous line repeated 2 more times]
+>   File "./migferna.py", line 103, in get_instruction
+>     if minifield[newx][newy] == '0' or minifield[newx][newy] == 'E':
+> IndexError: list index out of range
+6c22
+< ./migferna.py: Invalid input.
+---
+> Success.
+14c30,39
+< ./migferna.py: Invalid input.
+---
+> Traceback (most recent call last):
+>   File "./migferna.py", line 135, in <module>
+>     main()
+>   File "./migferna.py", line 120, in main
+>     if not check(minifield):
+>   File "./migferna.py", line 24, in check
+>     checked = check_line(l)
+>   File "./migferna.py", line 12, in check_line
+>     if (line[0] != '+' and line[0] != 'E') or (line[-1] != '+' and line[-1] != 'E'):
+> IndexError: list index out of range
+18c43,59
+< Success.
+---
+> Traceback (most recent call last):
+>   File "./migferna.py", line 135, in <module>
+>     main()
+>   File "./migferna.py", line 125, in main
+>     robotState, newx, newy = play(minifield, instructions, robotx, roboty, robotState)
+>   File "./migferna.py", line 78, in play
+>     robotState, newx, newy = get_instruction(minifield, instructions, robotx, roboty, robotState)
+>   File "./migferna.py", line 109, in get_instruction
+>     robotState, newx, newy = get_instruction(minifield, instructions, newx, newy, robotState)
+>   File "./migferna.py", line 109, in get_instruction
+>     robotState, newx, newy = get_instruction(minifield, instructions, newx, newy, robotState)
+>   File "./migferna.py", line 109, in get_instruction
+>     robotState, newx, newy = get_instruction(minifield, instructions, newx, newy, robotState)
+>   [Previous line repeated 13 more times]
+>   File "./migferna.py", line 103, in get_instruction
+>     if minifield[newx][newy] == '0' or minifield[newx][newy] == 'E':
+> IndexError: list index out of range
+20c61,74
+< Success.
+---
+> Traceback (most recent call last):
+>   File "./migferna.py", line 135, in <module>
+>     main()
+>   File "./migferna.py", line 125, in main
+>     robotState, newx, newy = play(minifield, instructions, robotx, roboty, robotState)
+>   File "./migferna.py", line 78, in play
+>     robotState, newx, newy = get_instruction(minifield, instructions, robotx, roboty, robotState)
+>   File "./migferna.py", line 109, in get_instruction
+>     robotState, newx, newy = get_instruction(minifield, instructions, newx, newy, robotState)
+>   File "./migferna.py", line 109, in get_instruction
+>     robotState, newx, newy = get_instruction(minifield, instructions, newx, newy, robotState)
+>   File "./migferna.py", line 103, in get_instruction
+>     if minifield[newx][newy] == '0' or minifield[newx][newy] == 'E':
+> IndexError: list index out of range
+28c82,98
+< ./migferna.py: Invalid input.
+---
+> Traceback (most recent call last):
+>   File "./migferna.py", line 135, in <module>
+>     main()
+>   File "./migferna.py", line 125, in main
+>     robotState, newx, newy = play(minifield, instructions, robotx, roboty, robotState)
+>   File "./migferna.py", line 78, in play
+>     robotState, newx, newy = get_instruction(minifield, instructions, robotx, roboty, robotState)
+>   File "./migferna.py", line 109, in get_instruction
+>     robotState, newx, newy = get_instruction(minifield, instructions, newx, newy, robotState)
+>   File "./migferna.py", line 109, in get_instruction
+>     robotState, newx, newy = get_instruction(minifield, instructions, newx, newy, robotState)
+>   File "./migferna.py", line 109, in get_instruction
+>     robotState, newx, newy = get_instruction(minifield, instructions, newx, newy, robotState)
+>   [Previous line repeated 2 more times]
+>   File "./migferna.py", line 103, in get_instruction
+>     if minifield[newx][newy] == '0' or minifield[newx][newy] == 'E':
+> IndexError: list index out of range
+32c102
+< Success.
+---
+> ./migferna.py: Invalid input.
+Diff: KO
