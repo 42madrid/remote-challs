@@ -6,7 +6,7 @@
 /*   By: bazuara <bazuara@student.42madrid.>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/09 14:07:16 by bazuara           #+#    #+#             */
-/*   Updated: 2020/05/09 15:26:12 by bazuara          ###   ########.fr       */
+/*   Updated: 2020/05/09 15:42:44 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,12 @@
 
 char	*ft_format_duration(char *seconds)
 {
-	int sc;
-	int	mn;
-	int	hr;
-	int dy;
-	int yr;
+	int 	sc;
+	int		mn;
+	int		hr;
+	int 	dy;
+	int 	yr;
+	char	*result;
 
 	sc = atoi(seconds);
 	mn = sc / 60;
@@ -32,11 +33,14 @@ char	*ft_format_duration(char *seconds)
 	hr = hr % 24;
 	dy = dy % 365;
 	//printf("result: s:%i m:%i, h:%i, d:%i,  y:%i\n", sc, mn, hr, dy, yr);
-	return ("return");
+	result = calloc(999, sizeof(char));
+	sprintf(result, "s:%i m:%i, h:%i, d:%i, y:%i\n", sc, mn, hr, dy, yr);
+	//strcpy(seconds, sprintf(seconds, "s:%i m:%i, h:%i, d:%i,  y:%i\n", sc, mn, hr, dy, yr));
+	return (result);
 }
 
 int	main(void)
 {
 	//ft_format_duration("60");
-	ft_format_duration("31536000");
+	printf("%s",ft_format_duration("31536000"));
 }
