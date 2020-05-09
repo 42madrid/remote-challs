@@ -84,14 +84,14 @@ char                    *ft_set_units(unsigned long long unit, int i)
     char *str;
 
     if (i == 0)
-        return (ft_strcat_alloc(ft_itoa(unit), strdup(" years")));
+        return (ft_strcat_alloc(ft_itoa(unit), unit > 1 ? strdup(" years") : strdup(" year")));
     else if (i == 1)
-        return (ft_strcat_alloc(ft_itoa(unit), strdup(" days")));
+        return (ft_strcat_alloc(ft_itoa(unit), unit > 1 ? strdup(" days") : strdup(" day")));
     else if (i == 2)
-        return (ft_strcat_alloc(ft_itoa(unit), strdup(" hours")));
+        return (ft_strcat_alloc(ft_itoa(unit), unit > 1 ? strdup(" hours") : strdup(" hour")));
     else if (i == 3)
-        return (ft_strcat_alloc(ft_itoa(unit), strdup(" minutes")));
-    return (ft_strcat_alloc(ft_itoa(unit), strdup(" seconds")));
+        return (ft_strcat_alloc(ft_itoa(unit), unit > 1 ? strdup(" minutes") : strdup(" minute")));
+    return (ft_strcat_alloc(ft_itoa(unit),  unit > 1 ? strdup(" seconds") : strdup(" second")));
 }
 
 char                    *ft_create_sentence(char **conversion)
