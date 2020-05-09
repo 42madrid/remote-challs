@@ -90,7 +90,7 @@ int	is_valid(char *seconds)
 char *ft_format_duration(char *seconds)
 {
 	char *out;
-	if (is_valid(seconds))
+	if (is_valid(seconds) && *seconds)
 		out = parser_format(seconds);
 	else
 		out = "Invalid input.";
@@ -104,7 +104,7 @@ int main()
 	//printf("%s\n", ft_format_duration("0"));
 	printf("%s\n", ft_format_duration("-1"));
 	printf("%s\n", ft_format_duration("LOL42LOL"));
-	//printf("%s", ft_format_duration(""));
+	printf("%s\n", ft_format_duration(""));
 	printf("%s\n", ft_format_duration("2175984000"));
 	return (0);
 }
