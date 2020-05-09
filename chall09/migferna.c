@@ -105,8 +105,7 @@ char *ft_format_duration(char *seconds)
 {
 	char *out;
 	if (*seconds && is_valid(seconds))
-		//out = parser_format(seconds);
-		out = "Valid";
+		out = parser_format(seconds);
 	else
 		out = "Invalid input.";
 	return out;
