@@ -6,7 +6,7 @@
 /*   By: bazuara <bazuara@student.42madrid.>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/09 14:07:16 by bazuara           #+#    #+#             */
-/*   Updated: 2020/05/09 19:58:44 by bazuara          ###   ########.fr       */
+/*   Updated: 2020/05/09 20:13:40 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,22 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (new);
 }
 
+char		*ft_strjoin_free(char *str1, char *str2, int i)
+{
+	char *temp;
+
+	temp = ft_strjoin(str1, str2);
+	if (i == 1)
+		free(str1);
+	else if (i == 2)
+		free(str2);
+	if (i == 3)
+	{
+		free(str1);
+		free(str2);
+	}
+	return (temp);
+}
 
 char	*ft_format_duration(char *seconds)
 {
@@ -52,7 +68,7 @@ char	*ft_format_duration(char *seconds)
 	int		dy;
 	int		yr;
 	char	*result;
-	char	*temp;
+	char	temp[50];
 
 	sc = atoi(seconds);
 	if (sc <= 0)
@@ -66,37 +82,33 @@ char	*ft_format_duration(char *seconds)
 	hr = mn / 60;
 	dy = hr / 24;
 	yr = dy / 365;
-	printf("respre: s:%d m:%d, h:%d, d:%d,  y:%d\n", sc, mn, hr, dy, yr);
+	//printf("respre: s:%d m:%d, h:%d, d:%d,  y:%d\n", sc, mn, hr, dy, yr);
 	sc = sc % 60;
 	mn = mn % 60;
 	hr = hr % 24;
 	dy = dy % 365;
-	temp = calloc(50, sizeof(char));
 	sprintf(temp, "%d", yr);
 	if (yr != 0)
-		result = ft_strjoin( temp, " años, ");
+		result = ft_strjoin_free( temp, " años, ", 0);
 	sprintf(temp, "%d", dy);
 	if (dy != 0)
-		result = ft_strjoin( result, ft_strjoin( temp, " días, "));
+		result = ft_strjoin_free( result, ft_strjoin_free( temp, " días, ", 0), 3);
 	sprintf(temp, "%d", hr);
 	if (hr != 0)
-		result = ft_strjoin( result, ft_strjoin( temp, " horas, "));
+		result = ft_strjoin_free( result, ft_strjoin_free( temp, " horas, ", 0), 3);
 	sprintf(temp, "%d", mn);
 	if (mn != 0)
-		result = ft_strjoin( result, ft_strjoin( temp, " minutos y "));
+		result = ft_strjoin_free( result, ft_strjoin_free( temp, " minutos y ", 0), 3);
 	sprintf(temp, "%d", sc);
 	if (sc != 0)
-		result = ft_strjoin( result, ft_strjoin( temp, " segundos."));
-
-
-	printf("result: s:%i m:%i, h:%i, d:%i,  y:%i\n", sc, mn, hr, dy, yr);
+		result = ft_strjoin_free( result, ft_strjoin_free( temp, " segundos.", 0), 3);
 	return (result);
 }
 
 int	main(void)
 {
 	//ft_format_duration("60");
-	printf("%s",ft_format_duration("312236000"));
+	printf("%s",ft_format_duration("31536001"));
 /*	printf("%d\n", atoi("62")); //62
 	printf("%d\n", atoi("3662")); //3662
 	printf("%d\n", atoi("0")); //0 
@@ -115,4 +127,5 @@ int	main(void)
 	printf("%d\n", atoi(" - - - - - - 42")); //0
 	printf("%d\n", atoi("0042")); //42
 	printf("%d\n", atoi("0 42")); //0*/
+	system("leaks -fullContent  a.out");
 }
