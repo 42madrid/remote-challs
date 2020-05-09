@@ -36,7 +36,7 @@ typedef struct	s_time
 static char		ft_stc_validate_duration(char *seconds)
 {
 	
-	if (strlen(seconds) == 0)
+	if (seconds == NULL || strlen(seconds) == 0)
 		return (1);
 	while (*seconds != '\0')
 	{
@@ -131,9 +131,9 @@ char 	*ft_format_duration(char *seconds)
 	t_time	my_time;
 	char	*str;
 
-	bzero(&my_time, sizeof(t_time));
 	if (ft_stc_validate_duration(seconds) > 0)
 		return strdup("Invalid input.");
+	bzero(&my_time, sizeof(t_time));
 	my_time.years = ft_stc_convert_number(seconds);
 	if (my_time.years == ULLONG_MAX)
 		return strdup("Invalid input.");
