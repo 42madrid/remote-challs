@@ -17,11 +17,10 @@
 
 int		check_input(char *seconds)
 {
-	char	*aux;
 	int		space_after_digit;
 	int		found_digits;
 
-	if (!*seconds || ((aux = strchr(seconds, '+')) && !isspace(aux[1])))
+	if (!*seconds)
 		return (0);
 	space_after_digit = 0;
 	found_digits = 0;
@@ -35,7 +34,7 @@ int		check_input(char *seconds)
 				return (0);
 			found_digits = 1;
 		}
-		else if (!isspace(*seconds) && *seconds != '+')
+		else if (!isspace(*seconds))
 			return (0);
 		seconds++;
 	}
