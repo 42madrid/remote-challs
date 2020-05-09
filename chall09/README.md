@@ -44,6 +44,8 @@ A unit of time must be used "as much as possible". It means that the function sh
 
 > NOTE: For this challenge a year is always 365 days, a day is always 24 hours, an hour is always 60 minutes and a minute is always 60 seconds.
 
+> NOTE2: The biggest number of second that you need to handle is `10000000000000000000`. Good luck :)
+
 ### Examples
 ```C
 ft_format_duration("62") # returns "1 minute and 2 seconds"
