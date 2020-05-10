@@ -3,40 +3,31 @@
 #include <string.h>
 #include <limits.h>
 
-int                     ft_sign_or_space(char str)
-{
-    if (str == '-')
-        return (-1);
-    else if (str == '+' ||str == ' ')
-        return (1);
-    return (0);
-}
-
 unsigned long long     ft_ultimate_atoull(char *str)
 {
-    int sign;
     unsigned long long num;
-    char *p;
+    char *aux;
 
-    sign = 1;
-    p = NULL;
+    aux = str;
     if (!*str)
         return (ULLONG_MAX);
-    while (*str && ft_sign_or_space(*str))
+    while (*aux)
     {
-        sign = sign * ft_sign_or_space(*str);
-        str++;
-    }
-    num = strtoull(str, &p, 10);
-    while (*p)
-    {
-        if (*p != ' ' && (*(p - 1) < '0' ||*(p - 1) > '9'))
+        if (*aux != ' ' && (*aux < '0' ||*aux > '9'))
             return (ULLONG_MAX);
-        p++;
+        aux++;
     }
-    if (sign < 0)
+    aux = NULL;
+    num = strtoull(str, &aux, 10);
+    if (*(aux - 1) < '0' ||*(aux - 1) > '9')
         return (ULLONG_MAX);
-    return (num * sign);
+    while (*aux)
+    {
+        if (*aux != ' ')
+            return (ULLONG_MAX);
+        aux++;
+    }
+    return (num);
 }
 
 char                    *ft_itoa(unsigned long long num)
