@@ -164,6 +164,9 @@ int	is_valid(char *seconds)
 char *ft_format_duration(char *seconds)
 {
 	char *out;
+	while (isspace(*seconds))
+		seconds++;
+
 	if (*seconds && is_valid(seconds))
 		out = parser_format(seconds);
 	else
