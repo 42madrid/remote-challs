@@ -3,14 +3,21 @@
 #include <string.h>
 #include <ctype.h>
 
+typedef	struct			s_time
+{
+	unsigned long long	years;
+	unsigned long long	days;
+	unsigned long long	hours;
+	unsigned long long	minutes;
+	unsigned long long	seconds;
+}						t_time;
+
 unsigned long long parser(unsigned long long seconds, unsigned long long d)
 {
 	return seconds/d;
 }
 
-char *generate_output(unsigned long long years, unsigned long long months, 
-unsigned long long days, unsigned long long hours, unsigned long long minutes,
- unsigned long long seconds, int count_units)
+char *generate_output(t_time time, int count_units)
 {
 	char *format = NULL;
 	char tmp[100];
@@ -23,16 +30,15 @@ unsigned long long days, unsigned long long hours, unsigned long long minutes,
 
 	if (!(format = malloc(500)))
 		return NULL;
-	minutes_count = minutes > 1 ? "minutes" : "minute";
-	seconds_count = seconds > 1 ? "seconds" : "second";
-	hours_count = hours > 1 ? "hours" : "hour";
-	years_count = years > 1 ? "years" : "year";
-	months_count = months > 1 ? "months" : "month";
-	days_count = days > 1 ? "days" : "day";
+	minutes_count = time.minutes > 1 ? "minutes" : "minute";
+	seconds_count = time.seconds > 1 ? "seconds" : "second";
+	hours_count = time.hours > 1 ? "hours" : "hour";
+	years_count = time.years > 1 ? "years" : "year";
+	days_count = time.days > 1 ? "days" : "day";
 
-	if (years)
+	if (time.years)
 	{
-		sprintf(tmp, "%llu %s", years, years_count);
+		sprintf(tmp, "%llu %s", time.years, years_count);
 		strcat(format, tmp);
 		if (count_units > 2)
 		{
@@ -44,9 +50,9 @@ unsigned long long days, unsigned long long hours, unsigned long long minutes,
 			strcat(format, " and ");
 		}
 	}
-	if (days)
+	if (time.days)
 	{
-		sprintf(tmp, "%llu %s", days, days_count);
+		sprintf(tmp, "%llu %s", time.days, days_count);
 		strcat(format, tmp);
 		if (count_units > 2)
 		{
@@ -56,9 +62,9 @@ unsigned long long days, unsigned long long hours, unsigned long long minutes,
 		else if (count_units == 2)
 			strcat(format, " and ");
 	}
-	if (hours)
+	if (time.hours)
 	{
-		sprintf(tmp, "%llu %s", hours, hours_count);
+		sprintf(tmp, "%llu %s", time.hours, hours_count);
 		strcat(format, tmp);
 		if (count_units > 2)
 		{
@@ -68,9 +74,9 @@ unsigned long long days, unsigned long long hours, unsigned long long minutes,
 		else if (count_units == 2)
 			strcat(format, " and ");
 	}
-	if (minutes)
+	if (time.minutes)
 	{
-		sprintf(tmp, "%llu %s", minutes, minutes_count);
+		sprintf(tmp, "%llu %s", time.minutes, minutes_count);
 		strcat(format, tmp);
 		if (count_units > 2)
 		{
@@ -80,9 +86,9 @@ unsigned long long days, unsigned long long hours, unsigned long long minutes,
 		else if (count_units == 2)
 			strcat(format, " and ");
 	}
-	if (seconds)
+	if (time.seconds)
 	{
-		sprintf(tmp, "%llu %s", seconds, seconds_count);
+		sprintf(tmp, "%llu %s", time.seconds, seconds_count);
 		strcat(format, tmp);
 	}
 
@@ -92,46 +98,46 @@ unsigned long long days, unsigned long long hours, unsigned long long minutes,
 char *parser_format(char *s)
 {
 	char *out;
-
-	unsigned long long seconds = strtoull(s, NULL, 10);
-	unsigned long long minutes = 0;
-	unsigned long long hours = 0;
-	unsigned long long days = 0;
-	unsigned long long months = 0;
-	unsigned long long years = 0;
 	int count_units = 0;
-	
-	if (seconds == 0) {
+
+	t_time time;
+	time.seconds = strtoull(s, NULL, 10);
+	time.minutes = 0;
+	time.hours = 0;
+	time.days = 0;
+	time.years = 0;
+		
+	if (time.seconds == 0) {
 		return ("now");
 	}
-	if (seconds > 31536000)
+	if (time.seconds > 31536000)
 	{
-		years = parser(seconds, 31536000);
-		seconds = seconds % 31536000;
+		time.years = parser(time.seconds, 31536000);
+		time.seconds = time.seconds % 31536000;
 		count_units++;
 	}
-	if (seconds > 86400)
+	if (time.seconds > 86400)
 	{
-		days = parser(seconds, 86400);
-		seconds = seconds % 86400;
+		time.days = parser(time.seconds, 86400);
+		time.seconds = time.seconds % 86400;
 		count_units++;
 	}
-	if (seconds > 3600)
+	if (time.seconds > 3600)
 	{
-		hours = parser(seconds, 3600);
-		seconds = seconds % 3600;
+		time.hours = parser(time.seconds, 3600);
+		time.seconds = time.seconds % 3600;
 		count_units++;
 	}
-	if (seconds > 60)
+	if (time.seconds > 60)
 	{
-		minutes = parser(seconds, 60);
-		seconds = seconds % 60;
+		time.minutes = parser(time.seconds, 60);
+		time.seconds = time.seconds % 60;
 		count_units++;
 	}
-	if (seconds > 0)
+	if (time.seconds > 0)
 		count_units++;
 	
-	out = generate_output(years, months, days, hours, minutes, seconds, count_units);
+	out = generate_output(time, count_units);
 	return (out);
 }
 
@@ -141,13 +147,14 @@ int	is_valid(char *seconds)
 	int num_digits = 0;
 	while (ptr)
 	{
-		if (isdigit(*ptr))
+		while (*ptr)
 		{
-			num_digits++;
-			ptr = strtok(NULL, " ");
+			if (!isdigit(*ptr))
+				return (0);
+			ptr++;
 		}
-		else
-			return 0;
+		num_digits++;
+		ptr = strtok(NULL, " ");
 	}
 	if (num_digits > 1)
 		return 0;
