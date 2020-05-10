@@ -10,7 +10,7 @@ int parser(unsigned long long seconds, unsigned long long d)
 
 char *generate_output(unsigned long long years, unsigned long long months, 
 unsigned long long days, unsigned long long hours, unsigned long long minutes,
- unsigned long long seconds)
+ unsigned long long seconds, int count_units)
 {
 	char *format = NULL;
 	char tmp[50];
@@ -34,21 +34,51 @@ unsigned long long days, unsigned long long hours, unsigned long long minutes,
 	{
 		sprintf(tmp, "%llu %s", years, years_count);
 		strcat(format, tmp);
+		if (count_units > 2)
+		{
+			strcat(format, ", ");
+			count_units--;
+		}
+		else if (count_units == 2)
+		{
+			strcat(format, " and ");
+		}
 	}
 	if (days)
 	{
 		sprintf(tmp, "%llu %s", days, days_count);
 		strcat(format, tmp);
+		if (count_units > 2)
+		{
+			strcat(format, ", ");
+			count_units--;
+		}
+		else if (count_units == 2)
+			strcat(format, " and ");
 	}
 	if (hours)
 	{
 		sprintf(tmp, "%llu %s", hours, hours_count);
 		strcat(format, tmp);
+		if (count_units > 2)
+		{
+			strcat(format, ", ");
+			count_units--;
+		}
+		else if (count_units == 2)
+			strcat(format, " and ");
 	}
 	if (minutes)
 	{
 		sprintf(tmp, "%llu %s", minutes, minutes_count);
 		strcat(format, tmp);
+		if (count_units > 2)
+		{
+			strcat(format, ", ");
+			count_units--;
+		}
+		else if (count_units == 2)
+			strcat(format, " and ");
 	}
 	if (seconds)
 	{
@@ -101,7 +131,7 @@ char *parser_format(char *s)
 	if (seconds > 0)
 		count_units++;
 	
-	out = generate_output(years, months, days, hours, minutes, seconds);
+	out = generate_output(years, months, days, hours, minutes, seconds, count_units);
 	return (out);
 }
 
@@ -132,23 +162,4 @@ char *ft_format_duration(char *seconds)
 	else
 		out = "Invalid input.";
 	return out;
-}
-
-int main()
-{
-	printf("%s\n", ft_format_duration("62"));
-	printf("%s\n", ft_format_duration("3662"));
-	printf("%s\n", ft_format_duration("0"));
-	printf("%s\n", ft_format_duration("LOL42LOL"));
-	printf("%s\n", ft_format_duration(""));
-	printf("%s\n", ft_format_duration("2175984000"));
-	printf("%s\n", ft_format_duration("   42"));
-	printf("%s\n", ft_format_duration("   42 1"));
-	printf("%s\n", ft_format_duration("42 1"));
-	printf("%s\n", ft_format_duration("42   "));
-	printf("%s\n", ft_format_duration("+42"));
-	printf("%s\n", ft_format_duration("-42"));
-	printf("%s\n", ft_format_duration("0042"));
-	printf("%s\n", ft_format_duration("0 42"));
-	return (0);
 }
