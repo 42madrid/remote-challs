@@ -15,7 +15,7 @@ static const char		*unit_time[ARRAY_SIZE] = {"year", "day", "hour", "minute", "s
 
 static char				*walk_space(char *seconds)
 {
-	while (*seconds && isspace(*seconds))
+	while (*seconds && *seconds == ' ')
 		seconds++;
 	return (seconds);
 }
