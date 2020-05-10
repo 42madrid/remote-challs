@@ -166,7 +166,7 @@ char				*ft_format_duration(char *seconds)
 
 	if (check_line(seconds))
 		return ("Invalid input");
-	i = 0;;
+	i = 0;
 	if (seconds[i] == '0' && seconds[i + 1] == '\0')
 		return ("now");
 	while (seconds[i])
