@@ -6,7 +6,7 @@
 /*   By: estina <estina@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/09 19:45:09 by estina            #+#    #+#             */
-/*   Updated: 2020/05/10 14:36:59 by estina           ###   ########.fr       */
+/*   Updated: 2020/05/10 15:34:40 by estina           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,71 +33,52 @@ int		check_input(char *seconds)
 	return (1);
 }
 
-void	transform_time(unsigned long long *x, unsigned long long *y, int z)
+unsigned long long	transform_time(void *y, int z)
 {
-	*x = *y / z;
-	*y %= z;
+	unsigned long long	x;
+
+	x = *((unsigned long long *)y) / z;
+	*((unsigned long long *)y) %= z;
+	return (x);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	append_time(unsigned long long time, char *one, char *more, char *n, char **str)
 {
-	char	*str;
-	int		i, j;
-
-	i = s1 ? strlen(s1) : 0;
-	j = strlen(s2);
-	if (!(str = malloc(i + j + 1)))
-		return (NULL);
-	str = s1 ? strcpy(str, s1) : str;
-	str = strcat(str, s2);
-	return (str);
-}
-
-void	count_times(unsigned long long x, char *number_times)
-{
-	if (x)
-		(*number_times)++;
-}
-
-char	*append_time(unsigned long long time, char *one, char *more, char *n, char *str)
-{
-	char	buf[30];
+	char	buf[13];
 
 	if (time)
 	{
 		sprintf(buf, "%llu", time);
-		str = ft_strjoin(str, buf);
-		str = ft_strjoin(str, time == 1 ? one : more);
+		*str = strcat(*str, buf);
+		*str = strcat(*str, time == 1 ? one : more);
 		if (--(*n) > 1)
-			str = ft_strjoin(str, ", ");
+			*str = strcat(*str, ", ");
 		else if (*n == 1)
-			str = ft_strjoin(str, " and ");
+			*str = strcat(*str, " and ");
 	}
-	return (str);
 }
 
 char	*human_time(unsigned long long seconds)
 {
-	unsigned long long	years, days, hours, mins;
+	unsigned long long	years;
+	short				days;
+	char				hours, mins;
 	char				*new;
 	char				number_times;
 
-	transform_time(&years, &seconds, 31536000);
-	transform_time(&days, &seconds, 86400);
-	transform_time(&hours, &seconds, 3600);
-	transform_time(&mins, &seconds, 60);
-	number_times = 0;
-	count_times(years, &number_times);
-	count_times(days, &number_times);
-	count_times(hours, &number_times);
-	count_times(mins, &number_times);
-	count_times(seconds, &number_times);
-	new = NULL;
-	new = append_time(years, " year", " years", &number_times, new);
-	new = append_time(days, " day", " days", &number_times, new);
-	new = append_time(hours, " hour", " hours", &number_times, new);
-	new = append_time(mins, " minute", " minutes", &number_times, new);
-	new = append_time(seconds, " second", " seconds", &number_times, new);
+	years = transform_time(&seconds, 31536000);
+	days = transform_time(&seconds, 86400);
+	hours = transform_time(&seconds, 3600);
+	mins = transform_time(&seconds, 60);
+	number_times = (years ? 1 : 0) + (days ? 1 : 0) + (hours ? 1 : 0) +
+					(mins ? 1 : 0) + (seconds ? 1 : 0);
+	if (!(new = calloc(65, sizeof(char))))
+		return (NULL);
+	append_time(years, " year", " years", &number_times, &new);
+	append_time(days, " day", " days", &number_times, &new);
+	append_time(hours, " hour", " hours", &number_times, &new);
+	append_time(mins, " minute", " minutes", &number_times, &new);
+	append_time(seconds, " second", " seconds", &number_times, &new);
 	return (new);
 }
 
@@ -109,8 +90,7 @@ char	*ft_format_duration(char *seconds)
 		seconds++;
 	if (!check_input(seconds))
 		return ("Invalid input.");
-	number = strtoull(seconds, NULL, 10);
-	if (!number)
+	if (!(number = strtoull(seconds, NULL, 10)))
 		return ("now");
 	return (human_time(number));
 }
