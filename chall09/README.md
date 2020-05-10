@@ -55,7 +55,10 @@ ft_format_duration("LOL42LOL") # returns "Invalid input."
 ft_format_duration("") # returns "Invalid input."
 ft_format_duration("2175984000") # returns "69 years"
 ft_format_duration("   42") # returns "42 seconds"
+<<<<<<< HEAD
 ft_format_duration(" +  42") # returns "42 seconds"
+=======
+>>>>>>> 1b262fb18d7666b0fcc5c4baf570cf9a0f505c01
 ft_format_duration("   42 1") # returns "Invalid input."
 ft_format_duration("42 1") # returns "Invalid input."
 ft_format_duration("42   ") # returns "42 seconds"
