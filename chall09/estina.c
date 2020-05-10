@@ -6,7 +6,7 @@
 /*   By: estina <estina@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/09 19:45:09 by estina            #+#    #+#             */
-/*   Updated: 2020/05/09 22:36:47 by estina           ###   ########.fr       */
+/*   Updated: 2020/05/10 14:36:59 by estina           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,18 @@
 
 int		check_input(char *seconds)
 {
-	int		space_after_digit;
-	int		found_digits;
+	int		i;
 
 	if (!*seconds)
 		return (0);
-	space_after_digit = 0;
-	found_digits = 0;
-	while (*seconds)
+	i = strlen(seconds) - 1;
+	while (isspace(seconds[i]))
+		i--;
+	while (i >= 0)
 	{
-		if (isspace(*seconds) && found_digits)
-			space_after_digit = 1;
-		else if (isdigit(*seconds))
-		{
-			if (space_after_digit)
-				return (0);
-			found_digits = 1;
-		}
-		else if (!isspace(*seconds))
+		if (!isdigit(seconds[i]))
 			return (0);
-		seconds++;
+		i--;
 	}
 	return (1);
 }
@@ -113,10 +105,10 @@ char	*ft_format_duration(char *seconds)
 {
 	unsigned long long	number;
 
+	while (isspace(*seconds))
+		seconds++;
 	if (!check_input(seconds))
 		return ("Invalid input.");
-	while (!isdigit(*seconds))
-		seconds++;
 	number = strtoull(seconds, NULL, 10);
 	if (!number)
 		return ("now");
