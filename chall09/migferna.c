@@ -13,7 +13,7 @@ unsigned long long days, unsigned long long hours, unsigned long long minutes,
  unsigned long long seconds, int count_units)
 {
 	char *format = NULL;
-	char tmp[50];
+	char tmp[100];
 	char *minutes_count;
 	char *seconds_count;
 	char *hours_count;
@@ -21,7 +21,7 @@ unsigned long long days, unsigned long long hours, unsigned long long minutes,
 	char *months_count;
 	char *days_count;
 
-	if (!(format = malloc(100)))
+	if (!(format = malloc(500)))
 		return NULL;
 	minutes_count = minutes > 1 ? "minutes" : "minute";
 	seconds_count = seconds > 1 ? "seconds" : "second";
@@ -101,7 +101,6 @@ char *parser_format(char *s)
 	unsigned long long years = 0;
 	int count_units = 0;
 	
-	printf("\n%llu\n", seconds);
 	if (seconds == 0) {
 		return ("now");
 	}
@@ -163,10 +162,4 @@ char *ft_format_duration(char *seconds)
 	else
 		out = "Invalid input.";
 	return out;
-}
-
-int main()
-{
-	printf("%s\n", ft_format_duration("10000000000000000000"));
-	return (0);
 }
