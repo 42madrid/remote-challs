@@ -3,7 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 
-int parser(unsigned long long seconds, unsigned long long d)
+unsigned long long parser(unsigned long long seconds, unsigned long long d)
 {
 	return seconds/d;
 }
@@ -100,7 +100,8 @@ char *parser_format(char *s)
 	unsigned long long months = 0;
 	unsigned long long years = 0;
 	int count_units = 0;
-
+	
+	printf("\n%llu\n", seconds);
 	if (seconds == 0) {
 		return ("now");
 	}
@@ -162,4 +163,10 @@ char *ft_format_duration(char *seconds)
 	else
 		out = "Invalid input.";
 	return out;
+}
+
+int main()
+{
+	printf("%s\n", ft_format_duration("10000000000000000000"));
+	return (0);
 }
