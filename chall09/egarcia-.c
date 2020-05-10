@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <ctype.h>
-#include <string.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -36,6 +35,7 @@ char   *ft_print_format(int y ,int d, int h, int m, int s)
     char *seconds = strdup("");
     if ( y > 0)
     {
+
         sprintf(years, "%d", y);
         tmp = y > 1 ? ft_strjoin(years, " years") : ft_strjoin(years, " year");
         free (years);
@@ -99,35 +99,55 @@ char   *ft_print_format(int y ,int d, int h, int m, int s)
         sprintf(seconds, "%d", s);
         tmp = s > 1 ? ft_strjoin(seconds, " seconds") : ft_strjoin(seconds ," second");
         free(seconds);
-        seconds = tmp;
+        seconds = strdup(tmp);
         free(tmp);
     }
     asprintf(&str, "%s%s%s%s%s",years, days, hours, minutes, seconds);
+    free(years);
+    free(days);
+    free(hours);
+    free(minutes);
+    free(seconds);
     return(str);
 }
 
 char    *ft_format_duration(char *seconds)
 {
-    char *str;
     long long int n = atoll(seconds);
     int d = 0;
     int h = 0;
     int m = 0;
     int s = 0;
     int y = 0;
+    int i = 0;
+    
+    char *invalidinput = strdup("Invalid input.");
+    char *now = strdup("now");
 
-    for (int i = 0; seconds[i]; i++)
+     if (strlen(seconds) == 0)
+        return(invalidinput);
+    while(seconds[i] == ' ')
+            i++;
+    int flag = 0;
+    while (seconds[i])
+    {
         if(!(isnumber(seconds[i])))
-            return("Invalid input.");
-    if (seconds[0] == '0')
-        return("now");
-    else if (strlen(seconds) == 0)
-        return("Invalid input.");
+        {
+            if (seconds[i] == ' ')
+                flag = 1;
+            else
+                return(invalidinput);
+        }
+        if (isnumber(seconds[i]) && flag == 1)
+            return(invalidinput);
+        i++;
+    }
+    if (n == 0)
+        return (now);
     while (n > 0)
     {
-        if (n == 0)
-            return ("now");
-        else if (n >= 31536000)
+
+        if (n >= 31536000)
         {
             y = n / 31536000;
             n %= 31536000;
@@ -153,5 +173,7 @@ char    *ft_format_duration(char *seconds)
             n = 0;
         }
     }
+    free(invalidinput);
+    free(now);
     return(ft_print_format(y,d,h,m,s)); 
 }
