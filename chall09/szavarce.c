@@ -24,7 +24,7 @@ static int              len(long nb)
         return (len);
 }
 
-char                    *ft_itoa(int n)
+char                    *ft_itoa(long int n)
 {
         char    *str;
         long    num;
