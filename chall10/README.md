@@ -44,11 +44,11 @@ There may be up to 42 moves and the moves are in order.
 
 The first player who connects four items of the same color is the winner. Horizontally, vertically, or diagonally.
 
-You should detect, and print, which colour has won or `"Draw."` accordingly (check [examples](#examples)).
+You should detect, and print, which "team" has won or `"Draw."` accordingly (check [examples](#examples)).
 
 If the input is invalid or it doesn't make sense, print `"Invalid input."` and exit.
 
-> NOTE: There can only be two colours, else, the input is invalid.
+> NOTE: There can only be two "teams", else, the input is invalid.
 >
 > NOTE2: A valid grid is always 6 * 7, those being named from `A` to `G`.
 ### Examples
@@ -64,6 +64,28 @@ B_Yellow
 G_Red
 B_Yellow
 Yellow.
+
+[42student@somewhere ~]$ ./<login>.py
+A_Apple
+B_Android
+A_Apple
+B_Android
+A_Apple
+B_Android
+G_Apple
+B_Android
+Android.
+
+[42student@somewhere ~]$ ./<login>.py
+A_apple
+B_android
+A_apple
+B_android
+A_apple
+B_android
+G_apple
+B_android
+Invalid input.
 
 [42student@somewhere ~]$ ./<login>.py
 A_Red
