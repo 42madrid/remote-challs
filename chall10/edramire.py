@@ -26,7 +26,7 @@ class Connect:
 
     def down(self, row: int, col: int, cell: Cell):
         count = 0
-        while row < 6:
+        while row < 6 and count < 4:
             if cell == self.grid[row][col]:
                 count += 1
             else:
@@ -37,14 +37,14 @@ class Connect:
     def check_line(self, m: int, b: int, cell: Cell):
         count = 0
         col = 0
-        row = m * col + b
-        while col < 7 and 0 <= row < 6:
-            if cell == self.grid[row][col]:
-                count += 1
-            elif count < 4:
-                count = 0
-            col += 1
+        while col < 7 and count < 4:
             row = m * col + b
+            if 0 <= row < 6:
+                if cell == self.grid[row][col]:
+                    count += 1
+                elif count < 4:
+                    count = 0
+            col += 1
         return count == 4
 
     def load_line(self, line: str, cell):
@@ -73,12 +73,10 @@ class Connect:
             row -= 1
         if row < 0:
             raise ValueError
-        if any([
-            self.down(row, col, cell),
-            self.check_line(0, row - col, cell),
-            self.check_line(-1, row - col, cell),
-            self.check_line(1, row + col, cell)
-        ]):
+        if (self.down(row, col, cell)
+                or self.check_line(0, row, cell)
+                or self.check_line(1, row - col, cell)
+                or self.check_line(-1, row + col, cell)):
             self.win = cell
 
     def print_grid(self):
@@ -91,7 +89,7 @@ def connect42():
     count = 0
     for line in sys.stdin:
         try:
-            if game.win is None or count == 42:
+            if game.win is None and count < 42:
                 cell = Cell.RED if count % 2 == 0 else Cell.BLUE
                 idx, cell = game.load_line(line[:-1], cell)
                 game.play(idx, cell)
@@ -105,6 +103,7 @@ def connect42():
         print('Draw.')
     else:
         print(f'{game.red if game.win == Cell.RED else game.blue}.')
+    game.print_grid()
 
 
 if __name__ == '__main__':
