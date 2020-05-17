@@ -6,6 +6,8 @@ ROWS = 6
 COLS = 7
 
 def check_line(line, colors, split_line):
+	if len(split_line[0]) != 1:
+		exit("Invalid input.")
 	if not len(colors) or (len(colors) != 2 and colors[0] != split_line[1]):
 		colors.append(split_line[1])
 	elif colors[0] != split_line[1] and colors[1] != split_line[1]:
