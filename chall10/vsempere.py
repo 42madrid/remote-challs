@@ -3,62 +3,27 @@
 import sys
 import re
 
-def check_east(i, map):
-    if (i < 0 or i >= 42 or (i % 7) > 3):
+def cell_matches_value(map, valueToMatch, row, col):
+    if (row < 0 or row > 5 or col < 0 or col > 6):
+        return -1
+    elif (map[(row * 7) + col] == valueToMatch):
+        return map[(row * 7) + col]
+    else:
         return 0
-    if (map[i] == 1 and (map[i:i + 4] == [1,1,1,1])):
-        return 1
-    elif (map[i] == 2 and (map[i:i + 4] == [2,2,2,2])):
-        return 2
-    return 0
-
-
-def check_west(i, map):
-    if (i < 0 or i >= 42 or (i % 7) < 3):
-        return 0
-    if (map[i] == 1 and (map[i-4:i] == [1,1,1,1])):
-        return 1
-    elif (map[i] == 2 and (map[i-4:i] == [2,2,2,2])):
-        return 2
-    return 0
-
-
-def check_north(i, map):
-    if (i < 0 or i >= 14):
-        return 0
-    if (map[i] > 0 and map[i + 7] == map[i] and map[i + 14] == map[i] 
-    and map[i + 21] == map[i]):
-        return map[i]
-    return 0
-
-def check_north_west(i, map):
-    if (i < 0 or i >= 14 or (i % 7) < 3):
-        return 0
-    if (map[i] > 0 and map[i + 6] == map[i] and map[i + 12] == map[i] 
-    and map[i + 18] == map[i]):
-        return map[i]
-    return 0
-
-def check_north_east(i, map):
-    if (i < 0 or i >= 14 or (i % 7) >= 2):
-        return 0
-    if (map[i] > 0 and map[i + 8] == map[i] and map[i + 16] == map[i] 
-    and map[i + 24] == map[i]):
-        return map[i]
-    return 0
 
 def matches_win_condition_horizontal(map, row, col):
     matches = 1
-    pos = row * 7 + col
-    toMatch = map[pos]
-    offset = 1
-    while ((col + offset) < 7 and map[pos + offset]==toMatch and matches < 4):
-        matches = matches + 1 
-        offset = offset + 1
-    offset = 1
-    while ((col - offset) > -1 and map[pos - offset]==toMatch and matches < 4):
+    value_to_match = map[(row * 7) + col]
+    i = col + 1
+    while (cell_matches_value(map, value_to_match, row, i) > 0 and 
+    matches < 4):
+        i = i + 1
         matches = matches + 1
-        offset = offset + 1
+    i = col - 1
+    while (cell_matches_value(map, value_to_match, row, i) > 0 and 
+    matches < 4):
+        i = i - 1
+        matches = matches + 1
     if (matches >= 4):
         return 1
     else:
@@ -66,72 +31,65 @@ def matches_win_condition_horizontal(map, row, col):
 
 def matches_win_condition_vertical(map, row, col):
     matches = 1
-    pos = row * 7 + col
-    toMatch = map[pos]
-    offset = 7
-    while ((pos + offset) < 42 and map[pos + offset]==toMatch and matches < 4):
-        matches = matches + 1 
-        offset = offset + 7
-    offset = 7
-    while ((pos - offset) > -1 and map[pos - offset]==toMatch and matches < 4):
+    value_to_match = map[(row * 7) + col]
+    i = row + 1
+    while (cell_matches_value(map, value_to_match, i, col) > 0 and 
+    matches < 4):
+        i = i + 1
         matches = matches + 1
-        offset = offset + 7
+    i = row - 1
+    while (cell_matches_value(map, value_to_match, i, col) > 0 and 
+    matches < 4):
+        i = i - 1
+        matches = matches + 1
     if (matches >= 4):
         return 1
     else:
         return 0
 
 def matches_win_condition_diagonal_sw_ne(map, row, col):
-    realRow = row + 1
     matches = 1
-    pos = row * 7 + col
-    toMatch = map[pos]
-    offset = 8
-    while (realRow < 6 and (col + (realRow - row)) < 7 and 
-    (pos + offset) < 42 and 
-    map[pos + offset]==toMatch and matches < 4):
+    value_to_match = map[(row * 7) + col]
+    i = row + 1
+    j = col + 1
+    while (cell_matches_value(map, value_to_match, i, j) > 0 and 
+    matches < 4):
+        i = i + 1
+        j = j + 1
         matches = matches + 1
-        offset = offset + 8
-        realRow = realRow + 1
-    offset = 6
-    realRow = row - 1
-    while (realRow > -1 and (pos - offset) > -1 and
-    (col - (row - realRow)) > -1 and
-    map[pos - offset]==toMatch and matches < 4):
+    i = row - 1
+    j = col - 1
+    while (cell_matches_value(map, value_to_match, i, j) > 0 and 
+    matches < 4):
+        i = i - 1
+        j = j - 1
         matches = matches + 1
-        offset = offset - 6
-        realRow = realRow - 1
     if (matches >= 4):
         return 1
     else:
         return 0
-
 
 def matches_win_condition_diagonal_nw_se(map, row, col):
-    realRow = row + 1
     matches = 1
-    pos = row * 7 + col
-    toMatch = map[pos]
-    offset = 6
-    while (realRow < 6 and (pos + offset) < 42 and
-    (col + (realRow - row)) < 7 and 
-    map[pos + offset]==toMatch and matches < 4):
+    value_to_match = map[(row * 7) + col]
+    i = row + 1
+    j = col - 1
+    while (cell_matches_value(map, value_to_match, i, j) > 0 and 
+    matches < 4):
+        i = i + 1
+        j = j - 1
         matches = matches + 1
-        offset = offset - 6
-        realRow = realRow + 1
-    offset = 8
-    realRow = row - 1
-    while (realRow > -1 and (pos - offset) > -1 and
-    (col - (row - realRow)) > -1 and
-    map[pos - offset]==toMatch and matches < 4):
+    i = row - 1
+    j = col + 1
+    while (cell_matches_value(map, value_to_match, i, j) > 0 and 
+    matches < 4):
+        i = i - 1
+        j = j + 1
         matches = matches + 1
-        offset = offset - 6
-        realRow = realRow - 1
     if (matches >= 4):
         return 1
     else:
         return 0
-
 
 
 def check_winner(map, row, col):
