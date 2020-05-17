@@ -47,7 +47,7 @@ def check_north_east(i, map):
         return map[i]
     return 0
 
-def check_winner(map):
+def check_winner(map, cols):
     i = 0
     while (i < 42):
         if (check_east(i, map) or check_west(i, map) or 
@@ -59,8 +59,8 @@ def check_winner(map):
     return 0
     
 def process_user_input(user_input):
-    if (not isinstance(user_input, list)):
-        return None, None;
+    if (not isinstance(user_input, list) or len(user_input) > 42):
+        return None;
 
     plyrs = [None, None]
     cols = [0, 0, 0, 0, 0, 0, 0]
@@ -75,42 +75,41 @@ def process_user_input(user_input):
         colour = matches.group(2)
         colIndex = ord(col) - ord('A')
         if (colIndex < 0 or colIndex > 6):
-            return None, None
+            return None
 
         rowInCol = cols[colIndex]
         if (rowInCol >= 6):
-            return None, None
+            return None
         
         if (map[(rowInCol * 7) + colIndex] > 0):
-            return None, None
+            return None
         
         map[(rowInCol * 7) + colIndex] = (turn + 1)
         cols[colIndex] = cols[colIndex] + 1
 
-        if (turn == 0 and plyrs[0] is None):
+        winner = check_winner(map, cols)
+        if (winner > 0):
+            return plyrs[winner - 1]
+        elif (turn == 0 and plyrs[0] is None):
             plyrs[0] = colour
         elif (turn == 1 and plyrs[1] is None):
             plyrs[1] = colour
         
         if (turn == 0 and plyrs[0] != colour):
-            return None, None
+            return None
         elif (turn == 1 and plyrs[1] != colour):
-            return None, None
+            return None
         turn = (turn + 1) % 2
-    return map, plyrs
+    return "Draw"
 
 def main():
     user_input = sys.stdin.readlines()
 
-    map, plyrs = process_user_input(user_input)
-    if (map is None):
+    winner = process_user_input(user_input)
+    if (winner is None):
         print("Invalid input.")
     else:
-        winner = check_winner(map)
-        if (winner > 0):
-            print(plyrs[winner - 1] + '.')
-        else:
-            print("Draw.")
+        print(winner + ".")
     sys.exit(0)
 
 if __name__ == "__main__":
