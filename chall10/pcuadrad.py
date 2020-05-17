@@ -51,6 +51,8 @@ def check_win(table: list) -> bool:
                     count = 1
             if count == 4:
                 return True
+    #check diagonal
+    
     return False
 
 def game(lstInput: list, table: list) -> bool:
