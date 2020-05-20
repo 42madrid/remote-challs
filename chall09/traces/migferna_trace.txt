@@ -1,0 +1,61 @@
+Compilation: OK
+test: ft_format_duration("0")
+expected_output: now
+user_output: now
+test: ft_format_duration("60")
+=================================================================
+==3991==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x615000000274 at pc 0x0001068941f9 bp 0x7ffee93b7070 sp 0x7ffee93b6818
+WRITE of size 11 at 0x615000000274 thread T0
+    #0 0x1068941f8 in wrap_strcat (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x401f8)
+    #1 0x10684b03e in generate_output migferna.c:92
+    #2 0x10684bb64 in parser_format migferna.c:140
+    #3 0x10684beb8 in ft_format_duration migferna.c:171
+    #4 0x1068498f7 in assert_results main.c:19
+    #5 0x1068499f6 in main main.c:34
+    #6 0x7fff6ded82e4 in start (libdyld.dylib:x86_64+0x112e4)
+
+0x615000000274 is located 0 bytes to the right of 500-byte region [0x615000000080,0x615000000274)
+allocated by thread T0 here:
+    #0 0x106899abd in wrap_malloc (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x45abd)
+    #1 0x10684a923 in generate_output migferna.c:31
+    #2 0x10684bb64 in parser_format migferna.c:140
+    #3 0x10684beb8 in ft_format_duration migferna.c:171
+    #4 0x1068498f7 in assert_results main.c:19
+    #5 0x1068499f6 in main main.c:34
+    #6 0x7fff6ded82e4 in start (libdyld.dylib:x86_64+0x112e4)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x401f8) in wrap_strcat
+Shadow bytes around the buggy address:
+  0x1c29fffffff0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c2a00000000: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c2a00000010: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c2a00000020: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c2a00000030: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x1c2a00000040: 00 00 00 00 00 00 00 00 00 00 00 00 00 00[04]fa
+  0x1c2a00000050: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c2a00000060: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c2a00000070: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c2a00000080: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c2a00000090: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+==3991==ABORTING
+Exec: KO

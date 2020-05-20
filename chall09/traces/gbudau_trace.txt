@@ -1,0 +1,353 @@
+Compilation: OK
+test: ft_format_duration("0")
+expected_output: now
+user_output: now
+test: ft_format_duration("60")
+expected_output: 1 minute
+user_output: 1 minute
+test: ft_format_duration("61")
+expected_output: 1 minute and 1 second
+user_output: 1 minute and 1 second
+test: ft_format_duration("62")
+expected_output: 1 minute and 2 seconds
+user_output: 1 minute and 2 seconds
+test: ft_format_duration("63")
+expected_output: 1 minute and 3 seconds
+user_output: 1 minute and 3 seconds
+test: ft_format_duration("64")
+expected_output: 1 minute and 4 seconds
+user_output: 1 minute and 4 seconds
+test: ft_format_duration("4242")
+expected_output: 1 hour, 10 minutes and 42 seconds
+user_output: 1 hour, 10 minutes and 42 seconds
+test: ft_format_duration("1328218962")
+expected_output: 42 years, 42 days, 21 hours, 42 minutes and 42 seconds
+user_output: 42 years, 42 days, 21 hours, 42 minutes and 42 seconds
+test: ft_format_duration("asdad")
+expected_output: Invalid input.
+user_output: Invalid input.
+test: ft_format_duration("4asdad")
+expected_output: Invalid input.
+user_output: Invalid input.
+test: ft_format_duration("-41212")
+expected_output: Invalid input.
+user_output: Invalid input.
+test: ft_format_duration("4214 21421")
+expected_output: Invalid input.
+user_output: Invalid input.
+test: ft_format_duration("-214")
+expected_output: Invalid input.
+user_output: Invalid input.
+test: ft_format_duration("9999999999999999999")
+expected_output: 317097919837 years, 235 days, 17 hours, 46 minutes and 39 seconds
+user_output: 317097919837 years, 235 days, 17 hours, 46 minutes and 39 seconds
+test: ft_format_duration("10000000000000000000")
+expected_output: 317097919837 years, 235 days, 17 hours, 46 minutes and 40 seconds
+user_output: 317097919837 years, 235 days, 17 hours, 46 minutes and 40 seconds
+test: ft_format_duration("10000000000000000001")
+expected_output: Invalid input.
+user_output: Invalid input.
+test: ft_format_duration("4214032131247127411461641468712641471241241826481264821421")
+expected_output: Invalid input.
+user_output: Invalid input.
+test: ft_format_duration("8524822310390612708")
+expected_output: 270320342161 years, 15 days, 5 hours, 45 minutes and 8 seconds
+user_output: 270320342161 years, 15 days, 5 hours, 45 minutes and 8 seconds
+test: ft_format_duration("3527202352409037792")
+expected_output: 111846852879 years, 195 days, 12 hours, 43 minutes and 12 seconds
+user_output: 111846852879 years, 195 days, 12 hours, 43 minutes and 12 seconds
+test: ft_format_duration("7018522546736697292")
+expected_output: 222555889990 years, 139 days, 13 hours, 14 minutes and 52 seconds
+user_output: 222555889990 years, 139 days, 13 hours, 14 minutes and 52 seconds
+test: ft_format_duration("5824158894949481522")
+expected_output: 184682867039 years, 87 days, 16 hours, 52 minutes and 2 seconds
+user_output: 184682867039 years, 87 days, 16 hours, 52 minutes and 2 seconds
+test: ft_format_duration("825830961259842733")
+expected_output: 26186927995 years, 110 days, 5 hours, 12 minutes and 13 seconds
+user_output: 26186927995 years, 110 days, 5 hours, 12 minutes and 13 seconds
+test: ft_format_duration("7397272840006615283")
+expected_output: 234565983003 years, 277 days, 20 hours, 41 minutes and 23 seconds
+user_output: 234565983003 years, 277 days, 20 hours, 41 minutes and 23 seconds
+test: ft_format_duration("477945159649679382")
+expected_output: 15155541592 years, 50 days, 13 hours, 9 minutes and 42 seconds
+user_output: 15155541592 years, 50 days, 13 hours, 9 minutes and 42 seconds
+test: ft_format_duration("8488144578532400991")
+expected_output: 269157298913 years, 139 days, 6 hours, 29 minutes and 51 seconds
+user_output: 269157298913 years, 139 days, 6 hours, 29 minutes and 51 seconds
+test: ft_format_duration("938678634888065006")
+expected_output: 29765304251 years, 330 days, 4 hours, 43 minutes and 26 seconds
+user_output: 29765304251 years, 330 days, 4 hours, 43 minutes and 26 seconds
+test: ft_format_duration("1439501592046795265")
+expected_output: 45646296044 years, 37 days, 4 hours, 1 minute and 5 seconds
+user_output: 45646296044 years, 37 days, 4 hours, 1 minute and 5 seconds
+test: ft_format_duration("5769860950711138430")
+expected_output: 182961090522 years, 108 days, 4 hours, 13 minutes and 50 seconds
+user_output: 182961090522 years, 108 days, 4 hours, 13 minutes and 50 seconds
+test: ft_format_duration("7697021463316286959")
+expected_output: 244070949496 years, 120 days, 17 hours, 29 minutes and 19 seconds
+user_output: 244070949496 years, 120 days, 17 hours, 29 minutes and 19 seconds
+test: ft_format_duration("8440720761639811817")
+expected_output: 267653499544 years, 234 days, 2 hours, 50 minutes and 17 seconds
+user_output: 267653499544 years, 234 days, 2 hours, 50 minutes and 17 seconds
+test: ft_format_duration("3398578674640098782")
+expected_output: 107768222813 years, 107 days, 23 hours, 53 minutes and 2 seconds
+user_output: 107768222813 years, 107 days, 23 hours, 53 minutes and 2 seconds
+test: ft_format_duration("7931904761438153921")
+expected_output: 251519050020 years, 86 days, 58 minutes and 41 seconds
+user_output: 251519050020 years, 86 days, 58 minutes and 41 seconds
+test: ft_format_duration("8113978137466125395")
+expected_output: 257292558899 years, 315 days, 12 hours, 36 minutes and 35 seconds
+user_output: 257292558899 years, 315 days, 12 hours, 36 minutes and 35 seconds
+test: ft_format_duration("4661640665756496920")
+expected_output: 147819655814 years, 71 days, 16 hours, 15 minutes and 20 seconds
+user_output: 147819655814 years, 71 days, 16 hours, 15 minutes and 20 seconds
+test: ft_format_duration("6836387996028666398")
+expected_output: 216780441274 years, 136 days, 14 hours, 26 minutes and 38 seconds
+user_output: 216780441274 years, 136 days, 14 hours, 26 minutes and 38 seconds
+test: ft_format_duration("4116875889450214692")
+expected_output: 130545278077 years, 161 days, 8 hours, 58 minutes and 12 seconds
+user_output: 130545278077 years, 161 days, 8 hours, 58 minutes and 12 seconds
+test: ft_format_duration("6567021696129697353")
+expected_output: 208238891937 years, 51 days, 16 hours, 22 minutes and 33 seconds
+user_output: 208238891937 years, 51 days, 16 hours, 22 minutes and 33 seconds
+test: ft_format_duration("3627191455013512808")
+expected_output: 115017486523 years, 279 days, 22 hours and 8 seconds
+user_output: 115017486523 years, 279 days, 22 hours and 8 seconds
+test: ft_format_duration("4408946288017434930")
+expected_output: 139806769660 years, 227 days, 17 hours, 15 minutes and 30 seconds
+user_output: 139806769660 years, 227 days, 17 hours, 15 minutes and 30 seconds
+test: ft_format_duration("3559785448035035373")
+expected_output: 112880056064 years, 8 days, 11 hours, 9 minutes and 33 seconds
+user_output: 112880056064 years, 8 days, 11 hours, 9 minutes and 33 seconds
+test: ft_format_duration("4847815781167571253")
+expected_output: 153723229996 years, 158 days, 17 hours, 47 minutes and 33 seconds
+user_output: 153723229996 years, 158 days, 17 hours, 47 minutes and 33 seconds
+test: ft_format_duration("6706131724156519228")
+expected_output: 212650041988 years, 265 days, 15 hours, 20 minutes and 28 seconds
+user_output: 212650041988 years, 265 days, 15 hours, 20 minutes and 28 seconds
+test: ft_format_duration("7847232423297571856")
+expected_output: 248834107791 years, 6 days, 21 hours, 30 minutes and 56 seconds
+user_output: 248834107791 years, 6 days, 21 hours, 30 minutes and 56 seconds
+test: ft_format_duration("7867611540405038692")
+expected_output: 249480325355 years, 112 days, 22 hours, 44 minutes and 52 seconds
+user_output: 249480325355 years, 112 days, 22 hours, 44 minutes and 52 seconds
+test: ft_format_duration("2004179673480831952")
+expected_output: 63552120544 years, 60 days, 17 hours, 45 minutes and 52 seconds
+user_output: 63552120544 years, 60 days, 17 hours, 45 minutes and 52 seconds
+test: ft_format_duration("6863200070531620412")
+expected_output: 217630646579 years, 188 days, 9 hours, 13 minutes and 32 seconds
+user_output: 217630646579 years, 188 days, 9 hours, 13 minutes and 32 seconds
+test: ft_format_duration("9204915102161085587")
+expected_output: 291885943117 years, 270 days, 12 hours, 39 minutes and 47 seconds
+user_output: 291885943117 years, 270 days, 12 hours, 39 minutes and 47 seconds
+test: ft_format_duration("3947622638154877936")
+expected_output: 125178292686 years, 106 days, 6 hours, 32 minutes and 16 seconds
+user_output: 125178292686 years, 106 days, 6 hours, 32 minutes and 16 seconds
+test: ft_format_duration("2076208169893042808")
+expected_output: 65836129182 years, 109 days, 20 hours, 20 minutes and 8 seconds
+user_output: 65836129182 years, 109 days, 20 hours, 20 minutes and 8 seconds
+test: ft_format_duration("3283793988199475886")
+expected_output: 104128424283 years, 124 days, 20 hours, 38 minutes and 6 seconds
+user_output: 104128424283 years, 124 days, 20 hours, 38 minutes and 6 seconds
+test: ft_format_duration("6100654615235644487")
+expected_output: 193450488813 years, 334 days, 5 hours, 14 minutes and 47 seconds
+user_output: 193450488813 years, 334 days, 5 hours, 14 minutes and 47 seconds
+test: ft_format_duration("2988211615182310768")
+expected_output: 94755568720 years, 328 days, 14 hours, 19 minutes and 28 seconds
+user_output: 94755568720 years, 328 days, 14 hours, 19 minutes and 28 seconds
+test: ft_format_duration("2389550830246049103")
+expected_output: 75772159761 years, 267 days, 23 hours, 25 minutes and 3 seconds
+user_output: 75772159761 years, 267 days, 23 hours, 25 minutes and 3 seconds
+test: ft_format_duration("8093437081304246686")
+expected_output: 256641206281 years, 308 days, 5 hours, 24 minutes and 46 seconds
+user_output: 256641206281 years, 308 days, 5 hours, 24 minutes and 46 seconds
+test: ft_format_duration("7039173763336460728")
+expected_output: 223210735772 years, 354 days, 23 hours, 5 minutes and 28 seconds
+user_output: 223210735772 years, 354 days, 23 hours, 5 minutes and 28 seconds
+test: ft_format_duration("4381328919566956819")
+expected_output: 138931028651 years, 335 days, 21 hours, 20 minutes and 19 seconds
+user_output: 138931028651 years, 335 days, 21 hours, 20 minutes and 19 seconds
+test: ft_format_duration("5734799698683191582")
+expected_output: 181849305513 years, 291 days, 22 hours, 33 minutes and 2 seconds
+user_output: 181849305513 years, 291 days, 22 hours, 33 minutes and 2 seconds
+test: ft_format_duration("5650532777841484175")
+expected_output: 179177218982 years, 290 days, 21 hours, 9 minutes and 35 seconds
+user_output: 179177218982 years, 290 days, 21 hours, 9 minutes and 35 seconds
+test: ft_format_duration("3935809258965210282")
+expected_output: 124803692889 years, 204 days, 22 hours, 24 minutes and 42 seconds
+user_output: 124803692889 years, 204 days, 22 hours, 24 minutes and 42 seconds
+test: ft_format_duration("5544020318893775146")
+expected_output: 175799731065 years, 323 days, 7 hours, 45 minutes and 46 seconds
+user_output: 175799731065 years, 323 days, 7 hours, 45 minutes and 46 seconds
+test: ft_format_duration("1482253782736601940")
+expected_output: 47001959117 years, 264 days, 22 hours and 19 minutes
+user_output: 47001959117 years, 264 days, 22 hours and 19 minutes
+test: ft_format_duration("6274648640435840161")
+expected_output: 198967803159 years, 157 days, 14 hours, 16 minutes and 1 second
+user_output: 198967803159 years, 157 days, 14 hours, 16 minutes and 1 second
+test: ft_format_duration("6293533762813651461")
+expected_output: 199566646461 years, 226 days, 8 hours, 4 minutes and 21 seconds
+user_output: 199566646461 years, 226 days, 8 hours, 4 minutes and 21 seconds
+test: ft_format_duration("8528621273954654793")
+expected_output: 270440806505 years, 150 days, 4 hours, 6 minutes and 33 seconds
+user_output: 270440806505 years, 150 days, 4 hours, 6 minutes and 33 seconds
+test: ft_format_duration("4750304517840538448")
+expected_output: 150631168120 years, 95 days, 2 hours, 54 minutes and 8 seconds
+user_output: 150631168120 years, 95 days, 2 hours, 54 minutes and 8 seconds
+test: ft_format_duration("8654330067662459845")
+expected_output: 274427006204 years, 151 days, 19 hours, 17 minutes and 25 seconds
+user_output: 274427006204 years, 151 days, 19 hours, 17 minutes and 25 seconds
+test: ft_format_duration("5998942235700390939")
+expected_output: 190225210416 years, 247 days, 20 hours, 35 minutes and 39 seconds
+user_output: 190225210416 years, 247 days, 20 hours, 35 minutes and 39 seconds
+test: ft_format_duration("2057319477774317499")
+expected_output: 65237172684 years, 135 days, 8 hours, 11 minutes and 39 seconds
+user_output: 65237172684 years, 135 days, 8 hours, 11 minutes and 39 seconds
+test: ft_format_duration("677124775295969080")
+expected_output: 21471485771 years, 251 days, 7 hours, 24 minutes and 40 seconds
+user_output: 21471485771 years, 251 days, 7 hours, 24 minutes and 40 seconds
+test: ft_format_duration("7845356166703605081")
+expected_output: 248774612084 years, 261 days, 8 hours, 31 minutes and 21 seconds
+user_output: 248774612084 years, 261 days, 8 hours, 31 minutes and 21 seconds
+test: ft_format_duration("1051428294543461615")
+expected_output: 33340572505 years, 298 days, 9 hours, 33 minutes and 35 seconds
+user_output: 33340572505 years, 298 days, 9 hours, 33 minutes and 35 seconds
+test: ft_format_duration("4998969791792988801")
+expected_output: 158516292230 years, 320 days, 16 hours, 53 minutes and 21 seconds
+user_output: 158516292230 years, 320 days, 16 hours, 53 minutes and 21 seconds
+test: ft_format_duration("3707171775480713892")
+expected_output: 117553645848 years, 210 days, 11 hours, 38 minutes and 12 seconds
+user_output: 117553645848 years, 210 days, 11 hours, 38 minutes and 12 seconds
+test: ft_format_duration("7566965639576158797")
+expected_output: 239946906379 years, 92 days, 18 hours, 19 minutes and 57 seconds
+user_output: 239946906379 years, 92 days, 18 hours, 19 minutes and 57 seconds
+test: ft_format_duration("5584679758908335662")
+expected_output: 177089033450 years, 337 days, 5 hours, 14 minutes and 22 seconds
+user_output: 177089033450 years, 337 days, 5 hours, 14 minutes and 22 seconds
+test: ft_format_duration("4910459727857316191")
+expected_output: 155709656515 years, 3 days, 4 hours, 43 minutes and 11 seconds
+user_output: 155709656515 years, 3 days, 4 hours, 43 minutes and 11 seconds
+test: ft_format_duration("4420016068935530050")
+expected_output: 140157790110 years, 307 days, 12 hours, 34 minutes and 10 seconds
+user_output: 140157790110 years, 307 days, 12 hours, 34 minutes and 10 seconds
+test: ft_format_duration("7594948858674904355")
+expected_output: 240834248435 years, 332 days, 16 hours, 32 minutes and 35 seconds
+user_output: 240834248435 years, 332 days, 16 hours, 32 minutes and 35 seconds
+test: ft_format_duration("627363872745962530")
+expected_output: 19893577902 years, 329 days, 18 hours, 2 minutes and 10 seconds
+user_output: 19893577902 years, 329 days, 18 hours, 2 minutes and 10 seconds
+test: ft_format_duration("4983355242270001408")
+expected_output: 158021158113 years, 213 days, 8 hours, 23 minutes and 28 seconds
+user_output: 158021158113 years, 213 days, 8 hours, 23 minutes and 28 seconds
+test: ft_format_duration("3258668475491202913")
+expected_output: 103331699501 years, 320 days, 5 hours, 15 minutes and 13 seconds
+user_output: 103331699501 years, 320 days, 5 hours, 15 minutes and 13 seconds
+test: ft_format_duration("7953020431586532923")
+expected_output: 252188623528 years, 87 days, 2 hours, 15 minutes and 23 seconds
+user_output: 252188623528 years, 87 days, 2 hours, 15 minutes and 23 seconds
+test: ft_format_duration("1837578657034711749")
+expected_output: 58269236968 years, 137 days, 7 hours, 29 minutes and 9 seconds
+user_output: 58269236968 years, 137 days, 7 hours, 29 minutes and 9 seconds
+test: ft_format_duration("3082482029235066548")
+expected_output: 97744863940 years, 268 days, 19 hours, 49 minutes and 8 seconds
+user_output: 97744863940 years, 268 days, 19 hours, 49 minutes and 8 seconds
+test: ft_format_duration("4181135871651688774")
+expected_output: 132582948745 years, 339 days, 21 hours, 59 minutes and 34 seconds
+user_output: 132582948745 years, 339 days, 21 hours, 59 minutes and 34 seconds
+test: ft_format_duration("4468787709943677803")
+expected_output: 141704328701 years, 334 days, 23 hours, 23 minutes and 23 seconds
+user_output: 141704328701 years, 334 days, 23 hours, 23 minutes and 23 seconds
+test: ft_format_duration("3167143678138029092")
+expected_output: 100429467216 years, 164 days, 23 hours, 11 minutes and 32 seconds
+user_output: 100429467216 years, 164 days, 23 hours, 11 minutes and 32 seconds
+test: ft_format_duration("1331281624228392815")
+expected_output: 42214663376 years, 33 days, 1 hour, 33 minutes and 35 seconds
+user_output: 42214663376 years, 33 days, 1 hour, 33 minutes and 35 seconds
+test: ft_format_duration("4486405922280806870")
+expected_output: 142262998550 years, 92 days, 16 hours, 7 minutes and 50 seconds
+user_output: 142262998550 years, 92 days, 16 hours, 7 minutes and 50 seconds
+test: ft_format_duration("8472014544114620214")
+expected_output: 268645818877 years, 110 days, 12 hours, 16 minutes and 54 seconds
+user_output: 268645818877 years, 110 days, 12 hours, 16 minutes and 54 seconds
+test: ft_format_duration("2063158860403648517")
+expected_output: 65422338292 years, 314 days, 1 hour, 55 minutes and 17 seconds
+user_output: 65422338292 years, 314 days, 1 hour, 55 minutes and 17 seconds
+test: ft_format_duration("5601793160546893809")
+expected_output: 177631695857 years, 6 days, 6 hours, 30 minutes and 9 seconds
+user_output: 177631695857 years, 6 days, 6 hours, 30 minutes and 9 seconds
+test: ft_format_duration("6603445108770897051")
+expected_output: 209393870775 years, 121 days, 11 hours, 50 minutes and 51 seconds
+user_output: 209393870775 years, 121 days, 11 hours, 50 minutes and 51 seconds
+test: ft_format_duration("7727888865244477112")
+expected_output: 245049748390 years, 201 days, 19 hours, 38 minutes and 32 seconds
+user_output: 245049748390 years, 201 days, 19 hours, 38 minutes and 32 seconds
+test: ft_format_duration("6659145947350927934")
+expected_output: 211160132780 years, 9 days, 19 hours, 32 minutes and 14 seconds
+user_output: 211160132780 years, 9 days, 19 hours, 32 minutes and 14 seconds
+test: ft_format_duration("6340950991891236788")
+expected_output: 201070236932 years, 42 days, 15 hours, 33 minutes and 8 seconds
+user_output: 201070236932 years, 42 days, 15 hours, 33 minutes and 8 seconds
+test: ft_format_duration("8601696076017680360")
+expected_output: 272757993278 years, 30 days, 22 hours, 19 minutes and 20 seconds
+user_output: 272757993278 years, 30 days, 22 hours, 19 minutes and 20 seconds
+test: ft_format_duration("2784697163426616886")
+expected_output: 88302167790 years, 13 days, 14 hours, 54 minutes and 46 seconds
+user_output: 88302167790 years, 13 days, 14 hours, 54 minutes and 46 seconds
+test: ft_format_duration("2328744531896562569")
+expected_output: 73844004689 years, 280 days, 18 hours, 29 minutes and 29 seconds
+user_output: 73844004689 years, 280 days, 18 hours, 29 minutes and 29 seconds
+test: ft_format_duration("2053033857930720412")
+expected_output: 65101276570 years, 222 days, 5 hours, 26 minutes and 52 seconds
+user_output: 65101276570 years, 222 days, 5 hours, 26 minutes and 52 seconds
+test: ft_format_duration("8359373651244714016")
+expected_output: 265073999595 years, 194 days, 9 hours and 16 seconds
+user_output: 265073999595 years, 194 days, 9 hours and 16 seconds
+test: ft_format_duration("5585111214066559027")
+expected_output: 177102714804 years, 88 days, 3 hours, 17 minutes and 7 seconds
+user_output: 177102714804 years, 88 days, 3 hours, 17 minutes and 7 seconds
+test: ft_format_duration("6806985505772589782")
+expected_output: 215848094424 years, 200 days, 12 hours, 43 minutes and 2 seconds
+user_output: 215848094424 years, 200 days, 12 hours, 43 minutes and 2 seconds
+test: ft_format_duration("4252144995846112242")
+expected_output: 134834633303 years, 31 days, 7 hours, 10 minutes and 42 seconds
+user_output: 134834633303 years, 31 days, 7 hours, 10 minutes and 42 seconds
+test: ft_format_duration("5555772002869060201")
+expected_output: 176172374520 years, 73 days, 9 hours, 10 minutes and 1 second
+user_output: 176172374520 years, 73 days, 9 hours, 10 minutes and 1 second
+test: ft_format_duration("2497514985504354666")
+expected_output: 79195680666 years, 247 days, 10 hours, 31 minutes and 6 seconds
+user_output: 79195680666 years, 247 days, 10 hours, 31 minutes and 6 seconds
+test: ft_format_duration("1945850019997010213")
+expected_output: 61702499365 years, 258 days, 21 hours, 56 minutes and 53 seconds
+user_output: 61702499365 years, 258 days, 21 hours, 56 minutes and 53 seconds
+test: ft_format_duration("1535651567708749444")
+expected_output: 48695191771 years, 214 days, 1 hour, 4 minutes and 4 seconds
+user_output: 48695191771 years, 214 days, 1 hour, 4 minutes and 4 seconds
+test: ft_format_duration("1903568897218913276")
+expected_output: 60361773757 years, 210 days, 4 hours, 47 minutes and 56 seconds
+user_output: 60361773757 years, 210 days, 4 hours, 47 minutes and 56 seconds
+test: ft_format_duration("2499845008883035784")
+expected_output: 79269565223 years, 121 days, 14 hours, 49 minutes and 44 seconds
+user_output: 79269565223 years, 121 days, 14 hours, 49 minutes and 44 seconds
+test: ft_format_duration("8571440659615376303")
+expected_output: 271798600317 years, 213 days, 16 hours, 58 minutes and 23 seconds
+user_output: 271798600317 years, 213 days, 16 hours, 58 minutes and 23 seconds
+test: ft_format_duration("8799965810366119420")
+expected_output: 279045085310 years, 346 days, 18 hours, 3 minutes and 40 seconds
+user_output: 279045085310 years, 346 days, 18 hours, 3 minutes and 40 seconds
+test: ft_format_duration("2076081471180425352")
+expected_output: 65832111592 years, 174 days, 22 hours, 9 minutes and 12 seconds
+user_output: 65832111592 years, 174 days, 22 hours, 9 minutes and 12 seconds
+test: ft_format_duration("6405695615799052671")
+expected_output: 203123275488 years, 109 days, 18 hours, 37 minutes and 51 seconds
+user_output: 203123275488 years, 109 days, 18 hours, 37 minutes and 51 seconds
+test: ft_format_duration("5145823706747622028")
+expected_output: 163172999326 years, 33 days, 9 hours, 40 minutes and 28 seconds
+user_output: 163172999326 years, 33 days, 9 hours, 40 minutes and 28 seconds
+test: ft_format_duration("3854157280258415599")
+expected_output: 122214525629 years, 257 days, 18 hours, 33 minutes and 19 seconds
+user_output: 122214525629 years, 257 days, 18 hours, 33 minutes and 19 seconds
+test: ft_format_duration("7691028421323806408")
+expected_output: 243880911381 years, 145 days, 17 hours, 20 minutes and 8 seconds
+user_output: 243880911381 years, 145 days, 17 hours, 20 minutes and 8 seconds
+Exec: OK

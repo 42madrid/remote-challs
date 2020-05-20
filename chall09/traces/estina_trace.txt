@@ -1,0 +1,96 @@
+Compilation: OK
+test: ft_format_duration("0")
+expected_output: now
+user_output: now
+test: ft_format_duration("60")
+expected_output: 1 minute
+user_output: 1 minute
+test: ft_format_duration("61")
+expected_output: 1 minute and 1 second
+user_output: 1 minute and 1 second
+test: ft_format_duration("62")
+expected_output: 1 minute and 2 seconds
+user_output: 1 minute and 2 seconds
+test: ft_format_duration("63")
+expected_output: 1 minute and 3 seconds
+user_output: 1 minute and 3 seconds
+test: ft_format_duration("64")
+expected_output: 1 minute and 4 seconds
+user_output: 1 minute and 4 seconds
+test: ft_format_duration("4242")
+expected_output: 1 hour, 10 minutes and 42 seconds
+user_output: 1 hour, 10 minutes and 42 seconds
+test: ft_format_duration("1328218962")
+expected_output: 42 years, 42 days, 21 hours, 42 minutes and 42 seconds
+user_output: 42 years, 42 days, 21 hours, 42 minutes and 42 seconds
+test: ft_format_duration("asdad")
+expected_output: Invalid input.
+user_output: Invalid input.
+test: ft_format_duration("4asdad")
+expected_output: Invalid input.
+user_output: Invalid input.
+test: ft_format_duration("-41212")
+expected_output: Invalid input.
+user_output: Invalid input.
+test: ft_format_duration("4214 21421")
+expected_output: Invalid input.
+user_output: Invalid input.
+test: ft_format_duration("-214")
+expected_output: Invalid input.
+user_output: Invalid input.
+test: ft_format_duration("9999999999999999999")
+=================================================================
+==3984==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x607000000371 at pc 0x00010e8101f9 bp 0x7ffee1440290 sp 0x7ffee143fa38
+WRITE of size 9 at 0x607000000371 thread T0
+    #0 0x10e8101f8 in wrap_strcat (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x401f8)
+    #1 0x10e7c16d3 in append_time estina.c:53
+    #2 0x10e7c1d28 in human_time estina.c:81
+    #3 0x10e7c1ee9 in ft_format_duration estina.c:95
+    #4 0x10e7c0337 in assert_results main.c:19
+    #5 0x10e7c04c6 in main main.c:46
+    #6 0x7fff6ded82e4 in start (libdyld.dylib:x86_64+0x112e4)
+
+0x607000000371 is located 0 bytes to the right of 65-byte region [0x607000000330,0x607000000371)
+allocated by thread T0 here:
+    #0 0x10e815e92 in wrap_calloc (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x45e92)
+    #1 0x10e7c1c08 in human_time estina.c:75
+    #2 0x10e7c1ee9 in ft_format_duration estina.c:95
+    #3 0x10e7c0337 in assert_results main.c:19
+    #4 0x10e7c04c6 in main main.c:46
+    #5 0x7fff6ded82e4 in start (libdyld.dylib:x86_64+0x112e4)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x401f8) in wrap_strcat
+Shadow bytes around the buggy address:
+  0x1c0e00000010: fa fa 00 00 00 00 00 00 00 00 01 fa fa fa fa fa
+  0x1c0e00000020: 00 00 00 00 00 00 00 00 01 fa fa fa fa fa 00 00
+  0x1c0e00000030: 00 00 00 00 00 00 01 fa fa fa fa fa 00 00 00 00
+  0x1c0e00000040: 00 00 00 00 01 fa fa fa fa fa 00 00 00 00 00 00
+  0x1c0e00000050: 00 00 01 fa fa fa fa fa 00 00 00 00 00 00 00 00
+=>0x1c0e00000060: 01 fa fa fa fa fa 00 00 00 00 00 00 00 00[01]fa
+  0x1c0e00000070: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c0e00000080: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c0e00000090: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c0e000000a0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c0e000000b0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+==3984==ABORTING
+Exec: KO
