@@ -28,6 +28,13 @@ static void	put_line(char **response, char *token)
 	}
 }
 
+static char	*return_infinite(char **duplicate, char **response)
+{
+	if (*response)
+		free(*response);
+	return (strdup("Infinite loop !"));
+}
+
 char		*ft_goto_parser(const char *code)
 {
 	int		label;
@@ -39,14 +46,14 @@ char		*ft_goto_parser(const char *code)
 	while (token)
 	{
 		if (isdigit(token[0]))
-		{
 			put_line(&response, token);
-		}
 		else
 		{
 			label = atoi(token + 4);
 			if (loop == -1)
 				loop = label;
+			else if (loop == label)
+				return (return_infinite(&duplicate, &response));
 			token = strsep(&duplicate, "\n");
 			while (token)
 			{
@@ -61,11 +68,7 @@ char		*ft_goto_parser(const char *code)
 				{
 					free(duplicate);
 					if (label == loop)
-					{
-						if (response)
-							free(response);
-						return (strdup("Infinite loop !"));
-					}
+						return (return_infinite(&duplicate, &response));
 					duplicate = strdup(code);
 					token = strsep(&duplicate, "\n");
 				}
