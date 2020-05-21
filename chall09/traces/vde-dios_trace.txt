@@ -1,0 +1,9 @@
+Compilation: OK
+test: ft_format_duration("0")
+expected_output: now
+user_output: now
+test: ft_format_duration("60")
+expected_output: 1 minute
+user_output: 60 seconds
+Assertion failed: (strcmp(output, expected) == 0), function assert_results, file main.c, line 23.
+Exec: KO

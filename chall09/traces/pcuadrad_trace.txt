@@ -1,0 +1,51 @@
+Compilation: OK
+test: ft_format_duration("0")
+expected_output: now
+user_output: now
+test: ft_format_duration("60")
+expected_output: 1 minute
+user_output: 1 minute
+test: ft_format_duration("61")
+expected_output: 1 minute and 1 second
+user_output: 1 minute and 1 second
+test: ft_format_duration("62")
+expected_output: 1 minute and 2 seconds
+user_output: 1 minute and 2 seconds
+test: ft_format_duration("63")
+expected_output: 1 minute and 3 seconds
+user_output: 1 minute and 3 seconds
+test: ft_format_duration("64")
+expected_output: 1 minute and 4 seconds
+user_output: 1 minute and 4 seconds
+test: ft_format_duration("4242")
+expected_output: 1 hour, 10 minutes and 42 seconds
+user_output: 1 hour, 10 minutes and 42 seconds
+test: ft_format_duration("1328218962")
+expected_output: 42 years, 42 days, 21 hours, 42 minutes and 42 seconds
+user_output: 42 years, 42 days, 21 hours, 42 minutes and 42 seconds
+test: ft_format_duration("asdad")
+expected_output: Invalid input.
+user_output: Invalid input.
+test: ft_format_duration("4asdad")
+expected_output: Invalid input.
+user_output: Invalid input.
+test: ft_format_duration("-41212")
+expected_output: Invalid input.
+user_output: Invalid input.
+test: ft_format_duration("4214 21421")
+expected_output: Invalid input.
+user_output: Invalid input.
+test: ft_format_duration("-214")
+expected_output: Invalid input.
+user_output: Invalid input.
+test: ft_format_duration("9999999999999999999")
+expected_output: 317097919837 years, 235 days, 17 hours, 46 minutes and 39 seconds
+user_output: 317097919837 years, 235 days, 17 hours, 46 minutes and 39 seconds
+test: ft_format_duration("10000000000000000000")
+expected_output: 317097919837 years, 235 days, 17 hours, 46 minutes and 40 seconds
+user_output: 317097919837 years, 235 days, 17 hours, 46 minutes and 40 seconds
+test: ft_format_duration("10000000000000000001")
+expected_output: Invalid input.
+user_output: 317097919837 years, 235 days, 17 hours, 46 minutes and 41 seconds
+Assertion failed: (strcmp(output, expected) == 0), function assert_results, file main.c, line 23.
+Exec: KO
