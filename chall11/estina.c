@@ -31,6 +31,7 @@ static void	put_line(char **response, char *token)
 char		*ft_goto_parser(const char *code)
 {
 	int		label;
+	int		loop = -1;
 	char	*response = NULL;
 	char	*duplicate = strdup(code);
 	char	*token = strsep(&duplicate, "\n");
@@ -44,6 +45,8 @@ char		*ft_goto_parser(const char *code)
 		else
 		{
 			label = atoi(token + 4);
+			if (loop == -1)
+				loop = label;
 			token = strsep(&duplicate, "\n");
 			while (token)
 			{
@@ -56,9 +59,15 @@ char		*ft_goto_parser(const char *code)
 				token = strsep(&duplicate, "\n");
 				if (!token)
 				{
-					if (response)
-						free(response);
-					return (strdup("Infinite loop !"));
+					free(duplicate);
+					if (label == loop)
+					{
+						if (response)
+							free(response);
+						return (strdup("Infinite loop !"));
+					}
+					duplicate = strdup(code);
+					token = strsep(&duplicate, "\n");
 				}
 			}
 		}
