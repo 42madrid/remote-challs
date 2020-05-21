@@ -13,6 +13,7 @@ char *ft_goto_parser(const char *code)
     char *tmp = NULL;
     long n_line = 0;
     char *input = strdup(code);
+
     next = strtok(input, "\n");
     while (next)
     {
