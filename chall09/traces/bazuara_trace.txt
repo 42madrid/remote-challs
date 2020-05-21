@@ -1,0 +1,6 @@
+duplicate symbol '_main' in:
+    /var/folders/j_/w53vsk4d2n5_ggprf3r7gv5c0000gn/T/main-6a70c2.o
+    /var/folders/j_/w53vsk4d2n5_ggprf3r7gv5c0000gn/T/bazuara-582652.o
+ld: 1 duplicate symbol for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+Compilation: KO
