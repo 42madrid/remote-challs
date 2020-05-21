@@ -55,7 +55,11 @@ char		*ft_goto_parser(const char *code)
 					}
 				token = strsep(&duplicate, "\n");
 				if (!token)
+				{
+					if (response)
+						free(response);
 					return (strdup("Infinite loop !"));
+				}
 			}
 		}
 		token = strsep(&duplicate, "\n");
