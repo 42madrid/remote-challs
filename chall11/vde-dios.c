@@ -14,7 +14,7 @@ char *ft_goto_parser(const char *code)
     long n_line = 0;
     char *input = strdup(code);
 
-    next = strtok(input, "\n");
+    next = strtok_r(input, "\n", &input);
     while (next)
     {
         if (!strtol(next, &statement, 10) && errno == EINVAL)
@@ -25,15 +25,15 @@ char *ft_goto_parser(const char *code)
                 return (strdup("Infinite loop !"));
             else
             {
-                next = strtok(NULL, "\n");
+                next = strtok_r(input, "\n", &input);
                 while(!strstr(next, statement))
-                    next = strtok(NULL, "\n");
+                    next = strtok_r(input, "\n", &input);
             }
         }
         else
         {
             n_line = strtol(next, &statement, 10);
-            word = strtok(statement, " ");
+            word = strtok_r(statement, " ", &statement);
             while(word)
             {
                 while(isspace(*word))
@@ -41,9 +41,9 @@ char *ft_goto_parser(const char *code)
                 asprintf(&output, "%s%s%s", tmp ? tmp: "", tmp ? " ": "", word);
                 free(tmp);
                 tmp = output;
-                word = strtok(NULL, "\n");
+                word = strtok_r(statement, " ", &statement);
             }
-            next = strtok(NULL, "\n");
+        next = strtok_r(input, "\n", &input);
         }
     }
     free(input);
