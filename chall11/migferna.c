@@ -39,9 +39,10 @@ char *ft_goto_parser(const char *code)
 				}
 				else
 					tmp = strdup(subcode);
-				tmp[strlen(tmp) - 1] = '\0';
-				while (ptr != NULL && strstr(ptr, tmp) == NULL) 
-					ptr = strtok(NULL, "\n");
+				ptr = strtok(tmp, "\n");
+				//tmp[strlen(tmp) - 1] = '\0';
+				//while (ptr != NULL && strstr(ptr, tmp) == NULL) 
+				//	ptr = strtok(NULL, "\n");
 			}
 			while (isdigit(*ptr))
 				ptr++;
@@ -55,7 +56,7 @@ char *ft_goto_parser(const char *code)
 		else
 			return (NULL);
 	}
-	free(str);
+	//free(str);
 	free(list);
 	return (parser);
 }
