@@ -3,6 +3,29 @@
 #include <string.h>
 #include <ctype.h>
 
+char *clean_word(const char *code)
+{
+	char *clean;
+	char *str;
+	char *ptr;
+	char *word;
+
+	if (!(clean = malloc(sizeof(clean) * strlen(code))))
+		return (NULL);
+	str = strdup(code);
+	ptr = strtok_r(str, " ", &str);
+	while (ptr != NULL)
+	{
+		word = strdup(ptr);
+		
+		ptr = strtok_r(str, " ", &str);
+		if (ptr != NULL)
+			strlcat(word, " ", sizeof(word));
+		strlcat(clean, word, sizeof(word) * strlen(word));
+	}
+	return (clean);
+}
+
 char *ft_goto_parser(const char *code)
 {
 	char *parser;
@@ -45,7 +68,7 @@ char *ft_goto_parser(const char *code)
 				ptr++;
 			while (isspace(*ptr))
 				ptr++;
-			word = strdup(ptr);
+			word = clean_word(ptr);
 			ptr = strtok(NULL, "\n");
 			if (ptr != NULL)
 				strlcat(word, " ", sizeof(word));
