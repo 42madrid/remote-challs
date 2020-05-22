@@ -6,7 +6,7 @@
 /*   By: gsanchez <gsanchez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/21 23:20:53 by gsanchez          #+#    #+#             */
-/*   Updated: 2020/05/21 23:25:45 by gsanchez         ###   ########.fr       */
+/*   Updated: 2020/05/22 11:32:12 by gsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@ char  *ft_goto_parser(const char *code)
       }
       j++;
     }
-    free(buf);
     free(arr);
     return (result);
 }
