@@ -5,7 +5,7 @@
 
 typedef struct	s_format
 {
-	char    *result;//result[1276]
+	char    *result;
     char    *num_lines;
     char    *str_go_to;
     char    *duplicate;
@@ -28,7 +28,7 @@ void	carrier_init(t_format *carrier)
 void	print_struct(t_format *carrier)
 {
 	printf("\n");
-	//printf("duplicate: \n%s\n", carrier->duplicate);
+	printf("duplicate: \n%s\n", carrier->duplicate);
     printf("          result: %s\n", carrier->result);
 	printf("       num_lines: %s\n", carrier->num_lines);
 	printf("            temp: %s\n", carrier->temp);
@@ -149,6 +149,7 @@ char		*ft_goto_parser(const char *code)
     return (carrier.result);
 }
 
+/*
 int    main()
 {
 char    *code;
@@ -169,3 +170,4 @@ printf("%s", ft_goto_parser(code));
 printf("\n");
 system("leaks a.out");
 }
+*/
