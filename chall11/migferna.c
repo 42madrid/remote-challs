@@ -40,23 +40,21 @@ char *ft_goto_parser(const char *code)
 				else
 					tmp = strdup(subcode);
 				ptr = strtok(tmp, "\n");
-				//tmp[strlen(tmp) - 1] = '\0';
-				//while (ptr != NULL && strstr(ptr, tmp) == NULL) 
-				//	ptr = strtok(NULL, "\n");
 			}
 			while (isdigit(*ptr))
 				ptr++;
 			while (isspace(*ptr))
 				ptr++;
 			word = strdup(ptr);
-			strlcat(word, " ", sizeof(word));
-			strlcat(parser, word, strlen(word) * sizeof(parser));
 			ptr = strtok(NULL, "\n");
+			if (ptr != NULL)
+				strlcat(word, " ", sizeof(word));
+			strlcat(parser, word, strlen(word) * sizeof(parser));
 		}
 		else
-			return (NULL);
+			return strdup("Infinite loop !");
 	}
-	//free(str);
+	free(str);
 	free(list);
 	return (parser);
 }
