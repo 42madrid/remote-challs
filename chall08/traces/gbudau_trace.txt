@@ -1,0 +1,7 @@
+6c6
+< ./gbudau.py: Invalid input.
+---
+> Success.
+13a14
+> ./gbudau.py: Invalid input.
+Diff: KO
