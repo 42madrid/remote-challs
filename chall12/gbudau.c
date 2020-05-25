@@ -86,10 +86,8 @@ char		*ft_reverse_parenthesis(const char *str)
 
 	if (valid_parenthesis(str) == false)
 		return (NULL);
-	length = strlen(str);
-	if ((data = malloc(length + 1)) == NULL)
+	if ((data = strdup(str)) == NULL)
 		return (NULL);
-	strncpy(data, str, length + 1);
 	if ((length = max_opened(str)) == 0)
 		return(data);
 	if ((stack = malloc(sizeof(*stack) * length)) == NULL)
