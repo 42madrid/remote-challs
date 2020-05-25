@@ -5,18 +5,18 @@ void    swap_str(char *str, int start, int finish)
     char        aux;
     int         i;
 
-    i = start;
+    i = start + 1;
     while (i < (finish - start + 1) / 2 + start)
     {
         aux = str[i];
         str[i] = str[finish + start - i];
-        str[finish + start - i] = aux;
-        //sustituir desplazando posición indicadores
         str[i] == ')' ? str[i] = '(' : (str[i] == '(' ? str[i] = ')' : 0);
-        str[finish + start - i] == ')' ? str[finish + start - i] = '(' :
-            (str[finish + start - i] == '(' ? str[finish + start - i] = ')' : 0);
+        aux == ')' ? aux = '(' : (aux == '(' ? aux = ')' : 0);
+        str[finish + start - i] = aux;
         i++;
     }
+    if ((finish - start + 1) % 2)
+        str[i] == ')' ? str[i] = '(' : (str[i] == '(' ? str[i] = ')' : 0);
 }
 
 char *ft_reverse_parenthesis(const char *str)
