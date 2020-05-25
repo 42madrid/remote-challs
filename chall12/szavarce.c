@@ -53,7 +53,7 @@ char *ft_reverse_parenthesis(const char *str)
 
 	start_pos = 0;
 	end_pos = 0;
-	if (count_chars(str, '(') != count_chars(str, ')'))
+	if (!(str) || (count_chars(str, '(') != count_chars(str, ')')))
 		return (0);
 	if (!(new_str = malloc(sizeof(char) * strlen(str))))
 		return (0);
