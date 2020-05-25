@@ -101,7 +101,7 @@ char *ft_reverse_parenthesis(const char *str)
     int flag = 0;
     int j = 0;
 
-    if ((parenthesis = check_parenthesis(s)) == -1)
+    if (!str || (parenthesis = check_parenthesis(s)) == -1)
         return(strdup("NULL"));
     while (parenthesis > 0)
     {
