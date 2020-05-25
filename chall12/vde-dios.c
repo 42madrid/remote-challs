@@ -10,13 +10,13 @@ void    swap_str(char *str, int start, int finish)
     {
         aux = str[i];
         str[i] = str[finish + start - i];
-        str[i] == ')' ? str[i] = '(' : (str[i] == '(' ? str[i] = ')' : 0);
-        aux == ')' ? aux = '(' : (aux == '(' ? aux = ')' : 0);
+        str[i] == ')' ? str[i] = '(' : (str[i] == '(' ? str[i] = ')' : str[i]);
+        aux == ')' ? aux = '(' : (aux == '(' ? aux = ')' : aux);
         str[finish + start - i] = aux;
         i++;
     }
     if ((finish - start + 1) % 2)
-        str[i] == ')' ? str[i] = '(' : (str[i] == '(' ? str[i] = ')' : 0);
+        str[i] == ')' ? str[i] = '(' : (str[i] == '(' ? str[i] = ')' : str[i]);
 }
 
 char *ft_reverse_parenthesis(const char *str)
@@ -24,8 +24,13 @@ char *ft_reverse_parenthesis(const char *str)
     int i, j, level;
     char *aux = strdup(str);
 
-    i = 0;
+    i = -1;
     level = 0;
+    while (str[++i])
+        str[i] == '(' ? level++ : (str[i] == ')' ? level-- : level);
+    if (level)
+        return (NULL);
+    i = 0;
     while(aux[i])
     {
         if (aux[i] == '(')
@@ -42,10 +47,7 @@ char *ft_reverse_parenthesis(const char *str)
                     break;
                 j++;
             }
-            if (!level)
-                swap_str(aux, i, j);
-            else
-                return (NULL);
+            swap_str(aux, i, j);
         }
         i++;
     }
