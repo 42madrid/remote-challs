@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   gsanchez.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gsanchez <gsanchez@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/05/26 10:20:06 by gsanchez          #+#    #+#             */
+/*   Updated: 2020/05/26 10:20:08 by gsanchez         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -11,15 +23,9 @@ static int ft_searchunmatch(const char *stro)
 	while (*str)
 	{
 		if (*str == '(')
-		{
-			open = 1;
 			paren++;
-		}
-		else if (*str == ')' && open)
-		{
-			open = 0;
+		else if (*str == ')' && paren > 0)
 			paren--;
-		}
 		str++;
 	}
 	if (paren)
