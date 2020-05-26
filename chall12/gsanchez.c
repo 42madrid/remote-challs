@@ -6,7 +6,7 @@
 /*   By: gsanchez <gsanchez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 10:20:06 by gsanchez          #+#    #+#             */
-/*   Updated: 2020/05/26 10:20:08 by gsanchez         ###   ########.fr       */
+/*   Updated: 2020/05/26 11:07:04 by gsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,25 +63,39 @@ char *ft_reverse_parenthesis(const char *str)
 	char	*reverse;
 	int		start, end;
 	int		i = 0;
-	int		j;
+	int		missmatch, paren;
 
+	paren = 0;
+	missmatch = 0;
 	if (!str || ft_searchunmatch(str))
 		return (NULL);
 	reverse = strdup(str);
 	if (!strchr(reverse, 40))
 		return (reverse);
-	j = strlen(reverse);
 	while (reverse[i])
 	{
-		while (reverse[i] != '(' && i < j)
-			i++;
-		start = i;
+		if (reverse[i] == '(')
+		{
+			if (!missmatch)
+				start = i;
+			missmatch++;
+		}
+		if (reverse[i] == ')' && missmatch > 0)
+		{
+			missmatch--;
+			if (!missmatch)
+			{
+				end = i;
+				paren = 1;
+			}
+		}
+		if (!missmatch && paren)
+		{
+			i = start;
+			paren = 0;
+			ft_strreverse(reverse, start, end);
+		}
 		i++;
-		while (reverse[j] != ')' && j > i)
-			j--;
-		end = j;
-		j--;
-		ft_strreverse(reverse, start, end);
 	}
 	return (reverse);
 }
