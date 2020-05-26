@@ -27,6 +27,22 @@ void	reverse_text(char *str, int start, int end)
 	}
 }
 
+int		check_first_parenthesis(const char *str)
+{
+	int		pos;
+
+	pos = 0;
+	while (str[pos] && str[pos] != '\0')
+	{
+		if (str[pos] == '(')
+			return (1);
+		if (str[pos] == ')')
+			return (0);
+		pos++;
+	}
+	return (1);
+}
+
 int		count_chars(const char *str, char to_find)
 {
 	int		pos;
@@ -54,6 +70,8 @@ char *ft_reverse_parenthesis(const char *str)
 	start_pos = 0;
 	end_pos = 0;
 	if (!(str) || (count_chars(str, '(') != count_chars(str, ')')))
+		return (0);
+	if (check_first_parenthesis(str) == 0)
 		return (0);
 	if (!(new_str = malloc(sizeof(char) * strlen(str))))
 		return (0);
