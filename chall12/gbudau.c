@@ -66,7 +66,7 @@ static void		reverse_str(char *str, size_t start, size_t end)
 
 static void		invert_paranthesis(char *str, size_t start, size_t end)
 {
-	while (start < end)
+	while (start <= end)
 	{
 		if (str[start] == ')')
 			str[start] = '(';
