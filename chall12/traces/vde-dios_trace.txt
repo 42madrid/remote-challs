@@ -1,0 +1,18 @@
+Compilation: OK
+test: ft_reverse_parenthesis("one (ruof ((rht)ee) owt)")
+expected_output: one (two ((thr)ee) four)
+user_output: one (two ((thr)ee) four)
+test: ft_reverse_parenthesis("one two three four")
+expected_output: one two three four
+user_output: one two three four
+test: ft_reverse_parenthesis("one (ruof (((rht)ee) owt)")
+expected_output: (null)
+user_output: (null)
+test: ft_reverse_parenthesis("(gnirts desrever)")
+expected_output: (reversed string)
+user_output: (reversed string)
+test: ft_reverse_parenthesis("never close ) before opening (")
+expected_output: (null)
+user_output: never close ) before opening (
+Assertion failed: (output == expected), function assert_results, file main.c, line 23.
+Exec: KO
