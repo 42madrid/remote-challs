@@ -1,0 +1,62 @@
+Compilation: OK
+test nb 1: ft_goto_parser("5 HERE
+goto  10  
+10 IS
+goto 40
+20 JUST rAnDoM TEXT
+30 AND
+40 MORE RANDOM text
+")
+expected_output: HERE IS MORE RANDOM text
+=================================================================
+==14335==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x607000000153 at pc 0x00010aac464d bp 0x7ffee5185550 sp 0x7ffee5184d08
+READ of size 1 at 0x607000000153 thread T0
+    #0 0x10aac464c in wrap_atoi (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4164c)
+    #1 0x10aa7ba1d in ft_goto_parser estina.c:52
+    #2 0x10aa7aac2 in assert_results main.c:19
+    #3 0x10aa7aba2 in main main.c:29
+    #4 0x7fff6caffcc8 in start (libdyld.dylib:x86_64+0x1acc8)
+
+0x607000000153 is located 3 bytes to the right of 80-byte region [0x607000000100,0x607000000150)
+allocated by thread T0 here:
+    #0 0x10aac3ec3 in wrap_strdup (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x40ec3)
+    #1 0x10aa7b932 in ft_goto_parser estina.c:43
+    #2 0x10aa7aac2 in assert_results main.c:19
+    #3 0x10aa7aba2 in main main.c:29
+    #4 0x7fff6caffcc8 in start (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4164c) in wrap_atoi
+Shadow bytes around the buggy address:
+  0x1c0dffffffd0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c0dffffffe0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c0dfffffff0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c0e00000000: fa fa fa fa 00 00 00 00 00 00 00 00 00 06 fa fa
+  0x1c0e00000010: fa fa 00 00 00 00 00 00 00 00 00 00 fa fa fa fa
+=>0x1c0e00000020: 00 00 00 00 00 00 00 00 00 00[fa]fa fa fa fa fa
+  0x1c0e00000030: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c0e00000040: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c0e00000050: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c0e00000060: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c0e00000070: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+==14335==ABORTING
+Exec: KO

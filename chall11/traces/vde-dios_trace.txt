@@ -1,0 +1,14 @@
+Compilation: OK
+test nb 1: ft_goto_parser("5 HERE
+goto  10  
+10 IS
+goto 40
+20 JUST rAnDoM TEXT
+30 AND
+40 MORE RANDOM text
+")
+expected_output: HERE IS MORE RANDOM text
+user_output: Infinite loop !
+
+Assertion failed: (strcmp(output, expected) == 0), function assert_results, file main.c, line 22.
+Exec: KO

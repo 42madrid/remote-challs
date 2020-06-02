@@ -1,0 +1,155 @@
+gsanchez.c:49:22: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+        while (token = strtok_r(rest, " ", &rest))
+               ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gsanchez.c:49:22: note: place parentheses around the assignment to silence this warning
+        while (token = strtok_r(rest, " ", &rest))
+                     ^
+               (                                 )
+gsanchez.c:49:22: note: use '==' to turn this assignment into an equality comparison
+        while (token = strtok_r(rest, " ", &rest))
+                     ^
+                     ==
+1 warning generated.
+Compilation: OK
+test nb 1: ft_goto_parser("5 HERE
+goto  10  
+10 IS
+goto 40
+20 JUST rAnDoM TEXT
+30 AND
+40 MORE RANDOM text
+")
+expected_output: HERE IS MORE RANDOM text
+user_output: HERE IS MORE RANDOM text
+
+test nb 2: ft_goto_parser("1 I am
+goto 5
+2 travelling
+3 down
+4 the river
+5 back
+10 home
+")
+expected_output: I am back home
+user_output: I am back home
+
+test nb 3: ft_goto_parser("1              I         
+goto      5       
+2 travelling
+3   down  
+4 the river
+5           love        being     
+10                in      42.
+")
+expected_output: I love being in 42.
+user_output: I love being in 42.
+
+test nb 4: ft_goto_parser("1 I am
+2 travelling
+3 down
+goto 2
+4 the river
+5 back
+10 home
+")
+expected_output: Infinite loop !
+user_output: Infinite loop !
+
+test nb 5: ft_goto_parser("1 I am
+goto 4
+2 travelling
+3 down
+goto 2
+4 the river
+5 that just
+10 keeps flowing
+")
+expected_output: I am the river that just keeps flowing
+user_output: I am the river that just keeps flowing
+
+test nb 6: ft_goto_parser("1 I am
+goto 4
+2 travelling
+3 down
+goto 2
+4 the river
+5 that just
+10 keeps flowing
+")
+expected_output: I am the river that just keeps flowing
+user_output: I am the river that just keeps flowing
+
+test nb 7: ft_goto_parser("1024 I         
+goto      64       
+512 travelling
+256   down  
+128 the river
+64           love        being     
+32 in      42.
+")
+expected_output: I love being in 42.
+user_output: I love being in 42.
+
+test nb 8: ft_goto_parser("1024 I         
+goto      512       
+512 travelling
+goto   64  
+128 the river
+64           love        being     
+32 in      42.
+")
+expected_output: I travelling love being in 42.
+user_output: I travelling love being in 42.
+
+test nb 9: ft_goto_parser("1 a
+goto 3
+2 B
+3 c
+goto 5
+4 D
+5 e
+goto 7
+6 F
+7 g
+")
+expected_output: a c e g
+user_output: a c e g
+
+test nb 10: ft_goto_parser("15 To be
+20 or
+25 not
+27 to be.
+")
+expected_output: To be or not to be.
+user_output: To be or not to be.
+
+test nb 11: ft_goto_parser("goto 13
+12 Banana wrists
+13 Strawberry fields
+goto 14
+14 Raspberry wishes
+15 I forgot
+goto 16
+16 the lyrics
+")
+expected_output: Strawberry fields Raspberry wishes I forgot the lyrics
+user_output: Strawberry fields Raspberry wishes I forgot the lyrics
+
+test nb 12: ft_goto_parser("5 HERE
+goto         50
+10 IS
+20 JUST rAnDoM TEXT
+goto         80
+30 AND
+40 MORE RANDOM text
+50 HERE2
+goto 20
+60 IS2
+70 JUST rAnDoM TEXT2
+80 AND2
+90 MORE RANDOM text2
+")
+expected_output: HERE HERE2 JUST rAnDoM TEXT AND2 MORE RANDOM text2
+user_output: HERE HERE2 JUST rAnDoM TEXT AND2 MORE RANDOM text2
+
+Exec: OK
